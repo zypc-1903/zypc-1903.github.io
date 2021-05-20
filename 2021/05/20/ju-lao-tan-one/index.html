@@ -663,6 +663,7 @@ P(\text{win})=\sum_{i=1}^nT(1,i)\times S(i-1)</script><hr>
 
           </div>
           
+    <div class="comments" id="gitalk-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -869,6 +870,26 @@ P(\text{win})=\sum_{i=1}^nT(1,i)\times S(i-1)</script><hr>
     
 
   
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : 'f42de837c1641ec9c865',
+      clientSecret: 'cf2479cb17e7d5c1ac5a92fe78ed423ad0853f92',
+      repo        : 'zypc-1903.github.io',
+      owner       : 'zypc-1903',
+      admin       : ['zypc-1903'],
+      id          : 'b95ef008477d988199afa7725ce9c4dc',
+        language: 'zh-CN',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
 
 </body>
 </html>
