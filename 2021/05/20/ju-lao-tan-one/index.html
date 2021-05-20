@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"zypc-1903.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="数与形的完美结合——函数——数的千万，形的高山作者 &#x2F; 190350 郑晓阳  函数对于我们是一个陌生而又熟悉的东西。怎么说呢？你绝对见过它，但你没有系统的学过它。今天我就来介绍一下函数。 介绍函数之前，我们先来了解一下变量与常量：在一个变化过程中，数值可以变化的量叫做变量，数值保持不变的量叫做常量。举个例子：$\textsf{zxy}$ 在去学校时，他与学校的距离在变化，这个距离就是变量，他的书">
+<meta property="og:type" content="article">
+<meta property="og:title" content="1903 巨佬谭 第一期">
+<meta property="og:url" content="https://zypc-1903.github.io/2021/05/20/ju-lao-tan-one/index.html">
+<meta property="og:site_name" content="1903">
+<meta property="og:description" content="数与形的完美结合——函数——数的千万，形的高山作者 &#x2F; 190350 郑晓阳  函数对于我们是一个陌生而又熟悉的东西。怎么说呢？你绝对见过它，但你没有系统的学过它。今天我就来介绍一下函数。 介绍函数之前，我们先来了解一下变量与常量：在一个变化过程中，数值可以变化的量叫做变量，数值保持不变的量叫做常量。举个例子：$\textsf{zxy}$ 在去学校时，他与学校的距离在变化，这个距离就是变量，他的书">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.luogu.com.cn/upload/image_hosting/wbcgiy2i.png">
+<meta property="og:image" content="https://cdn.luogu.com.cn/upload/image_hosting/yhxbb7se.png">
+<meta property="og:image" content="https://cdn.luogu.com.cn/upload/image_hosting/xsq3h2uf.png">
+<meta property="og:image" content="https://cdn.luogu.com.cn/upload/image_hosting/wzlqalyl.png">
+<meta property="og:image" content="https://cdn.luogu.com.cn/upload/image_hosting/4nnopfuo.png">
+<meta property="article:published_time" content="2021-05-20T10:19:31.000Z">
+<meta property="article:modified_time" content="2021-05-20T10:27:01.253Z">
+<meta property="article:author" content="1903">
+<meta property="article:tag" content="巨佬谭">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.luogu.com.cn/upload/image_hosting/wbcgiy2i.png">
+
+<link rel="canonical" href="https://zypc-1903.github.io/2021/05/20/ju-lao-tan-one/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>1903 巨佬谭 第一期 | 1903</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">1903</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zypc-1903.github.io/2021/05/20/ju-lao-tan-one/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="1903">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="1903">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          1903 巨佬谭 第一期
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-05-20 18:19:31 / 修改时间：18:27:01" itemprop="dateCreated datePublished" datetime="2021-05-20T18:19:31+08:00">2021-05-20</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="数与形的完美结合——函数"><a href="#数与形的完美结合——函数" class="headerlink" title="数与形的完美结合——函数"></a>数与形的完美结合——函数</h2><h4 id="——数的千万，形的高山"><a href="#——数的千万，形的高山" class="headerlink" title="——数的千万，形的高山"></a>——数的千万，形的高山</h4><p><strong>作者</strong> / 190350 郑晓阳</p>
+<hr>
+<p>函数对于我们是一个陌生而又熟悉的东西。怎么说呢？你绝对见过它，但你没有系统的学过它。今天我就来介绍一下函数。</p>
+<p>介绍函数之前，我们先来了解一下变量与常量：<strong>在一个变化过程中，数值可以变化的量叫做变量，数值保持不变的量叫做常量</strong>。举个例子：$\textsf{zxy}$ 在去学校时，他与学校的距离在变化，这个距离就是变量，他的书包的重量不变，这个重量就是常量。</p>
+<span id="more"></span>
+<hr>
+<p>函数，是数与形的完美结合。为数时，可以有千变万化的模样。为形时，可以描绘出无穷尽的画作。简单来说狭义上函数的定义：<strong>一般地，在某一变化过程中有两个变量 $x$ 和 $y$ ,如果对于 $x$  的每一个值，$y$ 都有唯一确定的值与之对应，那么就说 $x$ 是自变量，$y$ 是 $x$ 的函数</strong>。</p>
+<p>也就是说，我们可以通过不同的自变量 $x$ 得到不同的函数 $y$ 。而且同一个 $x$ 只能得到一个 $y$ 。那么由 $x$ 得到 $y$ 的这一个过程，我们是不能确定的。有可能我们是根据 $y=2x$ 这么一个式子得到的，有可能我们是把 $x$ 每一位上面的数字加起来，得到的和作为 $y$ ，甚至有可能对于 $x$ 的值，我想要 $y$ 是几，他就是几，毫无逻辑可言（当然对于同一个 $x$ ，$y$ 是唯一固定的）我们的函数是怎么得到的不是重点，重点是：</p>
+<ol>
+<li><p>我们是通过 $x$ 得到 $y$ ，而不是通过 $y$ 得到 $x$ 。</p>
+</li>
+<li><p>我们通过一个 $x$，只能得到且仅得到一个 $y$。什么意思呢？比如 $y=\pm x$ 就不是一个函数。为什么？对于一些 $x$ 我们可以取到两个 $y$，比如当 $x=1$，$y=1$ 或 $-1$，好家伙，出问题了，他就不是一个函数了。（这里要说明这个函数属于广义上的函数，而不属于狭义上的函数。在初中至高中我们讨论的都是狭义上的函数）</p>
+</li>
+</ol>
+<hr>
+<p>我们常见的几种函数：</p>
+<p>一次函数：$y=kx+b$ ( $k$ , $b$ 为常量 )<br>二次函数：$y=ax^2+bx+c$ ( $a$,$b$,$c$ 为常量，$a\not=0$ )<br>反比例函数：$y=\dfrac{k}{x}$ ( $k$ 为常量，$k \not= 0$ )</p>
+<p>像上面几种用代数式来表示 $x$ 与 $y$ 的关系，这个式子就叫做函数的解析式。</p>
+<hr>
+<p>那如果有的想咋咋地随便搞出来的，毫无逻辑的函数我们怎么表示呢？显然这个时候我们不能用式子了，因为我们这种没逻辑的函数无法找到表示他的解析式。这时候我们就要用到 <strong>表格</strong> 了。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">x</th>
+<th style="text-align:center">1</th>
+<th style="text-align:center">2</th>
+<th style="text-align:center">3</th>
+<th style="text-align:center">4</th>
+<th style="text-align:center">5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">y</td>
+<td style="text-align:center">12</td>
+<td style="text-align:center">16</td>
+<td style="text-align:center">32</td>
+<td style="text-align:center">54</td>
+<td style="text-align:center">72</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>诶，针不戳，我们现在就能很轻松的根据 $x$ 找到 $y$ 了，不是吗？但细心的同学就发现了，表格<del>小了，格局小了</del>，我们不可能把所有 $x$ 的函数写进一个小小的表格里，我们写不完的，表格不够全面。那有什么方法比表格全面，比解析式清晰呢？</p>
+<hr>
+<p><strong>图像法</strong> ：</p>
+<p>我们可以把每个 $x$ 与对应的 $y$ 两个数组成一个坐标 $(x,y)$ ，然后把所有这样的点描出来，最后这些点就能组成函数的图像。<br>打个比方，我们现在要知道函数 $y=2x$ 的图像长啥样。首先，我们描几个点。当 $x=1$ 时，$y=2x=2\times 1=2$。我们就把 $(1,2)$ 给它描出来。同样的，我们按这个思路把 $(2,4)$ ，$(3,6)$ 等点描起来，变成下面这个样子：</p>
+<p><img src="https://cdn.luogu.com.cn/upload/image_hosting/wbcgiy2i.png" alt=""></p>
+<p>这些点越描越多，我们就得到了一条直线：</p>
+<p><img src="https://cdn.luogu.com.cn/upload/image_hosting/yhxbb7se.png" alt=""></p>
+<p>一般，我们画图像时只需要描出多个点，然后用平滑的线将这些点连起来就可以了。</p>
+<hr>
+<p>三种方法的总结：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">解析式</th>
+<th style="text-align:center">表格法</th>
+<th style="text-align:center">图像法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>优点</strong></td>
+<td style="text-align:center">可以全面清楚的描述一个函数</td>
+<td style="text-align:center">函数的对应关系一目了然</td>
+<td style="text-align:center">可以清楚地看到函数的关系</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>缺点</strong></td>
+<td style="text-align:center">有的函数不能用解析式表示</td>
+<td style="text-align:center">表达不全面</td>
+<td style="text-align:center">不能准确的看出每一个函数的值，精确度不够</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>这么来看，每种方法各有所长，表示一个函数时，应该要合理选择，综合运用。</p>
+<hr>
+<p>最后，为什么说函数是数的千万，形的高山呢？上图：</p>
+<p><img src="https://cdn.luogu.com.cn/upload/image_hosting/xsq3h2uf.png" alt=""></p>
+<p>红色：$y=\sqrt{1-(|x|-1)^2}$<br>蓝色：$y=\cos^{-1}(1-|x|)-\pi$<br>这就是函数的魅力。</p>
+<div style="page-break-after:always"></div>
+
+<h2 id="浅谈函数"><a href="#浅谈函数" class="headerlink" title="浅谈函数"></a>浅谈函数</h2><p><strong>作者</strong> / 190310 方梓轩</p>
+<hr>
+<h3 id="一-绪论"><a href="#一-绪论" class="headerlink" title="一 绪论"></a>一 绪论</h3><p>经过和郑晓阳同学的讨论，我们认为需要呈现两种对函数的理解思路.<br>要学习函数，肯定要先了解函数的江湖传说.<br>函数是数形结合的集大成者，无论是求解析式，还是求面积，亦或是以后大家学到的建系，都把无数学生折磨得死去活来.<br>由于函数的优 雅 性 质，中考出题老师经常使用二次函数压轴，送走了无数同学的 A 甚至是千分之一.</p>
+<p><strong>阅前需知</strong></p>
+<p>由于初中内容有限，本文的表达形式不甚严谨.<br>由于作者学术水平有限，不可避免地会出现事实错误.<br>作者此前未系统学习过函数，关于函数的知识都是在接触信竞之后自己摸索的.<br>故以上内容仅供参考.</p>
+<hr>
+<h3 id="二-函数的定义"><a href="#二-函数的定义" class="headerlink" title="二 函数的定义"></a>二 函数的定义</h3><p>根据顾名思义的原则，函数是什么，还得看函数为什么叫作函数.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">“凡此变数中函彼变数者，则此为彼之函数。”</span><br><span class="line">——清朝数学家、函数译者 李善兰</span><br></pre></td></tr></table></figure>
+<p>变数，指变量.<br>白话文差不多就是“这个变量和那个变量有关系，那这个变量就是那个变量的函数”.<br>参考百度百科：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">给定一个数集A,假设其中的元素为x,对A中的元素x施加对应法则f,记作f(x),得到另一数集B。</span><br><span class="line">——百度百科</span><br></pre></td></tr></table></figure>
+<p>参考八下数学书：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">一般地,在某一变化过程中有两个变量x和y,如果对于x的每一个值,y都有唯一确定的值与之对应,那么就说x是自变量,y是x的函数。</span><br></pre></td></tr></table></figure>
+<p>敏锐的同学应该已经发现端倪了，八下数学书和其他两者的定义，是冲突的.<br>考虑 $y=\pm x$，问题来了，百度百科说这是个函数，但数学书说这个不是.<br>联想到历史中的“孤证不立”，我们得用李善兰的定义，来消除百度百科和八下数学书的矛盾.<br>$\pm$，正负号，怎么就不能是关系了呢？<br>所以，数学书又一次欺骗了我们，再次给我们埋下了坑，准备在高中埋伏我们一手，故技重施，再来一次认知冲突的小把戏.<br>那么，函数，是什么呢？<br>我们不如直击函数真正的定义，参考百度百科，注意到：</p>
+<p><strong>施加对应法则</strong></p>
+<p>举几个例子：</p>
+<p>$\textsf{zxy}$ 同学要吃饭，吃饭之前的 $\textsf{zxy}$ 饥肠辘辘，吃完之后的 $\textsf{zxy}$ 充满精神，这就是对 $\textsf{zxy}$ 同学进行了一次“吃饭”的法则施加.<br>$\textsf{fzx}$ 同学要做题，做到一半被题目教做人了，此时的 $\textsf{fzx}$ 同学已不再是做题前的那个意气风发的 $\textsf{fzx}$ ，而是那个颓靡不振的 $\textsf{fzx}$ .<br>$\textsf{zzk}$ 同学要去剪头发，剪完头发的之前的 $\textsf{zzk}$ 同学蓬头垢面，而对 $\textsf{zzk}$ 同学进行了剪头发的操作之后，$\textsf{zzk}$ 同学变得神清气爽.<br>即，剪头发 ( 蓬头垢面  $\textsf{zzk}$ ) = 神清气爽 $\textsf{zzk}$ .</p>
+<p>我们记剪头发前的 $\textsf{zzk}$ 同学为 $\textsf{zzk}_1$ ，而剪完之后的 $\textsf{zzk}_2$ ，再记剪头发的操作为 $g$，则有 $g(\textsf{zzk}_1)=\textsf{zzk}_2$ ，前两个例子亦如是.<br>“  变变变，青蛙变成王子 ” 亦是一个函数，即公主的吻 ( 青蛙 ) = 王子.</p>
+<p>我们对一个数 $x$ 进行取相反数操作，记取反之后的 $x$ 为 $y$，取相反数的操作为 $f$，则有 $f(x)=y$，根据定义，有 $y=-x$，所以 $f(x)=-x$.<br>进一步形象地理解，我们有一台机器，我们可以往里面丢东西，然后这台机器会吐东西，我们只知道凡丢必吐，那这也是个函数，尽管我们不知道我们丢进去一个，会吐出来多少个.<br>比如我们记丢进去的东西为 $x$，吐出来的东西为 $y$，如果丢进去和吐出来的东西有多个，则 $x,y$ 为丢进去和吐出来的东西的总称，丢和吐的过程为 $h$，则有 $h(x)=y$.</p>
+<hr>
+<h3 id="三-解析式"><a href="#三-解析式" class="headerlink" title="三 解析式"></a>三 解析式</h3><p>继续延伸我们之前所提到的机器，现在我们往里面丢一个数字，吐出来这个数的两倍，记丢进去的数为 $x$，丢出来的数为 $y$，丢和吐的过程为 $f$.<br>则有 $y$ 与 $x$ 的关系 $y=2x$，即有 $f(x)=2x$ 和 $y=2x$ 两种表示形式，为了迎合数轴的 $x,y$ 两轴，数学书中多使用 $y=2x$ 的形式，以下我们对二者通用.</p>
+<p>形如 $y=kx+b$ 的为函数，我们称之为一次函数，特别地，当 $b=0$ 时，我们称之为正比例函数.<br>形如 $f(x)=ax^2+bx+c$ 的函数，我们称之为二次函数，当 $a=0$ 时，符合一次函数的定义，故退化为一次函数.<br>形如 $f(x)=\dfrac{k}{x} (x\not=0)$ 的函数，我们称之为反比例函数.</p>
+<p>那么，我们丢进去的数，称为 <strong>自变量</strong>.<br>机器吐出来的数，称为 <strong>因变量</strong>.<br>假设如果我们丢进去的东西一样，则同一台机器吐出来的东西一直都是一样的，那么我们说.<br>自变量和因变量符合 <strong>函数关系</strong>，描述二者的关系的式子，叫函数的 <strong>解析式</strong>.</p>
+<p>开始理解.</p>
+<p>回到我们以前的例子：$\textsf{zxy}$ 同学要吃饭，吃饭之前的 $\textsf{zxy}$ 饥肠辘辘，吃完之后的 $\textsf{zxy}$ 充满精神，这就是对 $\textsf{zxy}$ 同学进行了一次“吃饭”的法则施加.<br>我们确定，只要不出现意外情况，$\textsf{zxy}$ 同学总能从饥肠辘辘，变成充满精神.<br>那么，饥肠辘辘的 $\textsf{zxy}$ 同学，和充满精神的 $\textsf{zxy}$ 同学，必然符合函数关系.<br>同样，意气风发的 $\textsf{fzx}$，和颓靡不振的 $\textsf{fzx}$，也符合函数关系.<br>对于我们取相反数的函数 $f$，我们只要丢进去的是同一个数，比如 10，那么这个函数的值就一直是 -10，不会多一点，也不会少一点.</p>
+<p>回到那台机器，假如我们不知道丢进去什么会吐出来什么，那我们需要一个个试，比如丢进去 $\textsf{fzx}$，吐出来 $\textsf{zxy}$，丢进去 $\textsf{zxy}$，吐出来 $\textsf{zzk}$，那么，我们可以列一个表.</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">丢进去啥</th>
+<th style="text-align:center">$\textsf{fzx}$ 同学</th>
+<th style="text-align:center">$\textsf{zxy}$ 同学</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">吐出来啥</td>
+<td style="text-align:center">$\textsf{zxy}$ 同学</td>
+<td style="text-align:center">$\textsf{zzk}$ 同学</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>同样，对于取相反数的函数，我们如法炮制.</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>丢进去啥</th>
+<th>3</th>
+<th>-10</th>
+<th>999</th>
+<th>666</th>
+<th>-2333</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>吐出来啥</td>
+<td>-3</td>
+<td>10</td>
+<td>-999</td>
+<td>-666</td>
+<td>2333</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>那么，我们可以给出一种朴素的描述自变量和因变量的函数关系的方式，<strong>列表格</strong>.<br>当然，如果我们知道了这就是取相反数之后，我们就可以给出一条优雅的式子$f(x)=-x$，涵盖了所有情况，这就是 <strong>解析式</strong> 的优越之处.<br>当然，解析式也可以表现为几何形式，正如上文中提到“迎合几何中的$x,y$两轴”，迫害无数学生的平面直角坐标系，他来了，他来了.</p>
+<p>当 $x=1,y=-1$，那么，我们可以涂黑点 $(1,-1)$.<br>当 $x=10,y=-10$，那么，我们可以涂黑点 $(10,-10)$.<br>这种方法，叫 <strong>画图表</strong>.<br>不难发现，每个点的的横纵坐标都构成了该函数关系，即任意点的坐标为 $(x,f(x))$.<br>横向观察图表，发现原图标表示当 $x$ 发生变化时，$y$ 的值的变化.<br>纵向观察，则为当 $y$ 发生变化时，$x$ 的值的变化，但是……</p>
+<hr>
+<h3 id="四-自变量和因变量的单向关系"><a href="#四-自变量和因变量的单向关系" class="headerlink" title="四 自变量和因变量的单向关系"></a>四 自变量和因变量的单向关系</h3><p>但是什么呢？<br>横向观察，我们能根据 $x$ 的值，求出 $y$ 的值.<br>纵向观察，我们却不一定能根据 $y$ 的值，确定 $x$ 的值.</p>
+<p>当 $x=1$ 时，函数 $y=\pm x$ 的值为 $\pm 1$，即 1 和 -1 两个值，我们通过 $x$，确定了 $y$，即使 $y$ 有两个值.<br>但是，当 $y=1$ 时，我们不能确定，$x=1$，还是 $x=-1$，我们不能通过 $y$，确定 $x$.</p>
+<p>回到我们原先的例子，$\textsf{fzx}$颓靡不振，并不一定是因为做题，还有可能是因为体育课.<br>即，体育课 ( 意气风发 $\textsf{fzx}$ ) = 做题 ( 意气风发 $\textsf{fzx}$ ) = 颓靡不振 $\textsf{fzx}$.</p>
+<p>我们学习到一元二次方程时，会了解到一元二次函数有两个根，即，使得原二次函数的值为 0 的根有两个，这两个根虽然可能相等，但大概率不会.</p>
+<p>所以，函数的因变量相等，不一定代表函数的自变量相等.<br>所以，因变量和自变量的关系，是单向的.<br>但是，学习过一元一次方程的我们知道，一元一次方程只有一个解，那么<br><strong>一次函数的自变量和因变量的关系，是双向的.</strong></p>
+<p>对于一次函数 $f(x)=5x$，我们可以根据 $x=5$，推出 $f(x)=25$，也可以根据 $f(x)=80$，推出 $x=16$.<br>对于二次函数 $f(x)=x^2$，我们就只能说，根据 $x=3$，得出 $f(x)=9$了，真要反着来，就是根据 $f(x)=25$，得出 $x=\pm5$ 了.</p>
+<hr>
+<h3 id="五-函数的单调性"><a href="#五-函数的单调性" class="headerlink" title="五 函数的单调性"></a>五 函数的单调性</h3><p>对于任意 $x_1,x_2$，$l\le x_1\le x_2\le r$，$f(x_1)&gt;f(x_2)$，则该函数在 $l,r$ 之间单调递减，若 $f(x_1)<f(x_2)$ 则为单调递增.
+简而言之，如果 $x$ 变大，$f(x)$ 变大，那么原函数单调递增，如果 $f(x)$ 变小，那么原函数单调递减.
+对于一次函数，我们很容易发现，一次函数在正负无穷之间，都有单调性，其一次项系数 $a>0$ 则单调递增，$a&lt;0$ 则单调递减，$a=0$ 则为恒值.<br>延伸，对于二次函数，我们很容易发现，其某一个点为分界线，一边单调递增，一边单调递减.</p>
+<hr>
+<h3 id="六-例题"><a href="#六-例题" class="headerlink" title="六 例题"></a>六 例题</h3><p>相信你已经大致了解了函数的基本概念，来练习一下吧.<br>例题有讲解，变式和延伸供自己练习，下附答案.</p>
+<p><strong>例题</strong>：函数 $y=ax+b$ 经过 $(2,0),(0,6)$ 两点，求 $a,b$ 的值.<br>由上文可得，当 $x=2$ 时，$y=0$，当 $x=0$ 时，$y=6$.<br>可列出如下方程组 ${2a+b=0,b=6}$.<br>解二元一次方程，可得到 $a=-3,b=6$.<br><strong>变式</strong>：函数 $y=ax+b$ 经过 $(1,5),(5,2)$ 两点，求 $a,b$ 的值.<br><strong>延伸</strong>：函数 $f(x)=ax^2+bx+c$ 经过 $(1,2),(2,4),(6,8)$，求 $a,b,c$ 的值.</p>
+<p><strong>例题</strong>：试求当 $5\le x \le 7$ 时，函数 $y=5x-3$ 的取值范围.<br>我们上文提到函数的单调性，即对于 $y=5x-3$，当 $x=5$ 时 $y$ 的值，一定小于当 $x&gt;5$ 时， $y$ 的值，当 $x=7$ 时 $y$ 的值，一定大于当 $x&lt;7$ 时 $y$ 的值.<br>故只需要代入两个临界值即可，当 $x=5$ 时，$y=22$，当 $x=7$ 时，$y=32$，故当 $5\le x \le 7$ 时，$22 \le y \le 32$.<br><strong>变式</strong>：试求函数 $y=x-7$ 在第四象限内的取值范围.<br><strong>延伸</strong>：试求函数 $f(x)=x^2$ 在 $-2 \le x \le 4$ 之时的取值范围.</p>
+<p><strong>旧题新解</strong>：一个刻度均匀但读数不准确的温度计，在实际温度为 $5^\circ C$ 时，度数为 $2^\circ C$，在实际读数为 $105^\circ C$ 时，读数为 $92^\circ C$，试列出一个一次函数，能使在此一次函数的基础上，只一次计算便能根据实际温度求出其读数，或根据其读数求出实际温度.<br><strong>旧题新解</strong>：某三角形的两条边分别为 $4,7$，试求该三角形周长的取值范围.</p>
+<div style="page-break-after:always"></div>
+
+<h2 id="浅谈排列组合"><a href="#浅谈排列组合" class="headerlink" title="浅谈排列组合"></a>浅谈排列组合</h2><p><strong>作者</strong> / 190331 舒熙皓</p>
+<hr>
+<h3 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识"></a>前置知识</h3><ul>
+<li>排列组合</li>
+</ul>
+<script type="math/tex; mode=display">
+A^m_n= \frac{n!}{(n-m)!} \\
+\binom{n}{m}=C^m_n=\frac{A^m_n}{A^m_m}=\frac{n!}{(n-m)! \cdot m!}</script><p>特别的，当 $m&gt;n$ 时，$C^m_n=0$ 。</p>
+<ul>
+<li>排列组合的推导</li>
+</ul>
+<p>在 $n$ 个数里面 <strong>按顺序</strong> 的选择 $m$ 个数，也就是 $A^m_n$ ，我们可以这样假设：有 $m$ 个空位，你需要一一把这 $n$ 个物品放上去。有 $n$ 种选择可以在第一个空位上面（ 因为每一个物品都可以放上去 ）。而第二个空位只有 $n-1$ 种选择，（因为有一个物品已经放在了第一个空位，剩下了 $n-1$ 个物品），第三个空位只有 $n-2$ 种选择 $\cdots\cdots$ ，第 $m$ 个空位只有 $(n-m+1)$ 中选择。所以，$A^m_n=n\times(n-1)\times\cdots\times(n-m+1)=\dfrac{n!}{(n-m)!}$ 。</p>
+<p>在 $n$ 个数里面 <strong>不按顺序</strong> 的选择 $m$ 个数，也就是 $C^m_n$ ，也可以写成 $\binom{n}{m}$ 。如果在乎顺序选择，那么总结果就是 $A^m_n$ 。如果不在乎顺序，就要去掉重复。所有被选出来的 $m$ 个数，按顺序排列有 $A^m_m$ 种，如果不按顺序排列，就只有一种。所以，$C^m_n=\dfrac{A^m_n}{A^m_m}=\dfrac{n!}{(n-m)! \cdot m!}$ 。</p>
+<ul>
+<li>排列组合的扩充</li>
+</ul>
+<p>由定义，我们可以发现 $n$ 个数里面选取 $m$ 个数的方案跟 $n$ 个数里面选取 $n-m$ 个数的方案是一样的（因为 $n$ 个数里面选 $m$ 个数，就相当于在 $n$ 个数里面选择 $n-m$ 个数丢掉），于是我们可以得到：</p>
+<script type="math/tex; mode=display">
+\binom{n}{m}=\binom{n}{n-m}</script><p>当在 $n+m$ 个数里面选择 $m$ 个数（ $n \ge m$ ）的时候，相当于从 $n$ 个数里面选择 $0,1,2,\cdots,m$ 个数，并且在剩下 $m$ 个数里面选 $m,m-1,m-2,\cdots,0$ 个数的方案数之和。也就是说，</p>
+<script type="math/tex; mode=display">
+\sum_{i=0}^m\binom{n}{i}\binom{m}{m-i}=\binom{n+m}{m}</script><p>其中 $\sum$ 是求和符号，表示 $i=0,1,2,3,\cdots,m$ 时，求和符号右边式子的值的和。</p>
+<p>当 $n=m$ 时，我们还可以得出</p>
+<script type="math/tex; mode=display">
+\sum_{i=0}^n\binom{n}{i}^2=\binom{2n}{n}</script><hr>
+<h3 id="1-组合数的递推式"><a href="#1-组合数的递推式" class="headerlink" title="1. 组合数的递推式"></a>1. 组合数的递推式</h3><p>在这一节，我们将会证明这个公式：</p>
+<script type="math/tex; mode=display">
+\binom{a}{b}=\binom{a-1}{b-1}+\binom{a-1}{b}</script><ul>
+<li>由 <strong>定义</strong> 出发</li>
+</ul>
+<p>先来看看 $\binom{a}{b}$ 的含义。它指的就是从 $a$ 个数里面不按顺序选出 $b$ 个数的方案数。</p>
+<p>我们可以这样分类讨论：</p>
+<ol>
+<li><p>不选最后一个数，那么就要从 $(a-1)$ 个数里面选出 $b$ 个，即 $\binom{a-1}{b}$ 。</p>
+</li>
+<li><p>选最后一个数，那么只要从 $(a-1)$ 个数里面选 $(b-1)$ 个数即可，那么就是 $\binom{a-1}{b-1}$ 。</p>
+</li>
+</ol>
+<p>由加法原理可以得到</p>
+<script type="math/tex; mode=display">
+\binom{a}{b}=\binom{a-1}{b-1}+\binom{a-1}{b}</script><ul>
+<li>由 <strong>计算</strong> 出发</li>
+</ul>
+<script type="math/tex; mode=display">
+\begin{aligned}
+&\binom{a-1}{b-1}+\binom{a-1}{b} \\
+
+&= \frac{(a-1)!}{(a-b)! \cdot (b-1)!}+\frac{(a-1)!}{(a-b-1)!\cdot b!} \\
+
+&= \frac{(a-1)(a-2)\cdots(a-b+1)}{(b-1)!}+ \frac{(a-1)(a-2)\cdots(a-b)}{b!}
+\end{aligned}</script><p>提公因式 $(a-1)(a-2)\cdots(a-b+1)$，得原式</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+&=(a-1)(a-2)\cdots(a-b+1) \cdot ( \frac{1}{(b-1)!} +\frac{a-b}{b!} )\\
+
+&= (a-1)(a-2)\cdots(a-b+1) \cdot ( \frac{b}{b!} +\frac{a-b}{b!} )\\
+
+&= (a-1)(a-2)\cdots(a-b+1) \cdot \frac{a}{b!}\\
+
+&= \frac{a(a-1)(a-2)\cdots(a-b+1)}{b!}\\
+
+&= \frac{a!}{(a-b)! \cdot b!}=\binom{a}{b}\\
+&& \square
+\end{aligned}</script><blockquote>
+<p>关于证明最后的小方块：QED 是拉丁词组 <strong>Q</strong>uod <strong>E</strong>rat <strong>D</strong>emonstrandum（这就是所要证明的）的缩写，代表证明完毕。现在的 QED 符号通常是 $\blacksquare$ 或者是 $\square$。—— <strong>OI-Wiki</strong></p>
+</blockquote>
+<hr>
+<h3 id="Ex-1-二项式定理"><a href="#Ex-1-二项式定理" class="headerlink" title="Ex.1 二项式定理"></a>Ex.1 二项式定理</h3><p>我们先从完全平方公式说起：</p>
+<script type="math/tex; mode=display">
+(a+b)^2=a^2+2ab+b^2</script><p>那么， $(a+b)^n$ 该怎么求呢？在这一节，我们将会证明这个公式，也就是 <strong>二项式定理</strong>：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+(a+b)^n&=\binom{n}{0}a^0b^n+\binom{n}{1}a^1b^{n-1}+\cdots+\binom{n}{n}a^nb^0\\
+&=\sum_{i=0}^n\binom{n}{i}a^ib^{n-i}
+\end{aligned}</script><p>其中 $\sum$ 是求和符号，表示 $i=0,1,2,3,\cdots,n$ 时，求和符号右边式子的值的和。</p>
+<p><strong>证明：</strong> 考虑 <strong>数学归纳法</strong>，</p>
+<p>当 $n=0$ 时，$(a+b)^0=1\times a^0b^0=1$ 显然成立。</p>
+<p>假设当 $n=k$ 时成立，即 $(a+b)^k=\sum_{i=0}^k\binom{k}{i}a^ib^{k-i}$ 。那么，当 $n=k+1$ 时，</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+(a+b)^{k+1}&=(a+b)^k\times(a+b)\\
+&=(a+b)\times(\binom{k}{0}b^k+\binom{k}{1}a^1b^{k-1}+\cdots+\binom{k}{k}a^k)\\
+&=\binom{k}{k}a^{k+1}+\binom{k}{k-1}a^kb+\binom{k}{k-2}a^{k-1}b^2+\cdots+\binom{k}{0}ab^k\\
+&\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\binom{k}{k}a^kb\ \ \ \ \ \ \ +\binom{k}{k-1}a^{k-1}b^2+\binom{k}{k-2}a^{k-2}b^3+\cdots+\binom{k}{0}b^{k+1}\\
+&=\binom{k}{k}a^{k+1}+(\binom{k}{k}+\binom{k}{k-1})a^kb+(\binom{k}{k-1}+\binom{k}{k-2})a^{k-1}b^2+\cdots+\binom{k}{0}b^{k+1}\\
+&=\binom{k+1}{k+1}a^{k+1}+\binom{k+1}{k}a^kb+\binom{k+1}{k-1}a^{k-1}b^2+\cdots+\binom{k}{0}b^{k+1}\\
+&=\sum_{i=0}^{k+1}\binom{k+1}{i}a^ib^{k+1-i}\\
+&&\square
+\end{aligned}</script><p>如果你不想看到这么复杂的计算过程，你也可以从它的组合意义出发证明。</p>
+<p>当二项式定理中的 $a$ 和 $b$ 取特殊值时，你可以得到下面这些式子：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\binom{n}{0}+\binom{n}{1}+\cdots+\binom{n}{n}=2^n &&(a=b=1)\\
+\sum_{i=0}^n(-1)^i\binom{n}{i}=0 &&(a=-1,b=1) \\
+
+\end{aligned}</script><hr>
+<h3 id="2-杨辉三角与排列组合"><a href="#2-杨辉三角与排列组合" class="headerlink" title="2. 杨辉三角与排列组合"></a>2. 杨辉三角与排列组合</h3><p>先将杨辉三角集体左移，放在一张表格上。（ 注意表格的行 / 列开头是 <strong>0</strong> ）</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">行 / 列</th>
+<th style="text-align:center">0</th>
+<th style="text-align:center">1</th>
+<th style="text-align:center">2</th>
+<th style="text-align:center">3</th>
+<th style="text-align:center">4</th>
+<th style="text-align:center">5</th>
+<th style="text-align:center">6</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>0</strong></td>
+<td style="text-align:center">1</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>1</strong></td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>2</strong></td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>3</strong></td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>4</strong></td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>5</strong></td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">10</td>
+<td style="text-align:center">10</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>6</strong></td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">15</td>
+<td style="text-align:center">20</td>
+<td style="text-align:center">15</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>我们设表格中第 $x$ 行，第 $y$ 列的数是 $P(x,y)$ 。</p>
+<p>首先，由杨辉三角本身可以得到 $P(a,b)=P(a-1,b)+P(a-1,b-1)$ 。</p>
+<p>接着，我们可以发现一个比较神奇的事实：$P(a,b)=\binom{a}{b}$ 。</p>
+<p><strong>证明</strong>：考虑 <strong>数学归纳法</strong>，</p>
+<p>显然可得 $P(0,0)=\binom{0}{0}$ 。</p>
+<p>发现杨辉三角的递推式 $P(a,b)=P(a-1,b)+P(a-1,b-1)$<br>与组合数的递推式 $\binom{a}{b}=\binom{a-1}{b-1}+\binom{a-1}{b}$ 形式是相同的，由此可以判断下列等式成立：</p>
+<script type="math/tex; mode=display">
+P(a,b)=\binom{a}{b}</script><p>我们再来回顾一下二项式定理：</p>
+<script type="math/tex; mode=display">
+(a+b)^n= \sum_{i=0}^{n} \dbinom{n}{i}a^i b^{n-i}</script><p>将它的系数从前往后列出来：$\dbinom{n}{0},  \dbinom{n}{1} ,  \dbinom{n}{2} ,  \cdots ,  \dbinom{n}{n}$</p>
+<p>由 $P(a,b)=\dbinom{a}{b}$ 可以得到：这些数字刚好就是杨辉三角第 $n$ 行从前往后的数字！</p>
+<p>而这，就是杨辉三角和组合数之间的关系。</p>
+<hr>
+<h3 id="Ex-2-Catalan-数"><a href="#Ex-2-Catalan-数" class="headerlink" title="Ex.2 Catalan 数"></a>Ex.2 Catalan 数</h3><p>假如你在一个平面直角坐标系上，起点为 $(0,0)$ 。你一共可以移动 $2n$ 次，每次可以向右或向上走一格。我们规定，你在任意时刻往右走的次数都不能少于往上走的次数。问：当你走到点 $(n,n)$ 时，有多少种不同的路径？</p>
+<p>如果不按照规定来，方案则相当于在 $2n$ 次移动中选择 $n$ 次向上移动，总数为$\dbinom{2n}{n}$ 。</p>
+<p>所有方案总数求出来了，我们接下来想一想不符合规定的方案总数。<br>先来想一个问题，什么时候方案是不符合要求的？</p>
+<p>设你在移动若干次后的坐标为 $(a,b)$ , 根据 ”你在任意时刻往右走的次数都不能少于往上走的次数“ 这一规定，可以得到这个不等式：$a \geq b$ 。也就是说，<strong>我们在坐标系上，把 $y=x+1$ 这条线画出来，如果一条路径触碰到了这根线，它就不符合要求。</strong></p>
+<p>这种方案就是不符合要求的：</p>
+<p><img src="https://cdn.luogu.com.cn/upload/image_hosting/wzlqalyl.png" alt=""></p>
+<p>我们再尝试对这个不符合要求的方案转换一下：</p>
+<p>所有的不符合要求的路径，都或多或少的触碰到了 $y=x+1$ 这一条直线。我们把第一次触碰到这条直线时的坐标记为 $(a,b)$ 。</p>
+<p>我们再把 $(a,b)$ 之后的路径全都按照 $y=x+1$ 这条直线对称过去，此时图片变成了这样：<br>（ 黑色：原路径     蓝色：对称后路径 ）</p>
+<p><img src="https://cdn.luogu.com.cn/upload/image_hosting/4nnopfuo.png" alt=""></p>
+<p>对称过后，终点坐标就变成了 $(n-1,n+1)$ 。而且，所有不符合规定的路径对称后就唯一对应着一条到 $(n-1,n+1)$ 的路径。不仅如此，<strong>所有到 $(n-1,n+1)$ 的一条路径也都唯一对应着一条不符合规定的路径</strong> 。（ 只需要再次对称回去就行了 ）从点 $(0,0)$ 到点 $(n-1,n+1)$ 的一条路径方案就相当于在 $2n$ 次移动操作中选取 $n+1$ 次的向上操作，总数为 $\binom{2n}{n+1}$ 。</p>
+<p>那么，所有符合规定的路径方案总数为 $\dbinom{2n}{n} - \dbinom{2n}{n+1}$ 。</p>
+<p>又因为 $\dbinom{a}{b} = \dbinom{a}{a-b}$ ，方案总数还可以表示为 $\dbinom{2n}{n} - \dbinom{2n}{n-1}$ 。</p>
+<p>而这，就是 <strong>Catalan 数</strong> 的通项公式。这个问题只是 Catalan 数的一种形式。</p>
+<hr>
+<h3 id="Practice"><a href="#Practice" class="headerlink" title="Practice"></a>Practice</h3><ol>
+<li>求证： $\sum_{i=0}^n\binom{n-i}{i}=F_{n+1}$ ，其中 $F$ 指斐波那契数列。</li>
+</ol>
+<p><strong>证明</strong>：考虑 <strong>数学归纳法</strong>，</p>
+<p>当 $n=0$ 时，$\dbinom{0}{0}=F_1=1$ 显然成立。当 $n=k$ 时，</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+F_k+F_{k-1}
+&=\sum_{i=0}^k\binom{k-i}{i}+\sum_{i=0}^{k-1}\binom{k-1-i}{i} \\
+&=\binom{k}{0}+\binom{k-1}{1}+\binom{k-2}{2}+\binom{k-3}{3}+\cdots+\binom{1}{k-1}+\binom{0}{k}\\
+&\ \ \ \ \ \ \ \ \ \ \ \ \ \ +\binom{k-1}{0} +\binom{k-2}{1}+\binom{k-3}{2}+\cdots+\binom{1}{k-2}+\binom{0}{k-1}\\
+&=\binom{k+1}{0}+\binom{k}{1}+\binom{k-1}{2}+\cdots+\binom{2}{k-1}+\binom{1}{k}+\binom{0}{k+1}\\
+&=\sum_{i=1}^{k+1}\binom{k+1-i}{i}=F_{k+1}\\
+&&\square
+\end{aligned}</script><ol>
+<li><strong>Zapina</strong> / 有 $n$ 个不同的人和 $n$ 道不同的题，当第 $i$ 个人开心时，当且仅当他被分配到 $i$ 道题。请求出让至少一个人开心的方案数。</li>
+</ol>
+<p><strong>答案 = 总方案数 - 所有人都不开心的方案数</strong> </p>
+<p>对于每道题而言，它都有 $n$ 个选择来去到一个人的手中。而又有 $n$ 道互不相同的题，根据乘法原理，所有总方案数自然就是 $n^n$ 。我们设 $f(i,j)$ 为到了第 $i$ 个人，分配了 $j$ 道题目后都不开心的方案数，易得</p>
+<script type="math/tex; mode=display">
+f(i,j)=\sum_{k=0}^j f(i-1,k)\times \binom{j}{k} \times [k\not=i]</script><p>其中 $[k\not=i]$ 表示判断语句。当语句内容为真时，值为 1。如果为假，值为 0。<br>初始值 $f(0,0)=0$ ，终值为 $f(n,n)$ ，答案即为 $n^n-f(n,n)$ 。</p>
+<ol>
+<li><strong>「雅礼集训2018」足球大战</strong> / 有一场足球比赛，还有 $n$ 秒就结束了，比分还是 $0:0$ 。主队每秒进球概率为 $p$ ，客队每秒进球概率为 $q$ ，求主队的获胜概率。</li>
+</ol>
+<p>我们设 $T(i,j)$ 为队伍 $i$ （ $i=1$ 表示主队，$i=0$ 表示客队 ）进球 $j$ 次的概率。可以得到</p>
+<script type="math/tex; mode=display">
+P(\text{win})=\sum_{i=1}^nT(1,i)\sum_{j=0}^{i-1}T(0,j)</script><p>我们还可以得到，</p>
+<script type="math/tex; mode=display">
+T(i,j)=\begin{cases}p^j(1-p)^{n-j}\times\dbinom{n}{j} & (i=1) \\ q^j(1-q)^{n-j}\times\dbinom{n}{j} & (i=0)\end{cases}</script><p>我们又设 $S(k)=\sum_{i=0}^kT(0,i)$ ，可以得到如下递推式：</p>
+<script type="math/tex; mode=display">
+S(0)=T(0,0),\ S(n)=S(n-1)+T(0,n) \ (n\ge 1)</script><p>最后，再把这些式子整合在一起，可以得到</p>
+<script type="math/tex; mode=display">
+P(\text{win})=\sum_{i=1}^nT(1,i)\times S(i-1)</script><hr>
+<h3 id="All-In-All"><a href="#All-In-All" class="headerlink" title="All In All"></a>All In All</h3><p>我们学到了什么？</p>
+<ul>
+<li>排列组合的定义，计算和拓展</li>
+<li>二项式定理的公式和拓展</li>
+<li>杨辉三角和排列组合的关系</li>
+<li>Catalan 数</li>
+<li>数学归纳法</li>
+</ul>
+<p>附件存储在 Github 中：<strong><a target="_blank" rel="noopener" href="https://github.com/Graphcities/Graphcity-s-Things">https://github.com/Graphcities/Graphcity-s-Things</a></strong></p>
+<h2 id="浅谈数学学习方法"><a href="#浅谈数学学习方法" class="headerlink" title="浅谈数学学习方法"></a>浅谈数学学习方法</h2><p><strong>作者</strong> / 190332 陶乐为</p>
+<p>这次数学考试，我意外地考了满分，以前几乎每次都只能考 110 多分，问题就出在倒数第二道大题，我从来没做对过。连续的失分后，我就失去了信心，考试时就认为反正也做不出来，就少在那上面花心思了。但这次考试倒数第二次却意外地是道几何，不像以前的代数新定义，怎么做，都至少扣 4 分，这就很开心，拿到试卷后，我又找回了信心，这就是我从高分到满分的原因：小运气。</p>
+<p>但这是不确定因素，我们要保证每次可以拿高分，每次都有一点进步，因此，我给出如下建议。第一，基础一定要牢固，无论是高分或满分，试卷的前一百分，是必定要不放走任何一份的。而为了确保这一点，就要做到课内的知识完全理解，熟练掌握细节也全部记得，所以对于 100 分以下的同学，就不要做太多“偏题、难题”，一心一意地攻克课内知识，理解清楚这样解题的目的和效果。最后，将错题整理，把每道题都弄懂，无论通过什么方式，每次的错题，最后都会做，不然每套试卷和刷过的题就无法展现出它全部的意义，你光在做题上的时间也显得并不值得。这是对于中层同学的建议：抓牢基础，落实错题。</p>
+<p>第二，最后两道大题，第一小问，只要看懂了题的大意，就只是基础题的水准，如果上了 100 分，这两小问，是不能丢分的，若是错了，后面的小问是无太大希望拿到分了，也就无法去冲刺高分。最后两题，要培养数学思维，也要对知识点非常的掌握，吃透教材，比如说在几何题中看到“重点”，便能联想到“中位线”、“斜边中线”、“倍长中线”、“三线合一”，再从上述方式中去尝试一下，不要害怕去尝试，大不了，换一种，这样，做题便有了思路，随后和大家分享一下几何大题的解题方法，首先在试卷中标出题干信息，但不要太乱；再看问题，从问题出发，一步一步往回推导，直到推得题中剩下已知条件；最后，从头开始，一步一步地把过程写详细。这样，做题便有了思考的方向，这是对于中上层同学的建议：冲刺大题，理解思路，不忘基础，落实错题。</p>
+<p>第三，对于数学方面较为薄弱的同学，建议是：上课认真听讲，做好笔记，课后不懂就问，多弄懂道题，你就是奆佬。</p>
+<p>在此，附上每个学而思教室都贴有的话：“兴趣是最好的老师！”</p>
+<h2 id="玄学的修养之道"><a href="#玄学的修养之道" class="headerlink" title="玄学的修养之道"></a>玄学的修养之道</h2><p><strong>作者</strong> / 190346 尹诗涵</p>
+<p>众所周知，语文是一门很玄的科目，选择题不知道有没有选对，主观题也不知道有没有答到点上，作文还可能不小心偏题( ? _ ? )<br>作为一个脑子不太行但是运气还不错的，现在就来讲（xiā）述（chě）一下，如何提高玄学的修为。</p>
+<p><strong>基础的选择题</strong> 这一块不多说，字音字形词意病句排序文化文学常识万年不变老套路。这里也是我觉得可以通过刷题快速提分的地方，但是重点还是背诵。最大化利用早读时间熟读课文以及在考试前的复习资料，个人效果针不戳。</p>
+<p><strong>古诗词默写</strong> 这种光靠背就可以拿到的分，必须得拿到（除非你像我一样全押中题了??）。背了以后要自己默写，默到每一个字都对，并且要记住意思和情感，所以建议背的时候可以对着翻译背。白日梦会做嘛( ? ），背诗和文言文也一样，在脑子里描绘出场景！！！利用课本背比较好，因为课本有丰富的色彩，熟练了之后甚至可以在脑海里翻书，根据课本插图的颜色、排版，记住每一句话是第几段第几行，到哪一句是下一页，从而顺利记忆！！！相信你的大脑！！</p>
+<p>然后是 <strong>古诗词和文言文</strong> $\cdots\cdots$ 因为现在的考试都是反套路，所以答题技巧不要乱使！虽然说翻译和情感是万能的，但是有的同学（也包括我自己）翻译都不会，看都看不懂。从选择题里面去找，找到啥写啥情感的话如果没有直抒胸臆的地方，就看诗里的意象，通过练题提升语感也 ??? 然后一定要听课！因为晶姐上课是肯定会提到哪里哪里用了什么什么的表达方式 / 写作手法的，把它记下来，说不定哪天你以为的废话就被考了 ?? 文言文也是我的一大薄弱点 (T . T) 实词虚词的积累主要是来自于课文以及自编里的题目，在预习或者是写作业的时候，遇到看不懂的词就去查翻译，然后标注在原文上，加上课堂或是讲作业时的重复翻阅就很好记住了当你能够完全的看懂考试的文言文时，你就赢了。</p>
+<p>虽然说现在考题都是反套路了对吧但是答题思路还是背了比较保险，说不定哪天就“我预判了你预判了我预判了你的预判是我预判了你的预判” ?? 反套路也是一种套路，只是我们没有做习惯而已，跳出框架的思路，考什么答什么就对了。其余就是多看书，提升文学素养。答题答不到点上大概是因为你考试的时候内心所思所想和作者不在一个频道。把自己代入主人公，想象那个场景，如果你做了这么一系列的动作，说了这些话，你是想表达什么，然后你就能想出这些什么动作描写和语言描写之类的是要表达啥情感了。通俗一点可以理解为奇怪的换位思考（这说明我们在日常生活中要做个好人）还有例如标题的含义啊一共就那么几个呗 一个一个套就完了。是什么为什么怎么做的那种题目如果不知道链接怎么用你可以直接把链接概括一遍然后写上去，然后不要把重点放在材料上回归原文答情感和启示再联系生活实际，上升到社会之类的升个华就差不多了。</p>
+<p><strong>小作文</strong> 现在都差不多是考应用类，去看微课吧哈哈哈哈！在现实中也要这么有“仪式感”多写写这些东西习惯就好。建议多打劫其他奆佬的作文拿来看 ，我们班上大佬真的超级多！！！根据自己的短板去选，要不要得到就是人品问题了 ?? 考试的时候注意审清要写什么，不要偏题。</p>
+<p>就是这些了，还有一些我没有想起来的点（？抱歉我记性不太好）祝早日修炼登天 ??</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%B7%A8%E4%BD%AC%E8%B0%AD/" rel="tag"># 巨佬谭</a>
+          </div>
+
+        
+
+
+        
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E4%B8%8E%E5%BD%A2%E7%9A%84%E5%AE%8C%E7%BE%8E%E7%BB%93%E5%90%88%E2%80%94%E2%80%94%E5%87%BD%E6%95%B0"><span class="nav-number">1.</span> <span class="nav-text">数与形的完美结合——函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%80%94%E2%80%94%E6%95%B0%E7%9A%84%E5%8D%83%E4%B8%87%EF%BC%8C%E5%BD%A2%E7%9A%84%E9%AB%98%E5%B1%B1"><span class="nav-number">1.0.1.</span> <span class="nav-text">——数的千万，形的高山</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%85%E8%B0%88%E5%87%BD%E6%95%B0"><span class="nav-number">2.</span> <span class="nav-text">浅谈函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80-%E7%BB%AA%E8%AE%BA"><span class="nav-number">2.1.</span> <span class="nav-text">一 绪论</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C-%E5%87%BD%E6%95%B0%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">2.2.</span> <span class="nav-text">二 函数的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89-%E8%A7%A3%E6%9E%90%E5%BC%8F"><span class="nav-number">2.3.</span> <span class="nav-text">三 解析式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9B-%E8%87%AA%E5%8F%98%E9%87%8F%E5%92%8C%E5%9B%A0%E5%8F%98%E9%87%8F%E7%9A%84%E5%8D%95%E5%90%91%E5%85%B3%E7%B3%BB"><span class="nav-number">2.4.</span> <span class="nav-text">四 自变量和因变量的单向关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%94-%E5%87%BD%E6%95%B0%E7%9A%84%E5%8D%95%E8%B0%83%E6%80%A7"><span class="nav-number">2.5.</span> <span class="nav-text">五 函数的单调性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%AD-%E4%BE%8B%E9%A2%98"><span class="nav-number">2.6.</span> <span class="nav-text">六 例题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%85%E8%B0%88%E6%8E%92%E5%88%97%E7%BB%84%E5%90%88"><span class="nav-number">3.</span> <span class="nav-text">浅谈排列组合</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86"><span class="nav-number">3.1.</span> <span class="nav-text">前置知识</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E7%BB%84%E5%90%88%E6%95%B0%E7%9A%84%E9%80%92%E6%8E%A8%E5%BC%8F"><span class="nav-number">3.2.</span> <span class="nav-text">1. 组合数的递推式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ex-1-%E4%BA%8C%E9%A1%B9%E5%BC%8F%E5%AE%9A%E7%90%86"><span class="nav-number">3.3.</span> <span class="nav-text">Ex.1 二项式定理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%9D%A8%E8%BE%89%E4%B8%89%E8%A7%92%E4%B8%8E%E6%8E%92%E5%88%97%E7%BB%84%E5%90%88"><span class="nav-number">3.4.</span> <span class="nav-text">2. 杨辉三角与排列组合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ex-2-Catalan-%E6%95%B0"><span class="nav-number">3.5.</span> <span class="nav-text">Ex.2 Catalan 数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Practice"><span class="nav-number">3.6.</span> <span class="nav-text">Practice</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#All-In-All"><span class="nav-number">3.7.</span> <span class="nav-text">All In All</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%85%E8%B0%88%E6%95%B0%E5%AD%A6%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95"><span class="nav-number">4.</span> <span class="nav-text">浅谈数学学习方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8E%84%E5%AD%A6%E7%9A%84%E4%BF%AE%E5%85%BB%E4%B9%8B%E9%81%93"><span class="nav-number">5.</span> <span class="nav-text">玄学的修养之道</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">1903</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">1903</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+</body>
+</html>
