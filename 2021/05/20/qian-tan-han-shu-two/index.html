@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"zypc-1903.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":12,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="作者 &#x2F; 190310 方梓轩  一 绪论经过和郑晓阳同学的讨论，我们认为需要呈现两种对函数的理解思路.要学习函数，肯定要先了解函数的江湖传说.函数是数形结合的集大成者，无论是求解析式，还是求面积，亦或是以后大家学到的建系，都把无数学生折磨得死去活来.由于函数的优 雅 性 质，中考出题老师经常使用二次函数压轴，送走了无数同学的 A 甚至是千分之一.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="浅谈函数 2">
+<meta property="og:url" content="https://zypc-1903.github.io/2021/05/20/qian-tan-han-shu-two/index.html">
+<meta property="og:site_name" content="1903">
+<meta property="og:description" content="作者 &#x2F; 190310 方梓轩  一 绪论经过和郑晓阳同学的讨论，我们认为需要呈现两种对函数的理解思路.要学习函数，肯定要先了解函数的江湖传说.函数是数形结合的集大成者，无论是求解析式，还是求面积，亦或是以后大家学到的建系，都把无数学生折磨得死去活来.由于函数的优 雅 性 质，中考出题老师经常使用二次函数压轴，送走了无数同学的 A 甚至是千分之一.">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-05-20T05:38:00.000Z">
+<meta property="article:modified_time" content="2021-05-21T05:41:30.333Z">
+<meta property="article:author" content="1903">
+<meta property="article:tag" content="巨佬谭">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://zypc-1903.github.io/2021/05/20/qian-tan-han-shu-two/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>浅谈函数 2 | 1903</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">1903</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zypc-1903.github.io/2021/05/20/qian-tan-han-shu-two/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="1903">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="1903">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          浅谈函数 2
+        </h1>
+
+        <div class="post-meta">
+          
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-05-20 13:38:00" itemprop="dateCreated datePublished" datetime="2021-05-20T13:38:00+08:00">2021-05-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-05-21 13:41:30" itemprop="dateModified" datetime="2021-05-21T13:41:30+08:00">2021-05-21</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><strong>作者</strong> / 190310 方梓轩</p>
+<hr>
+<h3 id="一-绪论"><a href="#一-绪论" class="headerlink" title="一 绪论"></a>一 绪论</h3><p>经过和郑晓阳同学的讨论，我们认为需要呈现两种对函数的理解思路.<br>要学习函数，肯定要先了解函数的江湖传说.<br>函数是数形结合的集大成者，无论是求解析式，还是求面积，亦或是以后大家学到的建系，都把无数学生折磨得死去活来.<br>由于函数的优 雅 性 质，中考出题老师经常使用二次函数压轴，送走了无数同学的 A 甚至是千分之一.</p>
+<span id="more"></span>
+<p><strong>阅前需知</strong></p>
+<p>由于初中内容有限，本文的表达形式不甚严谨.<br>由于作者学术水平有限，不可避免地会出现事实错误.<br>作者此前未系统学习过函数，关于函数的知识都是在接触信竞之后自己摸索的.<br>故以上内容仅供参考.</p>
+<hr>
+<h3 id="二-函数的定义"><a href="#二-函数的定义" class="headerlink" title="二 函数的定义"></a>二 函数的定义</h3><p>根据顾名思义的原则，函数是什么，还得看函数为什么叫作函数.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">“凡此变数中函彼变数者，则此为彼之函数。”</span><br><span class="line">——清朝数学家、函数译者 李善兰</span><br></pre></td></tr></table></figure>
+<p>变数，指变量.<br>白话文差不多就是“这个变量和那个变量有关系，那这个变量就是那个变量的函数”.<br>参考百度百科：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">给定一个数集A,假设其中的元素为x,对A中的元素x施加对应法则f,记作f(x),得到另一数集B。</span><br><span class="line">——百度百科</span><br></pre></td></tr></table></figure>
+<p>参考八下数学书：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">一般地,在某一变化过程中有两个变量x和y,如果对于x的每一个值,y都有唯一确定的值与之对应,那么就说x是自变量,y是x的函数。</span><br></pre></td></tr></table></figure>
+<p>敏锐的同学应该已经发现端倪了，八下数学书和其他两者的定义，是冲突的.<br>考虑 $y=\pm x$，问题来了，百度百科说这是个函数，但数学书说这个不是.<br>联想到历史中的“孤证不立”，我们得用李善兰的定义，来消除百度百科和八下数学书的矛盾.<br>$\pm$，正负号，怎么就不能是关系了呢？<br>所以，数学书又一次欺骗了我们，再次给我们埋下了坑，准备在高中埋伏我们一手，故技重施，再来一次认知冲突的小把戏.<br>那么，函数，是什么呢？<br>我们不如直击函数真正的定义，参考百度百科，注意到：</p>
+<p><strong>施加对应法则</strong></p>
+<p>举几个例子：</p>
+<p>$\textsf{zxy}$ 同学要吃饭，吃饭之前的 $\textsf{zxy}$ 饥肠辘辘，吃完之后的 $\textsf{zxy}$ 充满精神，这就是对 $\textsf{zxy}$ 同学进行了一次“吃饭”的法则施加.<br>$\textsf{fzx}$ 同学要做题，做到一半被题目教做人了，此时的 $\textsf{fzx}$ 同学已不再是做题前的那个意气风发的 $\textsf{fzx}$ ，而是那个颓靡不振的 $\textsf{fzx}$ .<br>$\textsf{zzk}$ 同学要去剪头发，剪完头发的之前的 $\textsf{zzk}$ 同学蓬头垢面，而对 $\textsf{zzk}$ 同学进行了剪头发的操作之后，$\textsf{zzk}$ 同学变得神清气爽.<br>即，剪头发 ( 蓬头垢面  $\textsf{zzk}$ ) = 神清气爽 $\textsf{zzk}$ .</p>
+<p>我们记剪头发前的 $\textsf{zzk}$ 同学为 $\textsf{zzk}_1$ ，而剪完之后的 $\textsf{zzk}_2$ ，再记剪头发的操作为 $g$，则有 $g(\textsf{zzk}_1)=\textsf{zzk}_2$ ，前两个例子亦如是.<br>“  变变变，青蛙变成王子 ” 亦是一个函数，即公主的吻 ( 青蛙 ) = 王子.</p>
+<p>我们对一个数 $x$ 进行取相反数操作，记取反之后的 $x$ 为 $y$，取相反数的操作为 $f$，则有 $f(x)=y$，根据定义，有 $y=-x$，所以 $f(x)=-x$.<br>进一步形象地理解，我们有一台机器，我们可以往里面丢东西，然后这台机器会吐东西，我们只知道凡丢必吐，那这也是个函数，尽管我们不知道我们丢进去一个，会吐出来多少个.<br>比如我们记丢进去的东西为 $x$，吐出来的东西为 $y$，如果丢进去和吐出来的东西有多个，则 $x,y$ 为丢进去和吐出来的东西的总称，丢和吐的过程为 $h$，则有 $h(x)=y$.</p>
+<hr>
+<h3 id="三-解析式"><a href="#三-解析式" class="headerlink" title="三 解析式"></a>三 解析式</h3><p>继续延伸我们之前所提到的机器，现在我们往里面丢一个数字，吐出来这个数的两倍，记丢进去的数为 $x$，丢出来的数为 $y$，丢和吐的过程为 $f$.<br>则有 $y$ 与 $x$ 的关系 $y=2x$，即有 $f(x)=2x$ 和 $y=2x$ 两种表示形式，为了迎合数轴的 $x,y$ 两轴，数学书中多使用 $y=2x$ 的形式，以下我们对二者通用.</p>
+<p>形如 $y=kx+b$ 的为函数，我们称之为一次函数，特别地，当 $b=0$ 时，我们称之为正比例函数.<br>形如 $f(x)=ax^2+bx+c$ 的函数，我们称之为二次函数，当 $a=0$ 时，符合一次函数的定义，故退化为一次函数.<br>形如 $f(x)=\dfrac{k}{x} (x\not=0)$ 的函数，我们称之为反比例函数.</p>
+<p>那么，我们丢进去的数，称为 <strong>自变量</strong>.<br>机器吐出来的数，称为 <strong>因变量</strong>.<br>假设如果我们丢进去的东西一样，则同一台机器吐出来的东西一直都是一样的，那么我们说.<br>自变量和因变量符合 <strong>函数关系</strong>，描述二者的关系的式子，叫函数的 <strong>解析式</strong>.</p>
+<p>开始理解.</p>
+<p>回到我们以前的例子：$\textsf{zxy}$ 同学要吃饭，吃饭之前的 $\textsf{zxy}$ 饥肠辘辘，吃完之后的 $\textsf{zxy}$ 充满精神，这就是对 $\textsf{zxy}$ 同学进行了一次“吃饭”的法则施加.<br>我们确定，只要不出现意外情况，$\textsf{zxy}$ 同学总能从饥肠辘辘，变成充满精神.<br>那么，饥肠辘辘的 $\textsf{zxy}$ 同学，和充满精神的 $\textsf{zxy}$ 同学，必然符合函数关系.<br>同样，意气风发的 $\textsf{fzx}$，和颓靡不振的 $\textsf{fzx}$，也符合函数关系.<br>对于我们取相反数的函数 $f$，我们只要丢进去的是同一个数，比如 10，那么这个函数的值就一直是 -10，不会多一点，也不会少一点.</p>
+<p>回到那台机器，假如我们不知道丢进去什么会吐出来什么，那我们需要一个个试，比如丢进去 $\textsf{fzx}$，吐出来 $\textsf{zxy}$，丢进去 $\textsf{zxy}$，吐出来 $\textsf{zzk}$，那么，我们可以列一个表.</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">丢进去啥</th>
+<th style="text-align:center">$\textsf{fzx}$ 同学</th>
+<th style="text-align:center">$\textsf{zxy}$ 同学</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">吐出来啥</td>
+<td style="text-align:center">$\textsf{zxy}$ 同学</td>
+<td style="text-align:center">$\textsf{zzk}$ 同学</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>同样，对于取相反数的函数，我们如法炮制.</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>丢进去啥</th>
+<th>3</th>
+<th>-10</th>
+<th>999</th>
+<th>666</th>
+<th>-2333</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>吐出来啥</td>
+<td>-3</td>
+<td>10</td>
+<td>-999</td>
+<td>-666</td>
+<td>2333</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>那么，我们可以给出一种朴素的描述自变量和因变量的函数关系的方式，<strong>列表格</strong>.<br>当然，如果我们知道了这就是取相反数之后，我们就可以给出一条优雅的式子$f(x)=-x$，涵盖了所有情况，这就是 <strong>解析式</strong> 的优越之处.<br>当然，解析式也可以表现为几何形式，正如上文中提到“迎合几何中的$x,y$两轴”，迫害无数学生的平面直角坐标系，他来了，他来了.</p>
+<p>当 $x=1,y=-1$，那么，我们可以涂黑点 $(1,-1)$.<br>当 $x=10,y=-10$，那么，我们可以涂黑点 $(10,-10)$.<br>这种方法，叫 <strong>画图表</strong>.<br>不难发现，每个点的的横纵坐标都构成了该函数关系，即任意点的坐标为 $(x,f(x))$.<br>横向观察图表，发现原图标表示当 $x$ 发生变化时，$y$ 的值的变化.<br>纵向观察，则为当 $y$ 发生变化时，$x$ 的值的变化，但是……</p>
+<hr>
+<h3 id="四-自变量和因变量的单向关系"><a href="#四-自变量和因变量的单向关系" class="headerlink" title="四 自变量和因变量的单向关系"></a>四 自变量和因变量的单向关系</h3><p>但是什么呢？<br>横向观察，我们能根据 $x$ 的值，求出 $y$ 的值.<br>纵向观察，我们却不一定能根据 $y$ 的值，确定 $x$ 的值.</p>
+<p>当 $x=1$ 时，函数 $y=\pm x$ 的值为 $\pm 1$，即 1 和 -1 两个值，我们通过 $x$，确定了 $y$，即使 $y$ 有两个值.<br>但是，当 $y=1$ 时，我们不能确定，$x=1$，还是 $x=-1$，我们不能通过 $y$，确定 $x$.</p>
+<p>回到我们原先的例子，$\textsf{fzx}$颓靡不振，并不一定是因为做题，还有可能是因为体育课.<br>即，体育课 ( 意气风发 $\textsf{fzx}$ ) = 做题 ( 意气风发 $\textsf{fzx}$ ) = 颓靡不振 $\textsf{fzx}$.</p>
+<p>我们学习到一元二次方程时，会了解到一元二次函数有两个根，即，使得原二次函数的值为 0 的根有两个，这两个根虽然可能相等，但大概率不会.</p>
+<p>所以，函数的因变量相等，不一定代表函数的自变量相等.<br>所以，因变量和自变量的关系，是单向的.<br>但是，学习过一元一次方程的我们知道，一元一次方程只有一个解，那么<br><strong>一次函数的自变量和因变量的关系，是双向的.</strong></p>
+<p>对于一次函数 $f(x)=5x$，我们可以根据 $x=5$，推出 $f(x)=25$，也可以根据 $f(x)=80$，推出 $x=16$.<br>对于二次函数 $f(x)=x^2$，我们就只能说，根据 $x=3$，得出 $f(x)=9$了，真要反着来，就是根据 $f(x)=25$，得出 $x=\pm5$ 了.</p>
+<hr>
+<h3 id="五-函数的单调性"><a href="#五-函数的单调性" class="headerlink" title="五 函数的单调性"></a>五 函数的单调性</h3><p>对于任意 $x_1,x_2$，$l\le x_1\le x_2\le r$，$f(x_1)&gt;f(x_2)$，则该函数在 $l,r$ 之间单调递减，若 $f(x_1)<f(x_2)$ 则为单调递增.
+简而言之，如果 $x$ 变大，$f(x)$ 变大，那么原函数单调递增，如果 $f(x)$ 变小，那么原函数单调递减.
+对于一次函数，我们很容易发现，一次函数在正负无穷之间，都有单调性，其一次项系数 $a>0$ 则单调递增，$a&lt;0$ 则单调递减，$a=0$ 则为恒值.<br>延伸，对于二次函数，我们很容易发现，其某一个点为分界线，一边单调递增，一边单调递减.</p>
+<hr>
+<h3 id="六-例题"><a href="#六-例题" class="headerlink" title="六 例题"></a>六 例题</h3><p>相信你已经大致了解了函数的基本概念，来练习一下吧.<br>例题有讲解，变式和延伸供自己练习，下附答案.</p>
+<p><strong>例题</strong>：函数 $y=ax+b$ 经过 $(2,0),(0,6)$ 两点，求 $a,b$ 的值.<br>由上文可得，当 $x=2$ 时，$y=0$，当 $x=0$ 时，$y=6$.<br>可列出如下方程组 ${2a+b=0,b=6}$.<br>解二元一次方程，可得到 $a=-3,b=6$.<br><strong>变式</strong>：函数 $y=ax+b$ 经过 $(1,5),(5,2)$ 两点，求 $a,b$ 的值.<br><strong>延伸</strong>：函数 $f(x)=ax^2+bx+c$ 经过 $(1,2),(2,4),(6,8)$，求 $a,b,c$ 的值.</p>
+<p><strong>例题</strong>：试求当 $5\le x \le 7$ 时，函数 $y=5x-3$ 的取值范围.<br>我们上文提到函数的单调性，即对于 $y=5x-3$，当 $x=5$ 时 $y$ 的值，一定小于当 $x&gt;5$ 时， $y$ 的值，当 $x=7$ 时 $y$ 的值，一定大于当 $x&lt;7$ 时 $y$ 的值.<br>故只需要代入两个临界值即可，当 $x=5$ 时，$y=22$，当 $x=7$ 时，$y=32$，故当 $5\le x \le 7$ 时，$22 \le y \le 32$.<br><strong>变式</strong>：试求函数 $y=x-7$ 在第四象限内的取值范围.<br><strong>延伸</strong>：试求函数 $f(x)=x^2$ 在 $-2 \le x \le 4$ 之时的取值范围.</p>
+<p><strong>旧题新解</strong>：一个刻度均匀但读数不准确的温度计，在实际温度为 $5^\circ C$ 时，度数为 $2^\circ C$，在实际读数为 $105^\circ C$ 时，读数为 $92^\circ C$，试列出一个一次函数，能使在此一次函数的基础上，只一次计算便能根据实际温度求出其读数，或根据其读数求出实际温度.<br><strong>旧题新解</strong>：某三角形的两条边分别为 $4,7$，试求该三角形周长的取值范围.</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%B7%A8%E4%BD%AC%E8%B0%AD/" rel="tag"># 巨佬谭</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/05/20/qian-tan-pai-lie-zu-he/" rel="prev" title="浅谈排列组合">
+      <i class="fa fa-chevron-left"></i> 浅谈排列组合
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/05/20/ju-lao-tan-one/" rel="next" title="1903 巨佬谭 第一期">
+      1903 巨佬谭 第一期 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80-%E7%BB%AA%E8%AE%BA"><span class="nav-number">1.</span> <span class="nav-text">一 绪论</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C-%E5%87%BD%E6%95%B0%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">2.</span> <span class="nav-text">二 函数的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89-%E8%A7%A3%E6%9E%90%E5%BC%8F"><span class="nav-number">3.</span> <span class="nav-text">三 解析式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9B-%E8%87%AA%E5%8F%98%E9%87%8F%E5%92%8C%E5%9B%A0%E5%8F%98%E9%87%8F%E7%9A%84%E5%8D%95%E5%90%91%E5%85%B3%E7%B3%BB"><span class="nav-number">4.</span> <span class="nav-text">四 自变量和因变量的单向关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%94-%E5%87%BD%E6%95%B0%E7%9A%84%E5%8D%95%E8%B0%83%E6%80%A7"><span class="nav-number">5.</span> <span class="nav-text">五 函数的单调性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%AD-%E4%BE%8B%E9%A2%98"><span class="nav-number">6.</span> <span class="nav-text">六 例题</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">1903</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">1903</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : 'f42de837c1641ec9c865',
+      clientSecret: 'cf2479cb17e7d5c1ac5a92fe78ed423ad0853f92',
+      repo        : 'zypc-1903.github.io',
+      owner       : 'zypc-1903',
+      admin       : ['zypc-1903'],
+      id          : '9031ca4df91117847d84f8aaa6cef2f9',
+        language: 'zh-CN',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+
+</body>
+</html>
