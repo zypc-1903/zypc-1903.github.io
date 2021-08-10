@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"zypc-1903.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":12,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="作者 &#x2F; 190331 舒熙皓  这一次将会讲解跟组合数学相关的数列，掌握浅谈排列组合 1 ，并且学有余力的同学可以尝试阅读。建议配合 OI-Wiki，《具体数学》等专业书籍或网站辅助阅读（如果没有也没关系），有疑问时多百度，实在看不懂就跳过。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="浅谈排列组合 2">
+<meta property="og:url" content="https://zypc-1903.github.io/2021/08/10/qian-tan-pai-lie-zu-he-two/index.html">
+<meta property="og:site_name" content="1903">
+<meta property="og:description" content="作者 &#x2F; 190331 舒熙皓  这一次将会讲解跟组合数学相关的数列，掌握浅谈排列组合 1 ，并且学有余力的同学可以尝试阅读。建议配合 OI-Wiki，《具体数学》等专业书籍或网站辅助阅读（如果没有也没关系），有疑问时多百度，实在看不懂就跳过。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://zypc-1903.github.io/2021/08/10/qian-tan-pai-lie-zu-he-two/6ZKfPO.png">
+<meta property="article:published_time" content="2021-08-10T10:41:03.000Z">
+<meta property="article:modified_time" content="2021-08-10T10:55:30.746Z">
+<meta property="article:author" content="1903">
+<meta property="article:tag" content="巨佬谭">
+<meta property="article:tag" content="第二期">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://zypc-1903.github.io/2021/08/10/qian-tan-pai-lie-zu-he-two/6ZKfPO.png">
+
+<link rel="canonical" href="https://zypc-1903.github.io/2021/08/10/qian-tan-pai-lie-zu-he-two/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>浅谈排列组合 2 | 1903</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">1903</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zypc-1903.github.io/2021/08/10/qian-tan-pai-lie-zu-he-two/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="1903">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="1903">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          浅谈排列组合 2
+        </h1>
+
+        <div class="post-meta">
+          
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-08-10 18:41:03 / 修改时间：18:55:30" itemprop="dateCreated datePublished" datetime="2021-08-10T18:41:03+08:00">2021-08-10</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><strong>作者</strong> / 190331 舒熙皓</p>
+<hr>
+<p>这一次将会讲解跟组合数学相关的数列，掌握浅谈排列组合 1 ，并且学有余力的同学可以尝试阅读。建议配合 <a target="_blank" rel="noopener" href="https://oi-wiki.org/math/stirling/">OI-Wiki</a>，《具体数学》等专业书籍或网站辅助阅读（如果没有也没关系），有疑问时多百度，实在看不懂就跳过。</p>
+<span id="more"></span>
+<h3 id="公式整理"><a href="#公式整理" class="headerlink" title="公式整理"></a>公式整理</h3><p>本次公式较多，所以在最前面先将所有公式列出来：</p>
+<script type="math/tex; mode=display">
+\def\stir#1#2{\begin{Bmatrix}#1\\#2\end{Bmatrix}}
+\def\Stir#1#2{\begin{bmatrix}#1\\#2\end{bmatrix}}
+\begin{aligned}
+& H_n=\binom{2n}{n}\times\frac{1}{n+1} &&(1)\\
+& H_n=\sum_{i=1}^nH_{i-1}H_{n-i} &&(2)\\
+& H_n=H_{n-1}\times\frac{4n-2}{n+1} &&(3)\\
+& H_n=\frac{1}{n+1}\times\sum_{i=0}^n\binom{n}{i}^2 &&(4)\\
+& F(n)=\sum_{i=0}^n\binom{n}{i}G(i)\Rightarrow G(n)=\sum_{i=0}^n(-1)^{n-i}\binom{n}{i}F(i)&&(5)\\
+& \stir{n}{k}=\stir{n-1}{k-1}+k\stir{n-1}{k} && (6)\\
+& n^m=\sum_{i=0}^n\stir{m}{i}\binom{n}{i}i! &&(7)\\
+& \stir{n}{m}=\sum_{i=0}^m\frac{(-1)^{m-i}i^n}{i!(m-i)!} &&(8)\\
+& \binom{n}{m}\binom{m}{k}=\binom{n}{k}\binom{n-k}{m-k} &&(9)\\
+& \Stir{n}{k}=\Stir{n-1}{k-1}+(n-1)\Stir{n-1}{k} &&(10)
+\end{aligned}</script><hr>
+<h3 id="1-Catalan-数"><a href="#1-Catalan-数" class="headerlink" title="1. Catalan 数"></a>1. Catalan 数</h3><ul>
+<li>Catalan 数公式拓展</li>
+</ul>
+<p>我们设 $H_i$ 为 Catalan 数的第 $i$ 项，由基础公式 $H_i=\dbinom{2n}{n}-\dbinom{2n}{n-1}$ ，来证明公式 1-4 。</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+H_i&=\binom{2n}{n}-\binom{2n}{n-1}\\
+&=\binom{2n}{n}\times(1-\frac{\binom{2n}{n-1}}{\binom{2n}{n}})\\
+&=\binom{2n}{n}\times(1-\frac{(2n)!}{(n+1)!(n-1)!}\times\frac{(n!)^2}{(2n)!})\\
+&=\binom{2n}{n}\times(1-\frac{n}{n+1})=\binom{2n}{n}\times\frac{1}{n+1} &&(1)
+\end{aligned}</script><p>由基础公式 $\sum_{i=0}^n\dbinom{n}{i}^2=\dbinom{2n}{n}$ 可以得到原式 $=\dfrac{1}{n+1}\times\sum_{i=0}^n\dbinom{n}{i}^2                (4)$</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\frac{H_n}{H_{n-1}}&=(\frac{\binom{2n}{n}}{n+1})\div(\frac{\binom{2n-2}{n-1}}{n})\\
+&=\frac{n}{n+1}\times\frac{\binom{2n}{n}}{\binom{2n-2}{n-1}}=\frac{n}{n+1}\times\frac{(2n)!}{(n!)^2}\times\frac{((n-1)!)^2}{(2n-2)!}\\
+&=\frac{n}{n+1}\times\frac{2n(2n-1)}{n^2}=\frac{4n-2}{n+1}\\
+\therefore H_n &=H_{n-1}\times\frac{4n-2}{n+1} &&(3)\\
+\end{aligned}</script><p>公式 2 考虑用 Catalan 数的意义证明。显然，最后一步必然是向上走。我们用一种 “奇特” 的方法来解决路径个数问题：我们把向右走看成左括号，向上走看成右括号，那么左括号和右括号一定会匹配 $n$ 次，而且到任意一步的时候，左括号的个数一定要不少于右括号的个数。这就是经典的 <strong>括号匹配模型</strong> 。我们令当走到第 $i$ 个左括号时，它是与最后一个右括号匹配的。此时它的左边必然已经全部匹配了。根据乘法原理，则当前方案是 $f(i-1)f(n-i)$ 。我们可以令 $i=1,2,3,\cdots,n$ ，则可以得到</p>
+<script type="math/tex; mode=display">
+H_n=\sum_{i=1}^nH_{i-1}H_{n-i}\ \ \ \ \ \ \ \ \ \ (2)</script><hr>
+<ul>
+<li>Catalan 数的基本模型</li>
+</ul>
+<p>在之前，我们已经将它的两个模型：括号匹配模型和路径个数模型讲了一遍。</p>
+<p><strong>01 序列模型</strong> / 给定 $n$ 个 0 和 $n$ 个 1，你需要将它们排成一行，使得序列中任意一个前缀 1 的个数都大于等于 0 的个数。/ 考虑将 1 看成左括号，0 看成右括号，于是又转化成了括号匹配模型。</p>
+<p><strong><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1044">进出栈模型</a></strong> / 你需要进栈和出栈 $n$ 次，求出总方案数。/ 将进栈看成左括号，出栈看成右括号，因为每个时候进栈次数必然大于出栈，于是又转化成了括号匹配模型。</p>
+<p><strong>二叉树构成模型</strong> / 如图，二叉树是一种这样的结构。每一个结点最多会分两个叉到下面的结点。问有 $n$ 个点能够构成多少种不同的二叉树。/ 我们设最上层的结点的左边分出去了 $k$ 个结点，则右边会分叉出去 $n-k-1$ 个结点。由乘法原理可以得到方案数为 $f(k)f(n-k-1)$ 。我们枚举左子树分出去的结点数量，则有$f(n)=f(0)f(n-1)+f(1)f(n-2)\cdots+f(n-1)f(0)$ 。这跟公式 2 的形式相同，所以答案就是卡特兰数。</p>
+<p><img src="/2021/08/10/qian-tan-pai-lie-zu-he-two/6ZKfPO.png" alt="6ZKfPO.png"></p>
+<p><strong><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3200">「湖南省选」有趣的数列</a></strong> / 给定一个 $1-2n$ 的排列 $a$ ，满足所有奇数项和偶数项递增，且对于任意的 $i$ ，都有 $a_{2i-1}&lt;a_{2i}$ 。/ 考虑先给每个数标号，奇数项标 1 ，偶数项标 0 。将 $1-2n$ 按顺序排列，则任意一个前缀 1 的个数应该不小于 0 的个数（否则偶数项无法成功配对），便转化成了 01 序列模型。</p>
+<hr>
+<h3 id="Ex-1-二项式反演"><a href="#Ex-1-二项式反演" class="headerlink" title="Ex.1 二项式反演"></a>Ex.1 二项式反演</h3><p>如果你知道了 $F(n)=\sum_{i=0}^nG(i)a_{ni}$ 。如果你知道了 $F(1,2,\dots,n)$ ，可以反推出 $G(n)=\sum_{i=0}^nF(i)b_{ni}$ ，这个过程就叫做 <strong>反演</strong> 。</p>
+<p>我们考虑先来用组合意义来证明公式 9：$\dbinom{n}{m}\dbinom{m}{k}=\dbinom{n}{k}\dbinom{n-k}{m-k}$ 。这个就相当于从 $n$ 个人里面选出 $m$ 个人，再从 $m$ 个人里面选出 $k$ 个人的方案数。这其实就相当于从 $n$ 个人里面内定了 $k$ 个人，然后再从 $n-k$ 个人中选择 $m-k$ 个人来 ”凑数“。</p>
+<p>公式 5 ( <strong>二项式反演公式</strong> )：$F(n)=\sum_{i=0}^n\dbinom{n}{i}G(i)\Rightarrow G(n)=\sum_{i=0}^n(-1)^{n-i}\dbinom{n}{i}F(i)$</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\sum_{i=0}^n(-1)^{n-i}\binom{n}{i}F(i) &= \sum_{i=0}^n(-1)^{n-i}\binom{n}{i} (\sum_{j=0}^i\binom{i}{j}G(j)) &&(展开F(i))\\
+&=\sum_{i=0}^n(\sum_{j=0}^i(-1)^{n-i}\binom{n}{i}\binom{i}{j})G(j) &&(乘法分配律) \\
+&=\sum_{j=0}^nG(j)\sum_{i=j}^n(-1)^{n-i}\binom{n}{i}\binom{i}{j} &&(交换和式)
+\end{aligned}</script><p>我们来仔细探究一下最后一步为什么可以这样做。我们将所有的项用矩阵的形式写出来：</p>
+<script type="math/tex; mode=display">
+\begin{bmatrix}
+(-1)^0\binom{n}{0}\binom{0}{0}G(0) \\
+(-1)^1\binom{n}{1}\binom{1}{0}G(0) & (-1)^1\binom{n}{1}\binom{1}{1}G(1) \\
+(-1)^2\binom{n}{2}\binom{2}{0}G(0) & (-1)^2\binom{n}{2}\binom{2}{1}G(1) & (-1)^2\binom{n}{2}\binom{2}{2}G(2) \\
+\vdots & \vdots & \ddots \\
+(-1)^n\binom{n}{n}\binom{n}{0}G(0) & (-1)^n\binom{n}{n}\binom{n}{1}G(1) & \cdots & (-1)^n\binom{n}{n}\binom{n}{n}G(n)
+\end{bmatrix}</script><p>之前的一步是按照行来枚举的，而最后一步则是按照列来枚举。</p>
+<p>考虑分析 $\sum_{i=j}^n(-1)^{n-i}\dbinom{n}{i}\dbinom{i}{j}$ 。</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\sum_{i=j}^n(-1)^{n-i}\binom{n}{i}\binom{i}{j} &= \sum_{i=j}^n(-1)^{n-i}\binom{n}{j}\binom{n-j}{i-j} &&(利用公式9化简)\\
+&=\binom{n}{j}\sum_{i=j}^n(-1)^{n-i}\binom{n-j}{i-j} &&(移项)\\
+&=\binom{n}{j}\sum_{i=0}^{n-j}(-1)^{n-j-i}\binom{n-j}{i} &&(更改枚举下标)\\
+&=\binom{n}{j}(1-1)^{n-j} &&(二项式定理)
+\end{aligned}</script><p>于是，当 $j&lt;n$ 时，原式的值为 0，当 $j=n$ 时，原式的值为 1。于是，</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+&\sum_{j=0}^nG(j)\sum_{i=j}^n(-1)^{n-i}\binom{n}{i}\binom{i}{j}\\
+=&\sum_{j=0}^nG(j)\times[j=n]=G(n) &&（等效替代）\\
+\therefore & \sum_{i=0}^n(-1)^{n-i}\binom{n}{i}F(i)=G(n) && \square
+\end{aligned}</script><hr>
+<h3 id="2-第二类斯特林数"><a href="#2-第二类斯特林数" class="headerlink" title="2. 第二类斯特林数"></a>2. 第二类斯特林数</h3><ul>
+<li>简单介绍</li>
+</ul>
+<blockquote>
+<p><strong>为什么先介绍第二类斯特林数？</strong></p>
+<p>虽然被称作“第二类”，第二类斯特林数却在斯特林的相关著作和具体数学中被首先描述，同时也比第一类斯特林数常用得多。———— <a target="_blank" rel="noopener" href="https://oi-wiki.org/math/stirling/">OI-Wiki</a></p>
+</blockquote>
+<p><strong>第二类斯特林数</strong>，写作 $\begin{Bmatrix}n\\k\end{Bmatrix}$ 或者 $S(n,k)$ ，是指将 $n$ 个互不相同的小球放入 $k$ 个不区分的盒子中，且每个盒子不为空的方案数。根据定义，我们可以得到递推式（ 公式 6 ）：</p>
+<script type="math/tex; mode=display">
+\def\stir#1#2{\begin{Bmatrix}#1\\#2\end{Bmatrix}}
+\stir{n}{k}=\stir{n-1}{k-1}+k\stir{n-1}{k}\ \ \ \ \ \ \ \ \ \ (6)</script><p>当 $k=0$ 时，$\begin{Bmatrix}n\\k\end{Bmatrix}=[n=0]$ 。我们可以用组合意义来理解：</p>
+<ol>
+<li>把一个新的小球放到一个新的盒子，共有 $\begin{Bmatrix}n-1\\k-1\end{Bmatrix}$ 种方案。</li>
+<li>把小球放到一个现有的盒子中，共有 $k\begin{Bmatrix}n-1\\k\end{Bmatrix}$ 种方案。</li>
+</ol>
+<p>运用加法原理即可得到递推式。根据定义，还有一个很神奇的公式（公式 7）：</p>
+<script type="math/tex; mode=display">
+\def\stir#1#2{\begin{Bmatrix}#1\\#2\end{Bmatrix}}
+n^m=\sum_{i=0}^n\stir{m}{i}\binom{n}{i}i!\ \ \ \ \ \ \ \ \ \ (7)</script><p>$n^m$ 相当于把 $m$ 个互不相同的小球放入 $n$ 个互不相同的盒子里面的方案数。我们考虑先枚举不空的盒子数量 $i$ ，然后用斯特林数求出在这些盒子里面放入 $m$ 个小球的方案数。由于斯特林数中盒子互不区分，所以最终还要乘上一个 $i!$ 才能够得到最终结果。</p>
+<hr>
+<ul>
+<li>通项公式</li>
+</ul>
+<p>我们设 $F_k$ 为将 $n$ 个不同的球放到 $k$ 个不同的盒子（盒子不可以为空）的方案数，$G_k$ 则是盒子允许为空时的方案数。由组合意义得</p>
+<script type="math/tex; mode=display">
+G_k=k^n=\sum_{j=0}^k\binom{k}{j}F(j)</script><p>我们发现第二个等号右边的式子刚好符合二项式反演的形式，于是可以得到</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+F_i &= \sum_{j=0}^i(-1)^{i-j}\binom{i}{j}G_j\\
+&=\sum_{j=0}^i(-1)^{i-j}\binom{i}{j}j^n &&(带入 G_k=k^n)\\ 
+&=\sum_{j=0}^i\frac{i!(-1)^{i-j}j^n}{(i-j)!j!} &&(展开组合数)
+\end{aligned}</script><p>第二类斯特林数与 $F_k$ 的关系只有它不会互相区分盒子。所以，$F_k$ 就是斯特林数的 $k!$ 倍，</p>
+<script type="math/tex; mode=display">
+\begin{Bmatrix}n\\k\end{Bmatrix}=\frac{F_k}{k!}=\sum_{i=0}^k\frac{(-1)^{k-i}i^n}{(k-i)!i!}\ \ \ \ \ \ \ \ \ \ (8)</script><hr>
+<ul>
+<li>Practice - <a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P6620">「2020省选联考」 组合数问题</a></li>
+</ul>
+<p>给出 $n,x,m$ ，请你化简下列式子，使得 $n$ 不出现在求和符号中：</p>
+<script type="math/tex; mode=display">
+\sum_{k=0}^nf(k)\times x^k\times \binom{n}{k}</script><p>其中 $f(k)=a_0+a_1k+a_2k^2+\cdots+a_mk^m$ 。解：</p>
+<script type="math/tex; mode=display">
+\def\stir#1#2{\begin{Bmatrix}#1\\#2\end{Bmatrix}}
+\begin{aligned}
+& \sum_{k=0}^nf(k)\times x^k\times \binom{n}{k}\\
+=& \sum_{k=0}^n(\sum_{i=0}^ma_ik^i)x^k\binom{n}{k} &&(展开f(k))\\
+=& \sum_{k=0}^n(\sum_{i=0}^ma_i\sum_{j=0}^k\stir{i}{j}\binom{k}{j}j!)x^k\binom{n}{k} &&(利用公式7展开k^i)\\
+=& \sum_{k=0}^n(\sum_{i=0}^ma_i\sum_{j=0}^m\stir{i}{j}j!)x^k\binom{n}{k}\binom{k}{j} &&(移项并更改j的枚举上界) \\
+=& \sum_{k=0}^n(\sum_{i=0}^ma_i\sum_{j=0}^m\stir{i}{j}j!)x^k\binom{n}{j}\binom{n-j}{k-j} &&(利用公式9化简组合数) \\
+=& \sum_{i=0}^ma_i\sum_{j=0}^m\stir{i}{j}j!\sum_{k=0}^nx^k\binom{n}{j}\binom{n-j}{k-j} &&(更改枚举顺序) \\
+=& \sum_{i=0}^ma_i\sum_{j=0}^m\stir{i}{j}\binom{n}{j}j!\sum_{k=0}^nx^k\binom{n-j}{k-j} &&(移项) \\
+=& \sum_{i=0}^ma_i\sum_{j=0}^m\stir{i}{j}\binom{n}{j}j!x^j\sum_{k=0}^{n-j}x^k\binom{n-j}{k} &&(更改枚举下标)\\
+=& \sum_{i=0}^ma_i\sum_{j=0}^m\stir{i}{j}\binom{n}{j}j!x^j(x+1)^{n-j} &&(利用二项式定理化简)\\
+=& \sum_{i=0}^ma_i\sum_{j=0}^m\stir{i}{j}A_n^jx^j(x+1)^{n-j} &&(利用排列组合公式化简)
+\end{aligned}</script><p>这里给出本题的代码解决方案：<strong><a target="_blank" rel="noopener" href="https://loj.ac/s/1082810">There</a></strong> 。</p>
+<hr>
+<h3 id="Ex-2-第一类斯特林数"><a href="#Ex-2-第一类斯特林数" class="headerlink" title="Ex.2 第一类斯特林数"></a>Ex.2 第一类斯特林数</h3><ul>
+<li>圆排列与斯特林数</li>
+</ul>
+<p>设 $n$ 个人选出 $m$ 个人来围成一圈的排列数记为 $Q^m_n$ （所有经过旋转可以重合的排列视为一个排列）。我们发现，一个圆葱不同的 $m$ 个位置断开，所形成的排列都是不同的，于是就有：</p>
+<script type="math/tex; mode=display">
+Q^m_n=\frac{A^m_n}{m}=\frac{n!}{m\times(n-m)!}</script><p><strong>第一类斯特林数</strong> ，记作 $\begin{bmatrix}n\\k\end{bmatrix}$ 或者 $s(n,k)$ ，表示将 $n$ 个不同的人放入 $k$ 个互不区分的圆排列的方案数。递推式（也就是公式 10）如下：</p>
+<script type="math/tex; mode=display">
+\def\Stir#1#2{\begin{bmatrix}#1\\#2\end{bmatrix}}
+\Stir{n}{k}=\Stir{n-1}{k-1}+(n-1)\Stir{n-1}{k}\ \ \ \ \ \ \ \ \ \ (10)</script><p>我们可以这样理解：</p>
+<ol>
+<li>将一个人单独放入一个圆排列中，有 $\begin{bmatrix}n-1\\k-1\end{bmatrix}$ 中方案。</li>
+<li>将一个人放入现有的圆排列中，由于放入任何一个人旁边都会产生一个新方案，而又有 $(n-1)$ 个人，所以共有 $(n-1)\begin{bmatrix}n-1\\k\end{bmatrix}$ 种方案。</li>
+</ol>
+<p>根据加法原理即可得到递推式。</p>
+<hr>
+<h3 id="Exercise-Time"><a href="#Exercise-Time" class="headerlink" title="Exercise Time"></a>Exercise Time</h3><ol>
+<li>请仿照二项式反演的证明过程，证明二项式反演的另一种形式：</li>
+</ol>
+<script type="math/tex; mode=display">
+F(n)=\sum_{i=0}^n(-1)^i\binom{n}{i}G(i)\Rightarrow G(n)=\sum_{i=0}^n(-1)^i\binom{n}{i}F(i)</script><ol>
+<li>给出引理（无需证明），请你证明斯特林反演公式：</li>
+</ol>
+<script type="math/tex; mode=display">
+\def\stir#1#2{\begin{Bmatrix}#1\\#2\end{Bmatrix}}
+\def\Stir#1#2{\begin{bmatrix}#1\\#2\end{bmatrix}}
+\begin{aligned}
+& \sum_{k=m}^n(-1)^{n-k}\Stir{n}{k}\stir{k}{m}=[m=n] && (引理)\\
+& F(n)=\sum_{i=0}^n\stir{n}{i}G(i)\Rightarrow G(n)=\sum_{i=0}^n(-1)^{n-i}\Stir{n}{k}F(k) &&(斯特林反演公式)
+\end{aligned}</script><ol>
+<li>请根据二项式反演和以上两道练习题，试判断在什么情况下反演公式成立：</li>
+</ol>
+<script type="math/tex; mode=display">
+F(n)=\sum_{i=0}^na_{ni}G(i)\Rightarrow G(n)=\sum_{i=0}^nb_{ni}F(i)</script><hr>
+<h3 id="All-in-All"><a href="#All-in-All" class="headerlink" title="All in All"></a>All in All</h3><p>我们学到了什么？</p>
+<ul>
+<li>Catalan 数通项公式极其模型</li>
+<li>斯特林数递推式和通项公式</li>
+<li>二项式反演公式</li>
+<li>简单的数论推式子技巧！</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%B7%A8%E4%BD%AC%E8%B0%AD/" rel="tag"># 巨佬谭</a>
+              <a href="/tags/%E7%AC%AC%E4%BA%8C%E6%9C%9F/" rel="tag"># 第二期</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/08/10/jie-xi-fa-zong-he-yun-yong/" rel="prev" title="解析法综合运用">
+      <i class="fa fa-chevron-left"></i> 解析法综合运用
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/08/10/qian-tan-ji-he/" rel="next" title="浅谈集合">
+      浅谈集合 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%AC%E5%BC%8F%E6%95%B4%E7%90%86"><span class="nav-number">1.</span> <span class="nav-text">公式整理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Catalan-%E6%95%B0"><span class="nav-number">2.</span> <span class="nav-text">1. Catalan 数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ex-1-%E4%BA%8C%E9%A1%B9%E5%BC%8F%E5%8F%8D%E6%BC%94"><span class="nav-number">3.</span> <span class="nav-text">Ex.1 二项式反演</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E7%AC%AC%E4%BA%8C%E7%B1%BB%E6%96%AF%E7%89%B9%E6%9E%97%E6%95%B0"><span class="nav-number">4.</span> <span class="nav-text">2. 第二类斯特林数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ex-2-%E7%AC%AC%E4%B8%80%E7%B1%BB%E6%96%AF%E7%89%B9%E6%9E%97%E6%95%B0"><span class="nav-number">5.</span> <span class="nav-text">Ex.2 第一类斯特林数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Exercise-Time"><span class="nav-number">6.</span> <span class="nav-text">Exercise Time</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#All-in-All"><span class="nav-number">7.</span> <span class="nav-text">All in All</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">1903</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">1903</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : 'f42de837c1641ec9c865',
+      clientSecret: 'cf2479cb17e7d5c1ac5a92fe78ed423ad0853f92',
+      repo        : 'zypc-1903.github.io',
+      owner       : 'zypc-1903',
+      admin       : ['zypc-1903'],
+      id          : '46ac314a219eadd113aed1d3859442bb',
+        language: 'zh-CN',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+
+</body>
+</html>

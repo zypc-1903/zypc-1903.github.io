@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"zypc-1903.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":12,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="作者 &#x2F; 190331 舒熙皓  解析法 不同于我们常用的利用倒角，全等，平分线等纯几何的方法来解决问题，而是利用建立平面直角坐标系，利用坐标，直线方程，函数等进行代数和几何的综合运用来得出解。事实上，解析法不需要太多的思维，更注重的是计算能力和分析能力。我们来用一些例题探究解析法在初中数学中的运用：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="解析法综合运用">
+<meta property="og:url" content="https://zypc-1903.github.io/2021/08/10/jie-xi-fa-zong-he-yun-yong/index.html">
+<meta property="og:site_name" content="1903">
+<meta property="og:description" content="作者 &#x2F; 190331 舒熙皓  解析法 不同于我们常用的利用倒角，全等，平分线等纯几何的方法来解决问题，而是利用建立平面直角坐标系，利用坐标，直线方程，函数等进行代数和几何的综合运用来得出解。事实上，解析法不需要太多的思维，更注重的是计算能力和分析能力。我们来用一些例题探究解析法在初中数学中的运用：">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://zypc-1903.github.io/2021/08/10/jie-xi-fa-zong-he-yun-yong/1.png">
+<meta property="og:image" content="https://zypc-1903.github.io/2021/08/10/jie-xi-fa-zong-he-yun-yong/2.png">
+<meta property="og:image" content="https://zypc-1903.github.io/2021/08/10/jie-xi-fa-zong-he-yun-yong/3.png">
+<meta property="og:image" content="https://zypc-1903.github.io/2021/08/10/jie-xi-fa-zong-he-yun-yong/4.png">
+<meta property="og:image" content="https://zypc-1903.github.io/2021/08/10/jie-xi-fa-zong-he-yun-yong/5.png">
+<meta property="og:image" content="https://zypc-1903.github.io/2021/08/10/jie-xi-fa-zong-he-yun-yong/6.png">
+<meta property="og:image" content="https://zypc-1903.github.io/2021/08/10/jie-xi-fa-zong-he-yun-yong/7.png">
+<meta property="og:image" content="https://zypc-1903.github.io/2021/08/10/jie-xi-fa-zong-he-yun-yong/8.png">
+<meta property="og:image" content="https://zypc-1903.github.io/2021/08/10/jie-xi-fa-zong-he-yun-yong/9.png">
+<meta property="og:image" content="https://zypc-1903.github.io/2021/08/10/jie-xi-fa-zong-he-yun-yong/10.png">
+<meta property="og:image" content="https://zypc-1903.github.io/2021/08/10/jie-xi-fa-zong-he-yun-yong/11.png">
+<meta property="og:image" content="https://zypc-1903.github.io/2021/08/10/jie-xi-fa-zong-he-yun-yong/12.png">
+<meta property="article:published_time" content="2021-08-10T10:26:55.000Z">
+<meta property="article:modified_time" content="2021-08-10T10:39:09.193Z">
+<meta property="article:author" content="1903">
+<meta property="article:tag" content="巨佬谭">
+<meta property="article:tag" content="第二期">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://zypc-1903.github.io/2021/08/10/jie-xi-fa-zong-he-yun-yong/1.png">
+
+<link rel="canonical" href="https://zypc-1903.github.io/2021/08/10/jie-xi-fa-zong-he-yun-yong/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>解析法综合运用 | 1903</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">1903</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zypc-1903.github.io/2021/08/10/jie-xi-fa-zong-he-yun-yong/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="1903">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="1903">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          解析法综合运用
+        </h1>
+
+        <div class="post-meta">
+          
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-08-10 18:26:55 / 修改时间：18:39:09" itemprop="dateCreated datePublished" datetime="2021-08-10T18:26:55+08:00">2021-08-10</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><strong>作者</strong> / 190331 舒熙皓</p>
+<hr>
+<p><strong>解析法</strong> 不同于我们常用的利用倒角，全等，平分线等纯几何的方法来解决问题，而是利用建立平面直角坐标系，利用坐标，直线方程，函数等进行代数和几何的综合运用来得出解。事实上，解析法不需要太多的思维，更注重的是计算能力和分析能力。我们来用一些例题探究解析法在初中数学中的运用：</p>
+<span id="more"></span>
+<blockquote>
+<p><strong>Example 1</strong> / 如图，有正方形 $ABCD$ 和 $BEFG$，边长分别为 4 和 6。连接 $DF$，$H$ 为 $DF$ 中点，连接 $GH$，请求出 $GH$ 的长度。</p>
+</blockquote>
+<p><img src="/2021/08/10/jie-xi-fa-zong-he-yun-yong/1.png" alt></p>
+<p><strong>解</strong>：以 $B$ 为原点，$AE,GB$ 所在执行分别为 $x$ 轴和 $y$ 轴，建立平面直角坐标系。由题可得</p>
+<p>$D(-4,4),F(6,6),G(0,6)$，由中点公式得 $H(1,5)$，由两点间距离公式得</p>
+<p>$|GH|=\sqrt{(0-1)^2+(6-5)^2}=\sqrt{2}$​​​。</p>
+<p>从这个例子中，我们可以看到解析法对于此类问题的方便快捷。</p>
+<blockquote>
+<p><strong>Example 2</strong> / 如图，有边长为 4 的正方形 $ABCD$，$E$ 为 $BC$ 中点。作 $DF\perp DE$ 交 $BA$ 延长线于点 $F$。连接 $AC$ 交 $EF,DE$ 于点 $H,G$，求 $GH$ 长度。</p>
+</blockquote>
+<p><img src="/2021/08/10/jie-xi-fa-zong-he-yun-yong/2.png" alt></p>
+<p><strong>解</strong>：以 $A$ 为原点，$AB,AD$ 所在执行分别为 $x$ 轴和 $y$ 轴，建立平面直角坐标系。由题可得</p>
+<p>$A(0,0),D(0,4),C(4,4),E(4,2)$。由待定系数法可得</p>
+<p>$AC:y=x,   DE:y=-\dfrac{1}{2}x+4,   G(\dfrac{8}{3},\dfrac{8}{3})$。因为 $DF$ 过点 $D$ 且垂直于 $DE$，</p>
+<p>$DF:y=2x+4,   F(-2,0),   EF:y=\dfrac{1}{3}x+\dfrac{2}{3},   H(1,1)$。由两点间距离公式得</p>
+<p>$|GH|=\sqrt{2\times (\dfrac{8}{3}-1)^2}=\dfrac{5}{3}\sqrt{2}$​​​​。</p>
+<p>从这个例子中，我们发现可以利用直线中两点的坐标，相互垂直的直线之间的斜率关系，一个点的坐标和直线斜率和待定系数法能够快速算出来直线的解析式或者点的坐标。</p>
+<blockquote>
+<p><strong>Example 3</strong>（衡阳2019）/ 在平面直角坐标系 $xOy$ 中，二次函数 $y=x^2+bx+c$ 的图象交 $x$ 轴于 $A(-1,0),B(3,0)$，与 $y$ 轴交于点 $N$。以 $AB$ 为边在 $x$ 轴上方作正方形 $ABCD$，点 $P$ 是 $x$ 轴上一动点，连接 $CP$，过点 $P$ 作 $CP$ 垂线与 $y$ 轴交于点 $E$ 。</p>
+<p><strong>1</strong> / 求该抛物线的函数解析式。</p>
+<p><strong>2</strong> / 当 $P$ 与线段 $OB$（不与 $O,B$ 重合）上运动至何处时，线段 $OE$ 的长有最大值？请求出 $E$ 点的坐标和这个最大值。</p>
+<p><strong>3</strong> / 在第四象限的抛物线上任取一点 $M$，连接 $MN,MB$ 。请问：$S_{\triangle MBN}$ 是否存在最大值？若存在，请求出点 $M$ 的坐标。不存在请说明理由。</p>
+</blockquote>
+<p><img src="/2021/08/10/jie-xi-fa-zong-he-yun-yong/3.png" alt></p>
+<p><strong>1</strong> / 由顶点式得 $(x+1)(x-3)=y$，整理得 $y=x^2-2x+3$。</p>
+<p><strong>2</strong> / 设 $P(a,0)$，由图得 $C(3,4),D(-1,4),   CP:y=\dfrac{-4x+4a}{a-3}$。又因为 $EP\perp PC$，</p>
+<p>$k_{EP}=\dfrac{a-3}{4},   EP:y=\dfrac{a-3}{4}(x-a),   E(0,\dfrac{a(3-a)}{4})$。</p>
+<p>显然，当 $a=3-a=1.5$​ 时，$\dfrac{a(3-a)}{4}$​ 取到最大值，此时 $E(0,\dfrac{9}{16}),OE_\max=\dfrac{9}{16}$​。</p>
+<p><strong>3</strong> / 当 $M$​ 作为切点，且切线斜率为 $k_{NB}$​ 时，$S_{\triangle MBN}$​ 取到最大值。利用铅锤法可以算出面积，但我们可以尝试一种更加简单的方法——求导法。</p>
+<p>设 $f(x)=x^2-2x+3$​，则 $f’(x)=2x-2$​，$f’(x)$​ 几何意义即为 $f(x)$​ 的切线斜率。由题得</p>
+<p>$NB:y=x-3,   \therefore 2x-2=1,x=1.5,   M(1.5,-3.75)$​​​ 。</p>
+<p>从这个例子中，我们可以发现巧妙的设元可以使问题变得更加简单可做，合理利用超纲知识也可以减少不必要的一些计算难度。在解决这种复杂问题的时候，计算错误是一定要注意避免的。</p>
+<hr>
+<h3 id="挑战中考"><a href="#挑战中考" class="headerlink" title="挑战中考"></a>挑战中考</h3><blockquote>
+<p><strong>邵阳 2019</strong> / 二次函数 $y=-\dfrac{1}{3}x^2+bx+c$ 的图象过原点和 $(8,0)$。</p>
+<p><strong>1</strong> / 求该函数的解析式。</p>
+<p><strong>2</strong> / 在 $x$ 轴上方作直线 $y_1=m$，交二次函数于点 $A,B$，过这两点分别作 $x$ 轴的垂线，交 $x$ 轴于点 $D,C$ 。当矩形 $ABCD$ 为正方形时，求 $m$ 的值。</p>
+<p><strong>3</strong> / 在 2 的条件下，动点 $P$ 从点 $A$ 出发沿射线 $AB$ 以 $1/s$ 匀速运动，同时动点 $Q$ 以 $1/s$ 从 $A$ 出发沿线段 $AD$ 匀速运动，到达点 $D$ 后原速返回。当 $Q$ 返回点 $A$ 时，$P,Q$ 停止运动。设运动时间为 $t (t&gt;0)$ 秒，过点 $P$ 向 $x$ 轴作垂线，交抛物线于点 $E$，交直线 $AC$ 于点 $F$。请问：以 $A,E,F,Q$ 四点为顶点能否构成平行四边形。若能，请求出 $t$。若不能，请说明理由。</p>
+</blockquote>
+<p><img src="/2021/08/10/jie-xi-fa-zong-he-yun-yong/4.png" alt></p>
+<blockquote>
+<p><strong>长沙 2018</strong> / 函数 $y=\dfrac{m}{x} (m&gt;1,x&gt;0)$ 的图象过点 $P(m,1),Q(1,m)$ ，直线 $PQ$ 与 $x$ 轴，$y$ 轴交于点 $C,D$，点 $M(x,y)$ 为函数图象上一动点，在坐标轴上有点 $A,B$ 使得四边形 $OAMB$ 为矩形。</p>
+<p><strong>1</strong> / 求 $\angle OCD$ 的度数。</p>
+<p><strong>2</strong> / 当 $m=3, 1&lt;x&lt;3$ 时，请求出使得 $\triangle OPM\sim \triangle OCP$ 的 $M$ 的坐标。</p>
+<p><strong>3</strong> / 当 $m=5$ 时，矩形 $OAMB$ 和 $\triangle OPQ$​​ 的重叠部分面积是否能够等于 4.1？</p>
+</blockquote>
+<p><img src="/2021/08/10/jie-xi-fa-zong-he-yun-yong/5.png" alt></p>
+<blockquote>
+<p><strong>长沙 2019</strong> / 抛物线 $y=ax^2+6ax (a&gt;0)$ 与 $x$ 轴交于 $A,O$ 两点，$B$ 为抛物线顶点，$D(t,0) (-3&lt;t&lt;0)$ ，连接 $BD$ 并延长过 $O,A,B$ 三点的 $\odot P$ 相交于点 $C$。过点 $C$ 作 $\odot P$ 的切线 $CE$ 交 $x$ 轴于点 $E$，连接 $AC,BE,BO$。</p>
+<p><strong>1</strong> / 求点 $A$ 的坐标。</p>
+<p><strong>2</strong> / 求证 $CE=DE$ 。</p>
+<p><strong>3</strong> / 当 $a=\dfrac{\sqrt{3}}{3}, \angle CAE=\angle OBE$ 时，求 $\dfrac{1}{OD}-\dfrac{1}{OE}$ 的值。</p>
+</blockquote>
+<p><img src="/2021/08/10/jie-xi-fa-zong-he-yun-yong/6.png" alt></p>
+<hr>
+<h3 id="答案"><a href="#答案" class="headerlink" title="答案"></a>答案</h3><p><strong>邵阳 2019</strong> / 如图，在此给出 3 中合法的平行四边形。</p>
+<p><img src="/2021/08/10/jie-xi-fa-zong-he-yun-yong/7.png" alt></p>
+<p><strong>1</strong> / 由顶点式得 $y=-\dfrac{1}{3}x(x-8)$，即 $y=-\dfrac{1}{3}x^2+\dfrac{3}{8}x$。</p>
+<p><strong>2</strong> / 设 $A(a,m)$，则 $B(8-a,m)$。由题，$AB=8-2a=AD=m,   \therefore a=\dfrac{8-m}{2}$ 。</p>
+<p>$\therefore A(\dfrac{8-m}{2},m)$，代入抛物线得 $m=-\dfrac{(8-m)^2}{2}+\dfrac{8(8-m)}{6}$ ，整理得</p>
+<p>$(m+16)(m-4)=0,   m=4$ 或 $m=-16$ (舍)。由此，$A(2,4),B(6,4),C(6,0),D(2,0)$ 。</p>
+<p><strong>3</strong> / 显然，当 $P$ 在 $AB$ 内时无解。由两点式，$AC:y=6-x$。我们设 $P(a,4) (a=t+2)$。</p>
+<p>计算可得 $E(a,\dfrac{8a-a^2}{3}),F(a,6-a),Q(2,a-6)$。由平行四边形的判定，</p>
+<p>$|EF|=|AQ|\Rightarrow \dfrac{8a-a^2}{3}-(6-a)=10-a$，整理得 $(a-6)(a-8)=0,a=6$ 或 $a=8$。</p>
+<p>所以，当 $t=4s$ 或 $t=6s$ 时，能够构成平行四边形。</p>
+<p><strong>长沙 2018</strong> / 在此给出第三题的三种情况。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><strong>图 1</strong></th>
+<th style="text-align:center"><strong>图 2</strong></th>
+<th style="text-align:center"><strong>图 3</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><img src="/2021/08/10/jie-xi-fa-zong-he-yun-yong/8.png" style="zoom:80%;"></td>
+<td style="text-align:center"><img src="/2021/08/10/jie-xi-fa-zong-he-yun-yong/9.png" alt></td>
+<td style="text-align:center"><img src="/2021/08/10/jie-xi-fa-zong-he-yun-yong/10.png" alt></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>1</strong> / 显然 $PQ:y=m+1-x, \angle OCD=45^\circ$ 。</p>
+<p><strong>2</strong> / 由题得 $P(3,1),Q(1,3),C(4,0)$，设 $M(a,\dfrac{3}{a})$，由相似得 $\dfrac{OP}{OM}=\dfrac{OC}{OP}=\dfrac{PC}{PM}$ 。</p>
+<p>由图，$OP=\sqrt{10},OC=4,OM=\sqrt{a^2+\dfrac{9}{a^2}}$。不难发现 $OP^2=OC\cdot OM$，代入得</p>
+<p>$10=4\sqrt{a^2+\dfrac{9}{a^2}}$，整理得 $(4a^2-9)(a^2-4)=0,$ 又 $\because 1&lt;a&lt;3   \therefore a=\dfrac{3}{2}$ 或 $a=2$。</p>
+<p>当 $a=\dfrac{3}{2}$ 时，检验失败，舍。$a=2$ 时，检验成功，$M(2,\dfrac{3}{2})$。</p>
+<p><strong>3</strong> / 设 $M(a,\dfrac{5}{a})$。由题得 $P(5,1),Q(1,5),C(6,0),D(0,6)$​​​​​。</p>
+<ul>
+<li><p>当 $a&lt;1$ 时，如图 1，$S&lt;S_{\triangle OAM}&lt;2.5$，不存在。</p>
+</li>
+<li><p>当 $a&gt;5$ 时，如图 1，$S&lt;S_{\triangle OBM}&lt;2.5$，不存在。</p>
+</li>
+</ul>
+<p>当 $1&lt;a&lt;5$ 时，如图 2，设 $OQ$ 交 $BM$ 与 $E$，$OP$ 交 $AM$ 于 $F$，由相似，</p>
+<p>$E(\dfrac{1}{a},\dfrac{5}{a}),F(a,\dfrac{a}{5})$。$S=S_{OAMB}-S_{\triangle OBE}-S_{\triangle OAF}=4.1$，由此可得</p>
+<p>$5-\dfrac{x^2}{10}-\dfrac{5}{2x^2}=4.1$，整理得 $x^4-9x^2+25=0$​​，没有实数根，不存在。</p>
+<p><strong>长沙 2019</strong> / 连接并延长 $BP$ 并交 $x$ 轴于 $F$，连接 $PC$。</p>
+<p><img src="/2021/08/10/jie-xi-fa-zong-he-yun-yong/11.png" alt></p>
+<p><strong>1</strong> / 由解析式得零点坐标满足 $ax(x+6)=0$，所以 $A(0,0)$ (舍) 或 $A(-6,0)$ 。</p>
+<p><strong>2</strong> / 由题，$\angle ECP=\angle BFD=90^\circ, \angle PBD=\angle PCB$。</p>
+<p>$\therefore 90^\circ-\angle PBD=90^\circ - \angle PCB, \angle FDB=\angle CDE=\angle DCE, EC=ED$。</p>
+<p><strong>3</strong> / 设 $E(a,0)$，由切割线定理，$CE^2=AE\cdot OE$。由图，$\angle CAO=\angle CBO=\angle OBE$。</p>
+<p>由角平分线定理，$\dfrac{BD}{BE}=\dfrac{DO}{OE}$。由解析式，$B(3,-3\sqrt{3})$。由两点间距离公式，</p>
+<p>$BD=\sqrt{(3+t)^2+27}, BE=\sqrt{(3+a)^2+27}, CE=DE=a-t$。</p>
+<p>$\therefore CE^2=AE\cdot OE\Rightarrow (a-t)^2=a(a+6)\Rightarrow a=\dfrac{t^2}{6-2t}$。</p>
+<p>$\therefore \dfrac{BD}{BE}=\dfrac{DO}{OE}\Rightarrow \dfrac{\sqrt{(3+t)^2+27}}{\sqrt{(3+a)^2+27}}=\dfrac{-t}{a}\Rightarrow a=-\dfrac{6t}{t+6}$。</p>
+<p>$\therefore \dfrac{t^2}{6-2t}=-\dfrac{6t}{t+6}\Rightarrow t^2=-18t+36, \dfrac{1}{OD}-\dfrac{1}{OE}=\dfrac{1}{-t}-\dfrac{1}{-m}=\dfrac{3t+6}{t^2}=\dfrac{1}{6}$​。</p>
+<hr>
+<h3 id="挑战高考"><a href="#挑战高考" class="headerlink" title="挑战高考"></a>挑战高考</h3><p>在高中，我们不仅需要学习直线和圆，还有椭圆，双曲线，抛物线这类 <strong>圆锥曲线</strong>。原来的函数解析式变成了方程和轨迹方程，不过，解题的思路和方法依旧没有变化。你也不必太过于担心它的难度：</p>
+<p><img src="/2021/08/10/jie-xi-fa-zong-he-yun-yong/12.png" style="zoom:67%;"></p>
+<blockquote>
+<p><strong>2015全国卷1</strong> / 在平面直角坐标系 $xOy$ 中，曲线 $C:y=\dfrac{x^2}{4}$ 与直线 $y=kx+a (a&gt;0)$ 交于点 $M,N$ 。</p>
+<p><strong>1</strong> / $k=0$ 时，分别求 $C$ 在点 $M,N$ 处的切线方程。</p>
+<p><strong>2</strong> / $y$ 轴上是否存在点 $P$，使得当 $k$ 变动时，总有 $\angle OPM=\angle OPN$？</p>
+</blockquote>
+<p><strong>1</strong> / 由待定系数法得 $M(2\sqrt{a},a),N(-2\sqrt{a},a)$ 或 $M(-2\sqrt{2},a),N(2\sqrt{2},a)$ 。对 $C$ 求导，</p>
+<p>$y’=\dfrac{1}{2}x$ 。当 $x=2\sqrt{a}$ 时切线斜率为 $\sqrt{a}$，$x=-2\sqrt{a}$ 时则为 $-\sqrt{a}$。由斜截式，</p>
+<p>$y-a=\pm \sqrt{a}(x\mp 2\sqrt{a})$，整理得 $\sqrt{a}x-y-a=0$ 或 $\sqrt{a}x+y+a=0$。</p>
+<p><strong>2</strong> / 设 $P(0,b)$ 符合题意，$M(x_1,y_1),N(x_2,y_2)$，直线 $PM,PN$ 斜率分别为 $k_1,k_2$。代入得</p>
+<p>$kx+a=\dfrac{x^2}{4}$，整理得 $x^2-4kx-4a=0$。由韦达定理，$x_1+x_2=4k, x_1x_2=-4a$。</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+k_1+k_2 &= \frac{y_1-b}{x_1}+\frac{y_2-b}{x_2}=\frac{x_2(y_1-b)+x_1(y_2-b)}{x_1x_2}\\
+&= \frac{x_2(kx_1+a-b)+x_1(kx_2+a-b)}{x_1x_2}\\
+&= \frac{2kx_1x_2+(a-b)(x_1+x_2)}{x_1x_2}=\frac{2k\cdot(-4a)+4k(a-b)}{-4a}\\
+&= \frac{k(a+b)}{a}
+\end{aligned}</script><p>当 $b=-a$ 时，$k_1+k_2=0$。由斜率与角度的关系，此时 $\angle OPM=\angle OPN, P(0,-a)$。</p>
+<blockquote>
+<p><strong>2015全国卷2</strong> / 已知椭圆 $C:9x^2+y^2=m^2 (m&gt;0)$，直线 $l$ 不过原点 $O$ 且不平行于坐标轴，$l$ 与 $C$ 有两个交点 $A,B$，线段 $AB$ 的中点为 $M$ 。</p>
+<p><strong>1</strong> / 证明：直线 $OM$ 斜率与 $l$ 的斜率的乘积为定值。</p>
+<p><strong>2</strong> / 若 $l$ 过 $(\dfrac{m}{3},m)$，延长线段 $OM$ 与 $C$ 交于点 $P$，四边形 $OAPB$ 能否为平行四边形？请求出此时 $l$ 的斜率。</p>
+</blockquote>
+<p><strong>1</strong> / 设 $l:y=kx+b,A(x_1,y_1),B(x_2,y_2),M(x_M,y_M)$。代入得</p>
+<p>$9x^2+(kx+b)^2=m^2$，整理得 $(k^2+9)x^2+2kbx+b^2-m^2=0$，由韦达定理，</p>
+<p>$x_M=\dfrac{x_1+x_2}{2}=-\dfrac{kb}{k^2+9}$，代入得 $y_M=\dfrac{9b}{k^2+9}$，</p>
+<p>$k_{OM}=\dfrac{y_M}{x_M}=-\dfrac{9}{k}$，所以 $k_{OM}\cdot k=-9$，为定值。证明成立。</p>
+<p><strong>2</strong> / 由 1 得 $OM:y=-\dfrac{9}{k}x$，设 $P(x_P,y_P)$ ，由待定系数法，$9x^2+(-\dfrac{9}{k}x)^2=m^2$。</p>
+<p>整理得 $x^2=\dfrac{k^2m^2}{9k^2+81},   \therefore x_P=\dfrac{\pm km}{3\sqrt{k^2+9}}$。由平行四边形判定，需要 $x_P=2x_M$。</p>
+<p>$l:b=y-kx=\dfrac{m(3-k)}{3}$，代入得 $x_M-kx+b=\dfrac{mk(k-3)}{3(k^2+9)}$。联立得</p>
+<p>$\dfrac{\pm km}{3\sqrt{k^2+9}}=\dfrac{2mk(k-3)}{3(k^2+9)}$，解得 $k=4\pm\sqrt{7}$​。</p>
+<p>（ PS：这个方程其实很好解 ）</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%B7%A8%E4%BD%AC%E8%B0%AD/" rel="tag"># 巨佬谭</a>
+              <a href="/tags/%E7%AC%AC%E4%BA%8C%E6%9C%9F/" rel="tag"># 第二期</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/08/10/qian-tan-suan-fa-shi-xian-de-shi-jian-wen-ti/" rel="prev" title="浅谈算法实现的时间问题">
+      <i class="fa fa-chevron-left"></i> 浅谈算法实现的时间问题
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/08/10/qian-tan-pai-lie-zu-he-two/" rel="next" title="浅谈排列组合 2">
+      浅谈排列组合 2 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%91%E6%88%98%E4%B8%AD%E8%80%83"><span class="nav-number">1.</span> <span class="nav-text">挑战中考</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AD%94%E6%A1%88"><span class="nav-number">2.</span> <span class="nav-text">答案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%91%E6%88%98%E9%AB%98%E8%80%83"><span class="nav-number">3.</span> <span class="nav-text">挑战高考</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">1903</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">1903</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : 'f42de837c1641ec9c865',
+      clientSecret: 'cf2479cb17e7d5c1ac5a92fe78ed423ad0853f92',
+      repo        : 'zypc-1903.github.io',
+      owner       : 'zypc-1903',
+      admin       : ['zypc-1903'],
+      id          : '59d42d4f2e62acf3ee7206b0bc97a1dc',
+        language: 'zh-CN',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+
+</body>
+</html>
