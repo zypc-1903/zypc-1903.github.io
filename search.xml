@@ -40,7 +40,7 @@
 <li><strong>无序性</strong>：每个元素之间的地位相同，元素之间没有先后顺序。</li>
 </ul>
 <hr>
-<h3 id="元素与几何的关系"><a href="#元素与几何的关系" class="headerlink" title="元素与几何的关系"></a>元素与几何的关系</h3><p>如果一个元素 <strong>属于</strong> 一个集合，我们如何这种关系表示呢？</p>
+<h3 id="元素与集合的关系"><a href="#元素与集合的关系" class="headerlink" title="元素与集合的关系"></a>元素与集合的关系</h3><p>如果一个元素 <strong>属于</strong> 一个集合，我们如何这种关系表示呢？</p>
 <p>我们用属于符号 $\in$ 来表示。</p>
 <p>比如集合 $A$ 代表 1903 同学的集合，则 $\textsf{zxy} \in A$ 。</p>
 <p>如果一个元素不属于一个集合，那么我们就用不属于符号 $\notin$ 来表示。比如：$\text{俄罗斯} \notin 亚洲国家$</p>
@@ -509,7 +509,7 @@ a^{173}=a^{128}\times a^{32}\times a^{8}\times a^{4}\times a</script><p>而 $a^4
 <p><strong>Example 1</strong> / 如图，有正方形 $ABCD$ 和 $BEFG$，边长分别为 4 和 6。连接 $DF$，$H$ 为 $DF$ 中点，连接 $GH$，请求出 $GH$ 的长度。</p>
 </blockquote>
 <p><img src="/2021/08/10/ju-lao-tan-two/1.png" alt></p>
-<p><strong>解</strong>：以 $B$ 为原点，$AE,GB$ 所在执行分别为 $x$ 轴和 $y$ 轴，建立平面直角坐标系。由题可得</p>
+<p><strong>解</strong>：以 $B$ 为原点，$AE,GB$ 所在直线分别为 $x$ 轴和 $y$ 轴，建立平面直角坐标系。由题可得</p>
 <p>$D(-4,4),F(6,6),G(0,6)$，由中点公式得 $H(1,5)$，由两点间距离公式得</p>
 <p>$|GH|=\sqrt{(0-1)^2+(6-5)^2}=\sqrt{2}$。</p>
 <p>从这个例子中，我们可以看到解析法对于此类问题的方便快捷。</p>
@@ -1328,7 +1328,7 @@ P(\text{win})=\sum_{i=1}^nT(1,i)\times S(i-1)</script><hr>
 <li><strong>无序性</strong>：每个元素之间的地位相同，元素之间没有先后顺序。</li>
 </ul>
 <hr>
-<h3 id="元素与几何的关系"><a href="#元素与几何的关系" class="headerlink" title="元素与几何的关系"></a>元素与几何的关系</h3><p>如果一个元素 <strong>属于</strong> 一个集合，我们如何这种关系表示呢？</p>
+<h3 id="元素与集合的关系"><a href="#元素与集合的关系" class="headerlink" title="元素与集合的关系"></a>元素与集合的关系</h3><p>如果一个元素 <strong>属于</strong> 一个集合，我们如何这种关系表示呢？</p>
 <p>我们用属于符号 $\in$ 来表示。</p>
 <p>比如集合 $A$ 代表 1903 同学的集合，则 $\textsf{zxy} \in A$ 。</p>
 <p>如果一个元素不属于一个集合，那么我们就用不属于符号 $\notin$ 来表示。比如：$\text{俄罗斯} \notin 亚洲国家$</p>
@@ -1726,7 +1726,7 @@ F(n)=\sum_{i=0}^na_{ni}G(i)\Rightarrow G(n)=\sum_{i=0}^nb_{ni}F(i)</script><hr>
 <p><strong>Example 1</strong> / 如图，有正方形 $ABCD$ 和 $BEFG$，边长分别为 4 和 6。连接 $DF$，$H$ 为 $DF$ 中点，连接 $GH$，请求出 $GH$ 的长度。</p>
 </blockquote>
 <p><img src="/2021/08/10/jie-xi-fa-zong-he-yun-yong/1.png" alt></p>
-<p><strong>解</strong>：以 $B$ 为原点，$AE,GB$ 所在执行分别为 $x$ 轴和 $y$ 轴，建立平面直角坐标系。由题可得</p>
+<p><strong>解</strong>：以 $B$ 为原点，$AE,GB$ 所在直线分别为 $x$ 轴和 $y$ 轴，建立平面直角坐标系。由题可得</p>
 <p>$D(-4,4),F(6,6),G(0,6)$，由中点公式得 $H(1,5)$，由两点间距离公式得</p>
 <p>$|GH|=\sqrt{(0-1)^2+(6-5)^2}=\sqrt{2}$​​​。</p>
 <p>从这个例子中，我们可以看到解析法对于此类问题的方便快捷。</p>
