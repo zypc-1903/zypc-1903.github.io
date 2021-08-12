@@ -1786,6 +1786,8 @@ P(\text{win})=\sum_{i=1}^nT(1,i)\times S(i-1)</script><hr>
 <hr>
 <p>这一次将会讲解跟组合数学相关的数列，掌握浅谈排列组合 1 ，并且学有余力的同学可以尝试阅读。建议配合 <a href="https://oi-wiki.org/math/stirling/">OI-Wiki</a>，《具体数学》等专业书籍或网站辅助阅读（如果没有也没关系），有疑问时多百度，实在看不懂就跳过。</p>
 <span id="more"></span>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=26264143&auto=1&height=66"></iframe>
+
 <h3 id="公式整理"><a href="#公式整理" class="headerlink" title="公式整理"></a>公式整理</h3><p>本次公式较多，所以在最前面先将所有公式列出来：</p>
 <script type="math/tex; mode=display">
 \def\stir#1#2{\begin{Bmatrix}#1\\#2\end{Bmatrix}}
@@ -1971,6 +1973,8 @@ F(n)=\sum_{i=0}^na_{ni}G(i)\Rightarrow G(n)=\sum_{i=0}^nb_{ni}F(i)</script><hr>
 <hr>
 <p><strong>解析法</strong> 不同于我们常用的利用倒角，全等，平分线等纯几何的方法来解决问题，而是利用建立平面直角坐标系，利用坐标，直线方程，函数等进行代数和几何的综合运用来得出解。事实上，解析法不需要太多的思维，更注重的是计算能力和分析能力。我们来用一些例题探究解析法在初中数学中的运用：</p>
 <span id="more"></span>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=1849196939&auto=1&height=66"></iframe>
+
 <blockquote>
 <p><strong>Example 1</strong> / 如图，有正方形 $ABCD$ 和 $BEFG$，边长分别为 4 和 6。连接 $DF$，$H$ 为 $DF$ 中点，连接 $GH$，请求出 $GH$ 的长度。</p>
 </blockquote>
@@ -2645,6 +2649,8 @@ A^m_n &= \frac{n!}{(n-m)!} \\
 \binom{n}{m} &=C^m_n=\frac{A^m_n}{A^m_m}=\frac{n!}{(n-m)! \cdot m!}
 \end{aligned}</script><p>特别的，当 $m&gt;n$ 时，$C^m_n=0$ 。</p>
 <span id="more"></span>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=439911735&auto=1&height=66"></iframe>
+
 <ul>
 <li>排列组合的推导</li>
 </ul>
