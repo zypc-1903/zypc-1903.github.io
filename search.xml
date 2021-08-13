@@ -2187,6 +2187,8 @@ k_1+k_2 &= \frac{y_1-b}{x_1}+\frac{y_2-b}{x_2}=\frac{x_2(y_1-b)+x_1(y_2-b)}{x_1x
 <p>但是，我们关心的是，什么样的方法是高效的？</p>
 <p>本文以<strong>斐波那契求值问题</strong>、<strong>数列排序问题</strong>为例，简单探究算法实现的时间问题。</p>
 <span id="more"></span>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=865964850&auto=1&height=66"></iframe>
+
 <p>以<strong>斐波那契求值问题</strong>为例，我们将探究<strong>递归</strong>思想、<strong>递推</strong>思想以及<strong>矩阵加速</strong>思想，其中，我们会简单探究<strong>快速幂问题</strong>。探究 $O(n^2)\to O(n) \to O(\log n)$ 的时间复杂度优化。其中前二者思维难度较低，相信对大家没有理解难度。第三者有线性代数知识，属于高中内容，但所涉不深，理解难度也不高，如果有兴趣建议阅读。</p>
 <p>以<strong>数列排序问题</strong>为例，我们将探究<strong>选择排序</strong>思想、<strong>冒泡排序</strong>思想、<strong>堆排序</strong>思想、<strong>归并排序</strong>思想以及<strong>计数排序</strong>思想。探究 $O(n^2) \to O(n\log n)\to O(n+w)$ 的时间复杂度优化。都是很简单的思想，属于信竞生入门必备通识，相信理解其思想对大家没有难度。</p>
 <p>以上这些奇奇怪怪的名词和符号看不懂也没关系，不影响理解，<del>只影响装X</del></p>
@@ -2589,6 +2591,8 @@ a^{173}=a^{128}\times a^{32}\times a^{8}\times a^{4}\times a</script><p>而 $a^4
 <hr>
 <h3 id="一-绪论"><a href="#一-绪论" class="headerlink" title="一 绪论"></a>一 绪论</h3><p>经过和郑晓阳同学的讨论，我们认为需要呈现两种对函数的理解思路.<br>要学习函数，肯定要先了解函数的江湖传说.<br>函数是数形结合的集大成者，无论是求解析式，还是求面积，亦或是以后大家学到的建系，都把无数学生折磨得死去活来.<br>由于函数的优 雅 性 质，中考出题老师经常使用二次函数压轴，送走了无数同学的 A 甚至是千分之一.</p>
 <span id="more"></span>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=2866921&auto=1&height=66"></iframe>
+
 <p><strong>阅前需知</strong></p>
 <p>由于初中内容有限，本文的表达形式不甚严谨.<br>由于作者学术水平有限，不可避免地会出现事实错误.<br>作者此前未系统学习过函数，关于函数的知识都是在接触信竞之后自己摸索的.<br>故以上内容仅供参考.</p>
 <hr>
