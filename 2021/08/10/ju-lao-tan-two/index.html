@@ -42,9 +42,9 @@
 <meta property="og:image" content="https://zypc-1903.github.io/2021/08/10/ju-lao-tan-two/6.png">
 <meta property="og:image" content="https://zypc-1903.github.io/2021/08/10/ju-lao-tan-two/11.png">
 <meta property="og:image" content="https://zypc-1903.github.io/2021/08/10/ju-lao-tan-two/12.png">
-<meta property="og:image" content="https://zypc-1903.github.io/2021/08/10/ju-lao-tan-two/6ZKfPO.png">
+<meta property="og:image" content="https://zypc-1903.github.io/2021/08/10/ju-lao-tan-two/Blog/zypc1903/source/_posts/qian-tan-pai-lie-zu-he-two/6ZKfPO.png">
 <meta property="article:published_time" content="2021-08-10T11:10:50.000Z">
-<meta property="article:modified_time" content="2021-08-17T08:37:02.290Z">
+<meta property="article:modified_time" content="2021-08-17T08:48:26.459Z">
 <meta property="article:author" content="1903">
 <meta property="article:tag" content="巨佬谭">
 <meta property="article:tag" content="第二期">
@@ -240,7 +240,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-08-17 16:37:02" itemprop="dateModified" datetime="2021-08-17T16:37:02+08:00">2021-08-17</time>
+                <time title="修改时间：2021-08-17 16:48:26" itemprop="dateModified" datetime="2021-08-17T16:48:26+08:00">2021-08-17</time>
               </span>
 
           
@@ -1008,11 +1008,22 @@ H_n=\sum_{i=1}^nH_{i-1}H_{n-i}\ \ \ \ \ \ \ \ \ \ (2)</script><hr>
 <li>Catalan 数的基本模型</li>
 </ul>
 <p>在之前，我们已经将它的两个模型：括号匹配模型和路径个数模型讲了一遍。</p>
-<p><strong>01 序列模型</strong> / 给定 $n$ 个 0 和 $n$ 个 1，你需要将它们排成一行，使得序列中任意一个前缀 1 的个数都大于等于 0 的个数。/ 考虑将 1 看成左括号，0 看成右括号，于是又转化成了括号匹配模型。</p>
-<p><strong><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1044">进出栈模型</a></strong> / 你需要进栈和出栈 $n$ 次，求出总方案数。/ 将进栈看成左括号，出栈看成右括号，因为每个时候进栈次数必然大于出栈，于是又转化成了括号匹配模型。</p>
-<p><strong>二叉树构成模型</strong> / 如图，二叉树是一种这样的结构。每一个结点最多会分两个叉到下面的结点。问有 $n$ 个点能够构成多少种不同的二叉树。/ 我们设最上层的结点的左边分出去了 $k$ 个结点，则右边会分叉出去 $n-k-1$ 个结点。由乘法原理可以得到方案数为 $f(k)f(n-k-1)$ 。我们枚举左子树分出去的结点数量，则有$f(n)=f(0)f(n-1)+f(1)f(n-2)\cdots+f(n-1)f(0)$ 。这跟公式 2 的形式相同，所以答案就是卡特兰数。</p>
-<p><img src="/2021/08/10/ju-lao-tan-two/6ZKfPO.png" alt="6ZKfPO.png"></p>
-<p><strong><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3200">「湖南省选」有趣的数列</a></strong> / 给定一个 $1-2n$ 的排列 $a$ ，满足所有奇数项和偶数项递增，且对于任意的 $i$ ，都有 $a_{2i-1}&lt;a_{2i}$ 。/ 考虑先给每个数标号，奇数项标 1 ，偶数项标 0 。将 $1-2n$ 按顺序排列，则任意一个前缀 1 的个数应该不小于 0 的个数（否则偶数项无法成功配对），便转化成了 01 序列模型。</p>
+<div class="note success">
+            <p> <strong>01 序列模型</strong></p><p>给定 $n$ 个 0 和 $n$ 个 1，你需要将它们排成一行，使得序列中任意一个前缀 1 的个数都大于等于 0 的个数。</p>
+          </div>
+<p>考虑将 1 看成左括号，0 看成右括号，于是又转化成了括号匹配模型。</p>
+<div class="note success">
+            <p> <strong><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1044">进出栈模型</a></strong></p><p>你需要进栈和出栈 $n$ 次，求出总方案数。</p>
+          </div>
+<p>将进栈看成左括号，出栈看成右括号，因为每个时候进栈次数必然大于出栈，于是又转化成了括号匹配模型。</p>
+<div class="note success">
+            <p> <strong>二叉树构成模型</strong></p><p>如图，二叉树是一种这样的结构。每一个结点最多会分两个叉到下面的结点。问有 $n$ 个点能够构成多少种不同的二叉树。</p><p><img src="/2021/08/10/ju-lao-tan-two/Blog\zypc1903\source\_posts\qian-tan-pai-lie-zu-he-two\6ZKfPO.png" alt="6ZKfPO.png"></p>
+          </div>
+<p>我们设最上层的结点的左边分出去了 $k$ 个结点，则右边会分叉出去 $n-k-1$ 个结点。由乘法原理可以得到方案数为 $f(k)f(n-k-1)$ 。我们枚举左子树分出去的结点数量，则有$f(n)=f(0)f(n-1)+f(1)f(n-2)\cdots+f(n-1)f(0)$ 。这跟公式 2 的形式相同，所以答案就是卡特兰数。</p>
+<div class="note success">
+            <p> <strong><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3200">「湖南省选」有趣的数列</a></strong></p><p>给定一个 $1-2n$ 的排列 $a$ ，满足所有奇数项和偶数项递增，且对于任意的 $i$ ，都有 $a_{2i-1}&lt;a_{2i}$ 。</p>
+          </div>
+<p>考虑先给每个数标号，奇数项标 1 ，偶数项标 0 。将 $1-2n$ 按顺序排列，则任意一个前缀 1 的个数应该不小于 0 的个数（否则偶数项无法成功配对），便转化成了 01 序列模型。</p>
 <hr>
 <h3 id="Ex-1-二项式反演"><a href="#Ex-1-二项式反演" class="headerlink" title="Ex.1 二项式反演"></a>Ex.1 二项式反演</h3><p>如果你知道了 $F(n)=\sum_{i=0}^nG(i)a_{ni}$ 。如果你知道了 $F(1,2,\dots,n)$ ，可以反推出 $G(n)=\sum_{i=0}^nF(i)b_{ni}$ ，这个过程就叫做 <strong>反演</strong> 。</p>
 <p>我们考虑先来用组合意义来证明公式 9：$\dbinom{n}{m}\dbinom{m}{k}=\dbinom{n}{k}\dbinom{n-k}{m-k}$ 。这个就相当于从 $n$ 个人里面选出 $m$ 个人，再从 $m$ 个人里面选出 $k$ 个人的方案数。这其实就相当于从 $n$ 个人里面内定了 $k$ 个人，然后再从 $n-k$ 个人中选择 $m-k$ 个人来 ”凑数“。</p>
@@ -1048,10 +1059,9 @@ H_n=\sum_{i=1}^nH_{i-1}H_{n-i}\ \ \ \ \ \ \ \ \ \ (2)</script><hr>
 <h3 id="2-第二类斯特林数"><a href="#2-第二类斯特林数" class="headerlink" title="2. 第二类斯特林数"></a>2. 第二类斯特林数</h3><ul>
 <li>简单介绍</li>
 </ul>
-<blockquote>
-<p><strong>为什么先介绍第二类斯特林数？</strong></p>
-<p>虽然被称作“第二类”，第二类斯特林数却在斯特林的相关著作和具体数学中被首先描述，同时也比第一类斯特林数常用得多。———— <a target="_blank" rel="noopener" href="https://oi-wiki.org/math/stirling/">OI-Wiki</a></p>
-</blockquote>
+<div class="note info">
+            <p> <strong>为什么先介绍第二类斯特林数？</strong></p><p>虽然被称作“第二类”，第二类斯特林数却在斯特林的相关著作和具体数学中被首先描述，同时也比第一类斯特林数常用得多。———— <a target="_blank" rel="noopener" href="https://oi-wiki.org/math/stirling/">OI-Wiki</a></p>
+          </div>
 <p><strong>第二类斯特林数</strong>，写作 $\begin{Bmatrix}n\\k\end{Bmatrix}$ 或者 $S(n,k)$ ，是指将 $n$ 个互不相同的小球放入 $k$ 个不区分的盒子中，且每个盒子不为空的方案数。根据定义，我们可以得到递推式（ 公式 6 ）：</p>
 <script type="math/tex; mode=display">
 \def\stir#1#2{\begin{Bmatrix}#1\\#2\end{Bmatrix}}
@@ -1082,9 +1092,9 @@ F_i &= \sum_{j=0}^i(-1)^{i-j}\binom{i}{j}G_j\\
 <ul>
 <li>Practice - <a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P6620">「2020省选联考」 组合数问题</a></li>
 </ul>
-<p>给出 $n,x,m$ ，请你化简下列式子，使得 $n$ 不出现在求和符号中：</p>
-<script type="math/tex; mode=display">
-\sum_{k=0}^nf(k)\times x^k\times \binom{n}{k}</script><p>其中 $f(k)=a_0+a_1k+a_2k^2+\cdots+a_mk^m$ 。解：</p>
+<div class="note success">
+            <p>给出 $n,x,m$ ，请你化简下列式子，使得 $n$ 不出现在求和符号中：</p><script type="math/tex; mode=display">\sum_{k=0}^nf(k)\times x^k\times \binom{n}{k}</script><p>其中 $f(k)=a_0+a_1k+a_2k^2+\cdots+a_mk^m$ 。</p>
+          </div>
 <script type="math/tex; mode=display">
 \def\stir#1#2{\begin{Bmatrix}#1\\#2\end{Bmatrix}}
 \begin{aligned}
