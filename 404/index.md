@@ -6,11 +6,12 @@ permalink: /404
 ---
 
 <!DOCTYPE HTML>
+<html>
 <!--[if IE 6 ]> <html class="ne_ua_ie6 ne_ua_ielte8"> <![endif]-->
 <!--[if IE 7 ]> <html class="ne_ua_ie7 ne_ua_ielte8"> <![endif]-->
 <!--[if IE 8 ]> <html class="ne_ua_ie8 ne_ua_ielte8"> <![endif]-->
 <!--[if IE 9 ]> <html class="ne_ua_ie9"> <![endif]-->
-<!--[if (gte IE 10)|!(IE)]><!--> <html phone="1"> <!--<![endif]-->
+<!--[if (gte IE 10)|!(IE)]><!--> <!--html phone="1"--> <!--<![endif]-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=gbk">
 <title>你404了!</title>
@@ -388,7 +389,7 @@ permalink: /404
 <body>
 <div class="wrap_2018_404" id="wrap_2018_404">
     <div class="content_2018_404">
-        <h1><img src="404.gif"/></h1>
+        <h1><img src="https://zypc-1903.github.io/404/404.gif"/></h1>
         <b class="tip">网页跑丢了</b>
     </div>
 </div>
@@ -397,3 +398,4 @@ permalink: /404
 </script>
 </body>
 </html>
+
