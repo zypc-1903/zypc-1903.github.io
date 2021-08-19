@@ -5,7 +5,7 @@ title: 404
 permalink: /404
 ---
 
-<!DOCTYPE HTML>
+
 <html>
 <!--[if IE 6 ]> <html class="ne_ua_ie6 ne_ua_ielte8"> <![endif]-->
 <!--[if IE 7 ]> <html class="ne_ua_ie7 ne_ua_ielte8"> <![endif]-->
@@ -398,4 +398,3 @@ permalink: /404
 </script>
 </body>
 </html>
-
