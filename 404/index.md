@@ -1,3 +1,10 @@
+---
+layout: false
+comments: false
+title: 404
+permalink: /404
+---
+
 <!DOCTYPE HTML>
 <!--[if IE 6 ]> <html class="ne_ua_ie6 ne_ua_ielte8"> <![endif]-->
 <!--[if IE 7 ]> <html class="ne_ua_ie7 ne_ua_ielte8"> <![endif]-->
@@ -6,7 +13,7 @@
 <!--[if (gte IE 10)|!(IE)]><!--> <html phone="1"> <!--<![endif]-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=gbk">
-<title>Äã404ÁË!</title>
+<title>ä½ 404äº†!</title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <meta id="viewport" name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
@@ -382,7 +389,7 @@
 <div class="wrap_2018_404" id="wrap_2018_404">
     <div class="content_2018_404">
         <h1><img src="css/404.gif"/></h1>
-        <b class="tip">ÍøÒ³ÅÜ¶ªÁË</b>
+        <b class="tip">ç½‘é¡µè·‘ä¸¢äº†</b>
     </div>
 </div>
 <script>
@@ -390,3 +397,4 @@
 </script>
 </body>
 </html>
+
