@@ -388,7 +388,7 @@ permalink: /404
 <body>
 <div class="wrap_2018_404" id="wrap_2018_404">
     <div class="content_2018_404">
-        <h1><img src="css/404.gif"/></h1>
+        <h1><img src="404.gif"/></h1>
         <b class="tip">网页跑丢了</b>
     </div>
 </div>
@@ -397,4 +397,3 @@ permalink: /404
 </script>
 </body>
 </html>
-
