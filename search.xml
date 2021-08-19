@@ -358,9 +358,14 @@ a^{173}=a^{128}\times a^{32}\times a^{8}\times a^{4}\times a</script><p>而 $a^4
 <p>还是用 $T(x)$ 来定义求出这玩意的时间，假设我们每次乘法的时间是固定为 1 单位时间的，因此我们并不关心 $a$ 而只关心 $b$。</p>
 <p>显然我们有 $T(x)=T(\dfrac{x}{2})+1$。在高中我们会学到<strong>对数</strong>，其中之一定义式是 $x=2^{\log_2x}$，比如 $2^5=32$，所以 $\log_2 32=5$。对数增长得很慢，我们具体就不列表格了，具体感受一下诸如 $\log_2 32768=15,\log_2 2147364848=31$ 之类的就可以了。</p>
 <p>我们不难发现 $T(x)=\log x$，于是我们在非常出色的时间内完成了 $a^b$ 的计算。</p>
-<h4 id="2-3-3-base-的推导"><a href="#2-3-3-base-的推导" class="headerlink" title="2.3.3 base 的推导"></a>2.3.3 base 的推导</h4><p>我们记 $F(x)$ 为一个矩阵 $\begin{bmatrix} a_x  a_{x-1} \end{bmatrix}$，显然我们要知道 $a_x$ 的值，取 $F(x)$ 的第一行第一列就可以了。</p>
-<p>现在我们期望有一个矩阵 $\text{base}$，使得 $F(x) \times \text{base} = F(x+1)$。首先这个矩阵得是两行两列的。然后我们再慢慢确定每一个值。<br>首先 $F(x+1)$ 的第一行第一列应该是 $a_{x+1} = 1 \times a_x+ 1 \times a_{x-1}$，利用矩阵乘法的性质我们很容易知道 $\text{base}$ 的第一列全部都是 1。<br>然后 $F(x+1)$ 的第一行第二列应该是 $a_x = 1 \times a_x+ 0 \times a_{x-1}$，我们如法炮制，得出 $\text{base}$ 的第二列为 $1,0$。<br>即有 $\text{base}=\begin{bmatrix} 1 &amp; 1 \ 1 &amp; 0 \end{bmatrix}$。</p>
-<h4 id="2-3-4-快速幂优化矩阵乘法"><a href="#2-3-4-快速幂优化矩阵乘法" class="headerlink" title="2.3.4 快速幂优化矩阵乘法"></a>2.3.4 快速幂优化矩阵乘法</h4><p>我为什么要把快速幂和矩阵乘法放在一起讲呢？是的，矩阵乘法也可以快速幂。</p>
+<h4 id="2-3-3-base-的推导"><a href="#2-3-3-base-的推导" class="headerlink" title="2.3.3 base 的推导"></a>2.3.3 base 的推导</h4><p>我们记 $F(x)$ 为一个矩阵 $\begin{bmatrix} a_x  &amp; a_{x-1} \end{bmatrix}$，显然我们要知道 $a_x$ 的值，取 $F(x)$ 的第一行第一列就可以了。</p>
+<p>现在我们期望有一个矩阵 $\text{base}$，使得 $F(x) \times \text{base} = F(x+1)$。首先这个矩阵得是两行两列的。然后我们再慢慢确定每一个值。<br>首先 $F(x+1)$ 的第一行第一列应该是 $a_{x+1} = 1 \times a_x+ 1 \times a_{x-1}$，利用矩阵乘法的性质我们很容易知道 $\text{base}$ 的第一列全部都是 1。<br>然后 $F(x+1)$ 的第一行第二列应该是 $a_x = 1 \times a_x+ 0 \times a_{x-1}$，我们如法炮制，得出 $\text{base}$ 的第二列为 $1,0$。</p>
+<script type="math/tex; mode=display">
+\text{base}=
+\begin{bmatrix}
+1 & 1 \\
+1 & 0 \\
+\end{bmatrix}</script><h4 id="2-3-4-快速幂优化矩阵乘法"><a href="#2-3-4-快速幂优化矩阵乘法" class="headerlink" title="2.3.4 快速幂优化矩阵乘法"></a>2.3.4 快速幂优化矩阵乘法</h4><p>我为什么要把快速幂和矩阵乘法放在一起讲呢？是的，矩阵乘法也可以快速幂。</p>
 <p>因为矩阵乘法的其实就是一堆东西相乘，对于一个矩阵 $A$，其依然满足 $A^b=A^{\frac{b}{2}}\times A^{\frac{b}{2}}$。</p>
 <h4 id="2-3-5-矩阵加速递推"><a href="#2-3-5-矩阵加速递推" class="headerlink" title="2.3.5 矩阵加速递推"></a>2.3.5 矩阵加速递推</h4><p>于是我们有 $F(2) \times \text{base} = F(3),F(3) \times \text{base}=F(4),F(4) \times \text{base}=F(5)$ ……<br>故可以得出 $F(x) = F(2) \times \text{base}^{x-2}$。使用快速幂计算 $\text{base}^{x-2}$。<br>考察 $T(x)$ 的值，不难发现 $T(x)=\log x$。</p>
 <h3 id="2-4-小结"><a href="#2-4-小结" class="headerlink" title="2.4 小结"></a>2.4 小结</h3><p>到这里，我们考察了 $T(x)=x^2$ 的<strong>递归</strong>算法，$T(x)=x$ 的<strong>递推</strong>算法和 $T(x)=\log x$的<strong>矩阵乘法</strong>算法。</p>
@@ -759,7 +764,7 @@ H_n=\sum_{i=1}^nH_{i-1}H_{n-i}\ \ \ \ \ \ \ \ \ \ (2)</script><hr>
           </div>
 <p>将进栈看成左括号，出栈看成右括号，因为每个时候进栈次数必然大于出栈，于是又转化成了括号匹配模型。</p>
 <div class="note success">
-            <p> <strong>二叉树构成模型</strong></p><p>如图，二叉树是一种这样的结构。每一个结点最多会分两个叉到下面的结点。问有 $n$ 个点能够构成多少种不同的二叉树。</p><p><img src="/2021/08/10/ju-lao-tan-two/Blog\zypc1903\source\_posts\qian-tan-pai-lie-zu-he-two\6ZKfPO.png" alt="6ZKfPO.png"></p>
+            <p> <strong>二叉树构成模型</strong></p><p>如图，二叉树是一种这样的结构。每一个结点最多会分两个叉到下面的结点。问有 $n$ 个点能够构成多少种不同的二叉树。</p><p><img src="/2021/08/10/ju-lao-tan-two/6ZKfPO.png" alt="6ZKfPO.png"></p>
           </div>
 <p>我们设最上层的结点的左边分出去了 $k$ 个结点，则右边会分叉出去 $n-k-1$ 个结点。由乘法原理可以得到方案数为 $f(k)f(n-k-1)$ 。我们枚举左子树分出去的结点数量，则有$f(n)=f(0)f(n-1)+f(1)f(n-2)\cdots+f(n-1)f(0)$ 。这跟公式 2 的形式相同，所以答案就是卡特兰数。</p>
 <div class="note success">
@@ -2465,8 +2470,13 @@ a^{173}=a^{128}\times a^{32}\times a^{8}\times a^{4}\times a</script><p>而 $a^4
 <p>显然我们有 $T(x)=T(\dfrac{x}{2})+1$。在高中我们会学到<strong>对数</strong>，其中之一定义式是 $x=2^{\log_2x}$，比如 $2^5=32$，所以 $\log_2 32=5$。对数增长得很慢，我们具体就不列表格了，具体感受一下诸如 $\log_2 32768=15,\log_2 2147364848=31$ 之类的就可以了。</p>
 <p>我们不难发现 $T(x)=\log x$，于是我们在非常出色的时间内完成了 $a^b$ 的计算。</p>
 <h4 id="2-3-3-base-的推导"><a href="#2-3-3-base-的推导" class="headerlink" title="2.3.3 base 的推导"></a>2.3.3 base 的推导</h4><p>我们记 $F(x)$ 为一个矩阵 $\begin{bmatrix} a_x  a_{x-1} \end{bmatrix}$，显然我们要知道 $a_x$ 的值，取 $F(x)$ 的第一行第一列就可以了。</p>
-<p>现在我们期望有一个矩阵 $\text{base}$，使得 $F(x) \times \text{base} = F(x+1)$。首先这个矩阵得是两行两列的。然后我们再慢慢确定每一个值。<br>首先 $F(x+1)$ 的第一行第一列应该是 $a_{x+1} = 1 \times a_x+ 1 \times a_{x-1}$，利用矩阵乘法的性质我们很容易知道 $\text{base}$ 的第一列全部都是 1。<br>然后 $F(x+1)$ 的第一行第二列应该是 $a_x = 1 \times a_x+ 0 \times a_{x-1}$，我们如法炮制，得出 $\text{base}$ 的第二列为 $1,0$。<br>即有 $\text{base}=\begin{bmatrix} 1 &amp; 1 \ 1 &amp; 0 \end{bmatrix}$。</p>
-<h4 id="2-3-4-快速幂优化矩阵乘法"><a href="#2-3-4-快速幂优化矩阵乘法" class="headerlink" title="2.3.4 快速幂优化矩阵乘法"></a>2.3.4 快速幂优化矩阵乘法</h4><p>我为什么要把快速幂和矩阵乘法放在一起讲呢？是的，矩阵乘法也可以快速幂。</p>
+<p>现在我们期望有一个矩阵 $\text{base}$，使得 $F(x) \times \text{base} = F(x+1)$。首先这个矩阵得是两行两列的。然后我们再慢慢确定每一个值。<br>首先 $F(x+1)$ 的第一行第一列应该是 $a_{x+1} = 1 \times a_x+ 1 \times a_{x-1}$，利用矩阵乘法的性质我们很容易知道 $\text{base}$ 的第一列全部都是 1。<br>然后 $F(x+1)$ 的第一行第二列应该是 $a_x = 1 \times a_x+ 0 \times a_{x-1}$，我们如法炮制，得出 $\text{base}$ 的第二列为 $1,0$。</p>
+<script type="math/tex; mode=display">
+\text{base}=
+\begin{bmatrix}
+1 & 1 \\
+1 & 0 \\
+\end{bmatrix}</script><h4 id="2-3-4-快速幂优化矩阵乘法"><a href="#2-3-4-快速幂优化矩阵乘法" class="headerlink" title="2.3.4 快速幂优化矩阵乘法"></a>2.3.4 快速幂优化矩阵乘法</h4><p>我为什么要把快速幂和矩阵乘法放在一起讲呢？是的，矩阵乘法也可以快速幂。</p>
 <p>因为矩阵乘法的其实就是一堆东西相乘，对于一个矩阵 $A$，其依然满足 $A^b=A^{\frac{b}{2}}\times A^{\frac{b}{2}}$。</p>
 <h4 id="2-3-5-矩阵加速递推"><a href="#2-3-5-矩阵加速递推" class="headerlink" title="2.3.5 矩阵加速递推"></a>2.3.5 矩阵加速递推</h4><p>于是我们有 $F(2) \times \text{base} = F(3),F(3) \times \text{base}=F(4),F(4) \times \text{base}=F(5)$ ……<br>故可以得出 $F(x) = F(2) \times \text{base}^{x-2}$。使用快速幂计算 $\text{base}^{x-2}$。<br>考察 $T(x)$ 的值，不难发现 $T(x)=\log x$。</p>
 <h3 id="2-4-小结"><a href="#2-4-小结" class="headerlink" title="2.4 小结"></a>2.4 小结</h3><p>到这里，我们考察了 $T(x)=x^2$ 的<strong>递归</strong>算法，$T(x)=x$ 的<strong>递推</strong>算法和 $T(x)=\log x$的<strong>矩阵乘法</strong>算法。</p>
