@@ -1,46 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>「三年巨献」1903 DREAM Edition</title>
-    <url>/2022/04/01/april-fool/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>经过了三年的班干部迭代，1903 班刊网站已从一个不起眼的的刚诞生的小网站，变成了一个有数五十用户的活跃社区。它不仅仅是一个博客平台，更拥有强大的社区、在线学习功能。如今，1903 班刊即将迎来了它的下一个大版本：2.6，内部开发代号 DREAM。</p>
-<span id="more"></span>
-<h2 id="全新-LOGO-设计"><a href="#全新-LOGO-设计" class="headerlink" title="全新 LOGO 设计"></a>全新 LOGO 设计</h2><p>我们根据本班班草 190351 郭铭泰，设计出了三个 LOGO 备选方案：</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center">方案一</th>
-<th style="text-align:center">方案二</th>
-<th style="text-align:center">方案三</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><img src="/2022/04/01/april-fool/xjrb.jpg" alt="相敬如宾"></td>
-<td style="text-align:center"><img src="/2022/04/01/april-fool/fltt.jpg" alt="风流倜傥"></td>
-<td style="text-align:center"><img src="/2022/04/01/april-fool/cnm.jpg" alt="cnm"></td>
-</tr>
-</tbody>
-</table>
-</div>
-<ul>
-<li><strong>方案一</strong> / 相敬如宾四个字和图片上二人同桌的画面体现了班级内部的和谐稳定，但相敬如宾大多形容夫妻，用在这里不合适，因此被否决。</li>
-<li><strong>方案二</strong> / 郭铭泰在网课时摸后脑勺体现了他的放荡不羁和风流倜傥，这才是少年应有的模样！</li>
-<li><strong>方案三</strong> / 上图的脏话和微笑体现我们班是有亲和力的班级，但脏话不符合社会主义核心价值观中个人层面的文明，因此被否决。</li>
-</ul>
-<h2 id="班级同学评价"><a href="#班级同学评价" class="headerlink" title="班级同学评价"></a>班级同学评价</h2><p>我现在非常想报复社会 / 你说这世上 还有什么值得的呢 —— sb</p>
-<p>文字又有什么关系呢 / 挡不住 gmt 的美貌 —— TIXE</p>
-<p>gmt 也可以漂白 / 好的那就 gmt 了 —— Kazuha</p>
-<p>gmt 与阿杰之间只差一顶帽子和一副眼镜 —— 德曼</p>
-<p>gmt：狗叫 —— 190354LeaFu</p>
-<p>未来属于文科 —— lgO3SO</p>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      <tags>
-        <tag>1903</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>1903 春日信笺 第一期</title>
     <url>/2021/08/12/chun-ri-xin-jian-one/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><ul>
@@ -779,6 +739,203 @@ k_1+k_2 &= \frac{y_1-b}{x_1}+\frac{y_2-b}{x_2}=\frac{x_2(y_1-b)+x_1(y_2-b)}{x_1x
       </tags>
   </entry>
   <entry>
+    <title>浅谈排列组合 2</title>
+    <url>/2021/08/10/qian-tan-pai-lie-zu-he-two/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><strong>作者</strong> / 190331 舒熙皓</p>
+<hr>
+<p>这一次将会讲解跟组合数学相关的数列，掌握浅谈排列组合 1 ，并且学有余力的同学可以尝试阅读。建议配合 <a href="https://oi-wiki.org/math/stirling/">OI-Wiki</a>，《具体数学》等专业书籍或网站辅助阅读（如果没有也没关系），有疑问时多百度，实在看不懂就跳过。</p>
+<span id="more"></span>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=26264143&auto=1&height=66"></iframe>
+
+<h3 id="公式整理"><a href="#公式整理" class="headerlink" title="公式整理"></a>公式整理</h3><p>本次公式较多，所以在最前面先将所有公式列出来：</p>
+<script type="math/tex; mode=display">
+\def\stir#1#2{\begin{Bmatrix}#1\\#2\end{Bmatrix}}
+\def\Stir#1#2{\begin{bmatrix}#1\\#2\end{bmatrix}}
+\begin{aligned}
+& H_n=\binom{2n}{n}\times\frac{1}{n+1} &&(1)\\
+& H_n=\sum_{i=1}^nH_{i-1}H_{n-i} &&(2)\\
+& H_n=H_{n-1}\times\frac{4n-2}{n+1} &&(3)\\
+& H_n=\frac{1}{n+1}\times\sum_{i=0}^n\binom{n}{i}^2 &&(4)\\
+& F(n)=\sum_{i=0}^n\binom{n}{i}G(i)\Rightarrow G(n)=\sum_{i=0}^n(-1)^{n-i}\binom{n}{i}F(i)&&(5)\\
+& \stir{n}{k}=\stir{n-1}{k-1}+k\stir{n-1}{k} && (6)\\
+& n^m=\sum_{i=0}^n\stir{m}{i}\binom{n}{i}i! &&(7)\\
+& \stir{n}{m}=\sum_{i=0}^m\frac{(-1)^{m-i}i^n}{i!(m-i)!} &&(8)\\
+& \binom{n}{m}\binom{m}{k}=\binom{n}{k}\binom{n-k}{m-k} &&(9)\\
+& \Stir{n}{k}=\Stir{n-1}{k-1}+(n-1)\Stir{n-1}{k} &&(10)
+\end{aligned}</script><hr>
+<h3 id="1-Catalan-数"><a href="#1-Catalan-数" class="headerlink" title="1. Catalan 数"></a>1. Catalan 数</h3><ul>
+<li>Catalan 数公式拓展</li>
+</ul>
+<p>我们设 $H_i$ 为 Catalan 数的第 $i$ 项，由基础公式 $H_i=\dbinom{2n}{n}-\dbinom{2n}{n-1}$ ，来证明公式 1-4 。</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+H_i&=\binom{2n}{n}-\binom{2n}{n-1}\\
+&=\binom{2n}{n}\times(1-\frac{\binom{2n}{n-1}}{\binom{2n}{n}})\\
+&=\binom{2n}{n}\times(1-\frac{(2n)!}{(n+1)!(n-1)!}\times\frac{(n!)^2}{(2n)!})\\
+&=\binom{2n}{n}\times(1-\frac{n}{n+1})=\binom{2n}{n}\times\frac{1}{n+1} &&(1)
+\end{aligned}</script><p>由基础公式 $\sum_{i=0}^n\dbinom{n}{i}^2=\dbinom{2n}{n}$ 可以得到原式 $=\dfrac{1}{n+1}\times\sum_{i=0}^n\dbinom{n}{i}^2                (4)$</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\frac{H_n}{H_{n-1}}&=(\frac{\binom{2n}{n}}{n+1})\div(\frac{\binom{2n-2}{n-1}}{n})\\
+&=\frac{n}{n+1}\times\frac{\binom{2n}{n}}{\binom{2n-2}{n-1}}=\frac{n}{n+1}\times\frac{(2n)!}{(n!)^2}\times\frac{((n-1)!)^2}{(2n-2)!}\\
+&=\frac{n}{n+1}\times\frac{2n(2n-1)}{n^2}=\frac{4n-2}{n+1}\\
+\therefore H_n &=H_{n-1}\times\frac{4n-2}{n+1} &&(3)\\
+\end{aligned}</script><p>公式 2 考虑用 Catalan 数的意义证明。显然，最后一步必然是向上走。我们用一种 “奇特” 的方法来解决路径个数问题：我们把向右走看成左括号，向上走看成右括号，那么左括号和右括号一定会匹配 $n$ 次，而且到任意一步的时候，左括号的个数一定要不少于右括号的个数。这就是经典的 <strong>括号匹配模型</strong> 。我们令当走到第 $i$ 个左括号时，它是与最后一个右括号匹配的。此时它的左边必然已经全部匹配了。根据乘法原理，则当前方案是 $f(i-1)f(n-i)$ 。我们可以令 $i=1,2,3,\cdots,n$ ，则可以得到</p>
+<script type="math/tex; mode=display">
+H_n=\sum_{i=1}^nH_{i-1}H_{n-i}\ \ \ \ \ \ \ \ \ \ (2)</script><hr>
+<ul>
+<li>Catalan 数的基本模型</li>
+</ul>
+<p>在之前，我们已经将它的两个模型：括号匹配模型和路径个数模型讲了一遍。</p>
+<div class="note success">
+            <p> <strong>01 序列模型</strong></p><p>给定 $n$ 个 0 和 $n$ 个 1，你需要将它们排成一行，使得序列中任意一个前缀 1 的个数都大于等于 0 的个数。</p>
+          </div>
+<p>考虑将 1 看成左括号，0 看成右括号，于是又转化成了括号匹配模型。</p>
+<div class="note success">
+            <p> <strong><a href="https://www.luogu.com.cn/problem/P1044">进出栈模型</a></strong></p><p>你需要进栈和出栈 $n$ 次，求出总方案数。</p>
+          </div>
+<p>将进栈看成左括号，出栈看成右括号，因为每个时候进栈次数必然大于出栈，于是又转化成了括号匹配模型。</p>
+<div class="note success">
+            <p> <strong>二叉树构成模型</strong></p><p>如图，二叉树是一种这样的结构。每一个结点最多会分两个叉到下面的结点。问有 $n$ 个点能够构成多少种不同的二叉树。</p><p><img src="/2021/08/10/qian-tan-pai-lie-zu-he-two/6ZKfPO.png" alt="6ZKfPO.png"></p>
+          </div>
+<p>我们设最上层的结点的左边分出去了 $k$ 个结点，则右边会分叉出去 $n-k-1$ 个结点。由乘法原理可以得到方案数为 $f(k)f(n-k-1)$ 。我们枚举左子树分出去的结点数量，则有$f(n)=f(0)f(n-1)+f(1)f(n-2)\cdots+f(n-1)f(0)$ 。这跟公式 2 的形式相同，所以答案就是卡特兰数。</p>
+<div class="note success">
+            <p> <strong><a href="https://www.luogu.com.cn/problem/P3200">「湖南省选」有趣的数列</a></strong></p><p>给定一个 $1-2n$ 的排列 $a$ ，满足所有奇数项和偶数项递增，且对于任意的 $i$ ，都有 $a_{2i-1}&lt;a_{2i}$ 。</p>
+          </div>
+<p>考虑先给每个数标号，奇数项标 1 ，偶数项标 0 。将 $1-2n$ 按顺序排列，则任意一个前缀 1 的个数应该不小于 0 的个数（否则偶数项无法成功配对），便转化成了 01 序列模型。</p>
+<hr>
+<h3 id="Ex-1-二项式反演"><a href="#Ex-1-二项式反演" class="headerlink" title="Ex.1 二项式反演"></a>Ex.1 二项式反演</h3><p>如果你知道了 $F(n)=\sum_{i=0}^nG(i)a_{ni}$ 。如果你知道了 $F(1,2,\dots,n)$ ，可以反推出 $G(n)=\sum_{i=0}^nF(i)b_{ni}$ ，这个过程就叫做 <strong>反演</strong> 。</p>
+<p>我们考虑先来用组合意义来证明公式 9：$\dbinom{n}{m}\dbinom{m}{k}=\dbinom{n}{k}\dbinom{n-k}{m-k}$ 。这个就相当于从 $n$ 个人里面选出 $m$ 个人，再从 $m$ 个人里面选出 $k$ 个人的方案数。这其实就相当于从 $n$ 个人里面内定了 $k$ 个人，然后再从 $n-k$ 个人中选择 $m-k$ 个人来 ”凑数“。</p>
+<p>公式 5 ( <strong>二项式反演公式</strong> )：$F(n)=\sum_{i=0}^n\dbinom{n}{i}G(i)\Rightarrow G(n)=\sum_{i=0}^n(-1)^{n-i}\dbinom{n}{i}F(i)$</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\sum_{i=0}^n(-1)^{n-i}\binom{n}{i}F(i) &= \sum_{i=0}^n(-1)^{n-i}\binom{n}{i} (\sum_{j=0}^i\binom{i}{j}G(j)) &&(展开F(i))\\
+&=\sum_{i=0}^n(\sum_{j=0}^i(-1)^{n-i}\binom{n}{i}\binom{i}{j})G(j) &&(乘法分配律) \\
+&=\sum_{j=0}^nG(j)\sum_{i=j}^n(-1)^{n-i}\binom{n}{i}\binom{i}{j} &&(交换和式)
+\end{aligned}</script><p>我们来仔细探究一下最后一步为什么可以这样做。我们将所有的项用矩阵的形式写出来：</p>
+<script type="math/tex; mode=display">
+\begin{bmatrix}
+(-1)^0\binom{n}{0}\binom{0}{0}G(0) \\
+(-1)^1\binom{n}{1}\binom{1}{0}G(0) & (-1)^1\binom{n}{1}\binom{1}{1}G(1) \\
+(-1)^2\binom{n}{2}\binom{2}{0}G(0) & (-1)^2\binom{n}{2}\binom{2}{1}G(1) & (-1)^2\binom{n}{2}\binom{2}{2}G(2) \\
+\vdots & \vdots & \ddots \\
+(-1)^n\binom{n}{n}\binom{n}{0}G(0) & (-1)^n\binom{n}{n}\binom{n}{1}G(1) & \cdots & (-1)^n\binom{n}{n}\binom{n}{n}G(n)
+\end{bmatrix}</script><p>之前的一步是按照行来枚举的，而最后一步则是按照列来枚举。</p>
+<p>考虑分析 $\sum_{i=j}^n(-1)^{n-i}\dbinom{n}{i}\dbinom{i}{j}$ 。</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\sum_{i=j}^n(-1)^{n-i}\binom{n}{i}\binom{i}{j} &= \sum_{i=j}^n(-1)^{n-i}\binom{n}{j}\binom{n-j}{i-j} &&(利用公式9化简)\\
+&=\binom{n}{j}\sum_{i=j}^n(-1)^{n-i}\binom{n-j}{i-j} &&(移项)\\
+&=\binom{n}{j}\sum_{i=0}^{n-j}(-1)^{n-j-i}\binom{n-j}{i} &&(更改枚举下标)\\
+&=\binom{n}{j}(1-1)^{n-j} &&(二项式定理)
+\end{aligned}</script><p>于是，当 $j&lt;n$ 时，原式的值为 0，当 $j=n$ 时，原式的值为 1。于是，</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+&\sum_{j=0}^nG(j)\sum_{i=j}^n(-1)^{n-i}\binom{n}{i}\binom{i}{j}\\
+=&\sum_{j=0}^nG(j)\times[j=n]=G(n) &&（等效替代）\\
+\therefore & \sum_{i=0}^n(-1)^{n-i}\binom{n}{i}F(i)=G(n) && \square
+\end{aligned}</script><hr>
+<h3 id="2-第二类斯特林数"><a href="#2-第二类斯特林数" class="headerlink" title="2. 第二类斯特林数"></a>2. 第二类斯特林数</h3><ul>
+<li>简单介绍</li>
+</ul>
+<div class="note info">
+            <p> <strong>为什么先介绍第二类斯特林数？</strong></p><p>虽然被称作“第二类”，第二类斯特林数却在斯特林的相关著作和具体数学中被首先描述，同时也比第一类斯特林数常用得多。———— <a href="https://oi-wiki.org/math/stirling/">OI-Wiki</a></p>
+          </div>
+<p><strong>第二类斯特林数</strong>，写作 $\begin{Bmatrix}n\\k\end{Bmatrix}$ 或者 $S(n,k)$ ，是指将 $n$ 个互不相同的小球放入 $k$ 个不区分的盒子中，且每个盒子不为空的方案数。根据定义，我们可以得到递推式（ 公式 6 ）：</p>
+<script type="math/tex; mode=display">
+\def\stir#1#2{\begin{Bmatrix}#1\\#2\end{Bmatrix}}
+\stir{n}{k}=\stir{n-1}{k-1}+k\stir{n-1}{k}\ \ \ \ \ \ \ \ \ \ (6)</script><p>当 $k=0$ 时，$\begin{Bmatrix}n\\k\end{Bmatrix}=[n=0]$ 。我们可以用组合意义来理解：</p>
+<ol>
+<li>把一个新的小球放到一个新的盒子，共有 $\begin{Bmatrix}n-1\\k-1\end{Bmatrix}$ 种方案。</li>
+<li>把小球放到一个现有的盒子中，共有 $k\begin{Bmatrix}n-1\\k\end{Bmatrix}$ 种方案。</li>
+</ol>
+<p>运用加法原理即可得到递推式。根据定义，还有一个很神奇的公式（公式 7）：</p>
+<script type="math/tex; mode=display">
+\def\stir#1#2{\begin{Bmatrix}#1\\#2\end{Bmatrix}}
+n^m=\sum_{i=0}^n\stir{m}{i}\binom{n}{i}i!\ \ \ \ \ \ \ \ \ \ (7)</script><p>$n^m$ 相当于把 $m$ 个互不相同的小球放入 $n$ 个互不相同的盒子里面的方案数。我们考虑先枚举不空的盒子数量 $i$ ，然后用斯特林数求出在这些盒子里面放入 $m$ 个小球的方案数。由于斯特林数中盒子互不区分，所以最终还要乘上一个 $i!$ 才能够得到最终结果。</p>
+<hr>
+<ul>
+<li>通项公式</li>
+</ul>
+<p>我们设 $F_k$ 为将 $n$ 个不同的球放到 $k$ 个不同的盒子（盒子不可以为空）的方案数，$G_k$ 则是盒子允许为空时的方案数。由组合意义得</p>
+<script type="math/tex; mode=display">
+G_k=k^n=\sum_{j=0}^k\binom{k}{j}F(j)</script><p>我们发现第二个等号右边的式子刚好符合二项式反演的形式，于是可以得到</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+F_i &= \sum_{j=0}^i(-1)^{i-j}\binom{i}{j}G_j\\
+&=\sum_{j=0}^i(-1)^{i-j}\binom{i}{j}j^n &&(带入 G_k=k^n)\\ 
+&=\sum_{j=0}^i\frac{i!(-1)^{i-j}j^n}{(i-j)!j!} &&(展开组合数)
+\end{aligned}</script><p>第二类斯特林数与 $F_k$ 的关系只有它不会互相区分盒子。所以，$F_k$ 就是斯特林数的 $k!$ 倍，</p>
+<script type="math/tex; mode=display">
+\begin{Bmatrix}n\\k\end{Bmatrix}=\frac{F_k}{k!}=\sum_{i=0}^k\frac{(-1)^{k-i}i^n}{(k-i)!i!}\ \ \ \ \ \ \ \ \ \ (8)</script><hr>
+<ul>
+<li>Practice - <a href="https://www.luogu.com.cn/problem/P6620">「2020省选联考」 组合数问题</a></li>
+</ul>
+<div class="note success">
+            <p>给出 $n,x,m$ ，请你化简下列式子，使得 $n$ 不出现在求和符号中：</p><script type="math/tex; mode=display">\sum_{k=0}^nf(k)\times x^k\times \binom{n}{k}</script><p>其中 $f(k)=a_0+a_1k+a_2k^2+\cdots+a_mk^m$ 。</p>
+          </div>
+<script type="math/tex; mode=display">
+\def\stir#1#2{\begin{Bmatrix}#1\\#2\end{Bmatrix}}
+\begin{aligned}
+& \sum_{k=0}^nf(k)\times x^k\times \binom{n}{k}\\
+=& \sum_{k=0}^n(\sum_{i=0}^ma_ik^i)x^k\binom{n}{k} &&(展开f(k))\\
+=& \sum_{k=0}^n(\sum_{i=0}^ma_i\sum_{j=0}^k\stir{i}{j}\binom{k}{j}j!)x^k\binom{n}{k} &&(利用公式7展开k^i)\\
+=& \sum_{k=0}^n(\sum_{i=0}^ma_i\sum_{j=0}^m\stir{i}{j}j!)x^k\binom{n}{k}\binom{k}{j} &&(移项并更改j的枚举上界) \\
+=& \sum_{k=0}^n(\sum_{i=0}^ma_i\sum_{j=0}^m\stir{i}{j}j!)x^k\binom{n}{j}\binom{n-j}{k-j} &&(利用公式9化简组合数) \\
+=& \sum_{i=0}^ma_i\sum_{j=0}^m\stir{i}{j}j!\sum_{k=0}^nx^k\binom{n}{j}\binom{n-j}{k-j} &&(更改枚举顺序) \\
+=& \sum_{i=0}^ma_i\sum_{j=0}^m\stir{i}{j}\binom{n}{j}j!\sum_{k=0}^nx^k\binom{n-j}{k-j} &&(移项) \\
+=& \sum_{i=0}^ma_i\sum_{j=0}^m\stir{i}{j}\binom{n}{j}j!x^j\sum_{k=0}^{n-j}x^k\binom{n-j}{k} &&(更改枚举下标)\\
+=& \sum_{i=0}^ma_i\sum_{j=0}^m\stir{i}{j}\binom{n}{j}j!x^j(x+1)^{n-j} &&(利用二项式定理化简)\\
+=& \sum_{i=0}^ma_i\sum_{j=0}^m\stir{i}{j}A_n^jx^j(x+1)^{n-j} &&(利用排列组合公式化简)
+\end{aligned}</script><p>这里给出本题的代码解决方案：<strong><a href="https://loj.ac/s/1082810">There</a></strong> 。</p>
+<hr>
+<h3 id="Ex-2-第一类斯特林数"><a href="#Ex-2-第一类斯特林数" class="headerlink" title="Ex.2 第一类斯特林数"></a>Ex.2 第一类斯特林数</h3><ul>
+<li>圆排列与斯特林数</li>
+</ul>
+<p>设 $n$ 个人选出 $m$ 个人来围成一圈的排列数记为 $Q^m_n$ （所有经过旋转可以重合的排列视为一个排列）。我们发现，一个圆葱不同的 $m$ 个位置断开，所形成的排列都是不同的，于是就有：</p>
+<script type="math/tex; mode=display">
+Q^m_n=\frac{A^m_n}{m}=\frac{n!}{m\times(n-m)!}</script><p><strong>第一类斯特林数</strong> ，记作 $\begin{bmatrix}n\\k\end{bmatrix}$ 或者 $s(n,k)$ ，表示将 $n$ 个不同的人放入 $k$ 个互不区分的圆排列的方案数。递推式（也就是公式 10）如下：</p>
+<script type="math/tex; mode=display">
+\def\Stir#1#2{\begin{bmatrix}#1\\#2\end{bmatrix}}
+\Stir{n}{k}=\Stir{n-1}{k-1}+(n-1)\Stir{n-1}{k}\ \ \ \ \ \ \ \ \ \ (10)</script><p>我们可以这样理解：</p>
+<ol>
+<li>将一个人单独放入一个圆排列中，有 $\begin{bmatrix}n-1\\k-1\end{bmatrix}$ 中方案。</li>
+<li>将一个人放入现有的圆排列中，由于放入任何一个人旁边都会产生一个新方案，而又有 $(n-1)$ 个人，所以共有 $(n-1)\begin{bmatrix}n-1\\k\end{bmatrix}$ 种方案。</li>
+</ol>
+<p>根据加法原理即可得到递推式。</p>
+<hr>
+<h3 id="Exercise-Time"><a href="#Exercise-Time" class="headerlink" title="Exercise Time"></a>Exercise Time</h3><ol>
+<li>请仿照二项式反演的证明过程，证明二项式反演的另一种形式：</li>
+</ol>
+<script type="math/tex; mode=display">
+F(n)=\sum_{i=0}^n(-1)^i\binom{n}{i}G(i)\Rightarrow G(n)=\sum_{i=0}^n(-1)^i\binom{n}{i}F(i)</script><ol>
+<li>给出引理（无需证明），请你证明斯特林反演公式：</li>
+</ol>
+<script type="math/tex; mode=display">
+\def\stir#1#2{\begin{Bmatrix}#1\\#2\end{Bmatrix}}
+\def\Stir#1#2{\begin{bmatrix}#1\\#2\end{bmatrix}}
+\begin{aligned}
+& \sum_{k=m}^n(-1)^{n-k}\Stir{n}{k}\stir{k}{m}=[m=n] && (引理)\\
+& F(n)=\sum_{i=0}^n\stir{n}{i}G(i)\Rightarrow G(n)=\sum_{i=0}^n(-1)^{n-i}\Stir{n}{k}F(k) &&(斯特林反演公式)
+\end{aligned}</script><ol>
+<li>请根据二项式反演和以上两道练习题，试判断在什么情况下反演公式成立：</li>
+</ol>
+<script type="math/tex; mode=display">
+F(n)=\sum_{i=0}^na_{ni}G(i)\Rightarrow G(n)=\sum_{i=0}^nb_{ni}F(i)</script><hr>
+<h3 id="All-in-All"><a href="#All-in-All" class="headerlink" title="All in All"></a>All in All</h3><p>我们学到了什么？</p>
+<ul>
+<li>Catalan 数通项公式极其模型</li>
+<li>斯特林数递推式和通项公式</li>
+<li>二项式反演公式</li>
+<li>简单的数论推式子技巧！</li>
+</ul>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <tags>
+        <tag>巨佬谭</tag>
+        <tag>第二期</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>浅谈排列组合</title>
     <url>/2021/05/20/qian-tan-pai-lie-zu-he/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><strong>作者</strong> / 190331 舒熙皓</p>
@@ -1088,203 +1245,6 @@ P(\text{win})=\sum_{i=1}^nT(1,i)\times S(i-1)</script>
       </tags>
   </entry>
   <entry>
-    <title>浅谈排列组合 2</title>
-    <url>/2021/08/10/qian-tan-pai-lie-zu-he-two/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><strong>作者</strong> / 190331 舒熙皓</p>
-<hr>
-<p>这一次将会讲解跟组合数学相关的数列，掌握浅谈排列组合 1 ，并且学有余力的同学可以尝试阅读。建议配合 <a href="https://oi-wiki.org/math/stirling/">OI-Wiki</a>，《具体数学》等专业书籍或网站辅助阅读（如果没有也没关系），有疑问时多百度，实在看不懂就跳过。</p>
-<span id="more"></span>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=26264143&auto=1&height=66"></iframe>
-
-<h3 id="公式整理"><a href="#公式整理" class="headerlink" title="公式整理"></a>公式整理</h3><p>本次公式较多，所以在最前面先将所有公式列出来：</p>
-<script type="math/tex; mode=display">
-\def\stir#1#2{\begin{Bmatrix}#1\\#2\end{Bmatrix}}
-\def\Stir#1#2{\begin{bmatrix}#1\\#2\end{bmatrix}}
-\begin{aligned}
-& H_n=\binom{2n}{n}\times\frac{1}{n+1} &&(1)\\
-& H_n=\sum_{i=1}^nH_{i-1}H_{n-i} &&(2)\\
-& H_n=H_{n-1}\times\frac{4n-2}{n+1} &&(3)\\
-& H_n=\frac{1}{n+1}\times\sum_{i=0}^n\binom{n}{i}^2 &&(4)\\
-& F(n)=\sum_{i=0}^n\binom{n}{i}G(i)\Rightarrow G(n)=\sum_{i=0}^n(-1)^{n-i}\binom{n}{i}F(i)&&(5)\\
-& \stir{n}{k}=\stir{n-1}{k-1}+k\stir{n-1}{k} && (6)\\
-& n^m=\sum_{i=0}^n\stir{m}{i}\binom{n}{i}i! &&(7)\\
-& \stir{n}{m}=\sum_{i=0}^m\frac{(-1)^{m-i}i^n}{i!(m-i)!} &&(8)\\
-& \binom{n}{m}\binom{m}{k}=\binom{n}{k}\binom{n-k}{m-k} &&(9)\\
-& \Stir{n}{k}=\Stir{n-1}{k-1}+(n-1)\Stir{n-1}{k} &&(10)
-\end{aligned}</script><hr>
-<h3 id="1-Catalan-数"><a href="#1-Catalan-数" class="headerlink" title="1. Catalan 数"></a>1. Catalan 数</h3><ul>
-<li>Catalan 数公式拓展</li>
-</ul>
-<p>我们设 $H_i$ 为 Catalan 数的第 $i$ 项，由基础公式 $H_i=\dbinom{2n}{n}-\dbinom{2n}{n-1}$ ，来证明公式 1-4 。</p>
-<script type="math/tex; mode=display">
-\begin{aligned}
-H_i&=\binom{2n}{n}-\binom{2n}{n-1}\\
-&=\binom{2n}{n}\times(1-\frac{\binom{2n}{n-1}}{\binom{2n}{n}})\\
-&=\binom{2n}{n}\times(1-\frac{(2n)!}{(n+1)!(n-1)!}\times\frac{(n!)^2}{(2n)!})\\
-&=\binom{2n}{n}\times(1-\frac{n}{n+1})=\binom{2n}{n}\times\frac{1}{n+1} &&(1)
-\end{aligned}</script><p>由基础公式 $\sum_{i=0}^n\dbinom{n}{i}^2=\dbinom{2n}{n}$ 可以得到原式 $=\dfrac{1}{n+1}\times\sum_{i=0}^n\dbinom{n}{i}^2                (4)$</p>
-<script type="math/tex; mode=display">
-\begin{aligned}
-\frac{H_n}{H_{n-1}}&=(\frac{\binom{2n}{n}}{n+1})\div(\frac{\binom{2n-2}{n-1}}{n})\\
-&=\frac{n}{n+1}\times\frac{\binom{2n}{n}}{\binom{2n-2}{n-1}}=\frac{n}{n+1}\times\frac{(2n)!}{(n!)^2}\times\frac{((n-1)!)^2}{(2n-2)!}\\
-&=\frac{n}{n+1}\times\frac{2n(2n-1)}{n^2}=\frac{4n-2}{n+1}\\
-\therefore H_n &=H_{n-1}\times\frac{4n-2}{n+1} &&(3)\\
-\end{aligned}</script><p>公式 2 考虑用 Catalan 数的意义证明。显然，最后一步必然是向上走。我们用一种 “奇特” 的方法来解决路径个数问题：我们把向右走看成左括号，向上走看成右括号，那么左括号和右括号一定会匹配 $n$ 次，而且到任意一步的时候，左括号的个数一定要不少于右括号的个数。这就是经典的 <strong>括号匹配模型</strong> 。我们令当走到第 $i$ 个左括号时，它是与最后一个右括号匹配的。此时它的左边必然已经全部匹配了。根据乘法原理，则当前方案是 $f(i-1)f(n-i)$ 。我们可以令 $i=1,2,3,\cdots,n$ ，则可以得到</p>
-<script type="math/tex; mode=display">
-H_n=\sum_{i=1}^nH_{i-1}H_{n-i}\ \ \ \ \ \ \ \ \ \ (2)</script><hr>
-<ul>
-<li>Catalan 数的基本模型</li>
-</ul>
-<p>在之前，我们已经将它的两个模型：括号匹配模型和路径个数模型讲了一遍。</p>
-<div class="note success">
-            <p> <strong>01 序列模型</strong></p><p>给定 $n$ 个 0 和 $n$ 个 1，你需要将它们排成一行，使得序列中任意一个前缀 1 的个数都大于等于 0 的个数。</p>
-          </div>
-<p>考虑将 1 看成左括号，0 看成右括号，于是又转化成了括号匹配模型。</p>
-<div class="note success">
-            <p> <strong><a href="https://www.luogu.com.cn/problem/P1044">进出栈模型</a></strong></p><p>你需要进栈和出栈 $n$ 次，求出总方案数。</p>
-          </div>
-<p>将进栈看成左括号，出栈看成右括号，因为每个时候进栈次数必然大于出栈，于是又转化成了括号匹配模型。</p>
-<div class="note success">
-            <p> <strong>二叉树构成模型</strong></p><p>如图，二叉树是一种这样的结构。每一个结点最多会分两个叉到下面的结点。问有 $n$ 个点能够构成多少种不同的二叉树。</p><p><img src="/2021/08/10/qian-tan-pai-lie-zu-he-two/6ZKfPO.png" alt="6ZKfPO.png"></p>
-          </div>
-<p>我们设最上层的结点的左边分出去了 $k$ 个结点，则右边会分叉出去 $n-k-1$ 个结点。由乘法原理可以得到方案数为 $f(k)f(n-k-1)$ 。我们枚举左子树分出去的结点数量，则有$f(n)=f(0)f(n-1)+f(1)f(n-2)\cdots+f(n-1)f(0)$ 。这跟公式 2 的形式相同，所以答案就是卡特兰数。</p>
-<div class="note success">
-            <p> <strong><a href="https://www.luogu.com.cn/problem/P3200">「湖南省选」有趣的数列</a></strong></p><p>给定一个 $1-2n$ 的排列 $a$ ，满足所有奇数项和偶数项递增，且对于任意的 $i$ ，都有 $a_{2i-1}&lt;a_{2i}$ 。</p>
-          </div>
-<p>考虑先给每个数标号，奇数项标 1 ，偶数项标 0 。将 $1-2n$ 按顺序排列，则任意一个前缀 1 的个数应该不小于 0 的个数（否则偶数项无法成功配对），便转化成了 01 序列模型。</p>
-<hr>
-<h3 id="Ex-1-二项式反演"><a href="#Ex-1-二项式反演" class="headerlink" title="Ex.1 二项式反演"></a>Ex.1 二项式反演</h3><p>如果你知道了 $F(n)=\sum_{i=0}^nG(i)a_{ni}$ 。如果你知道了 $F(1,2,\dots,n)$ ，可以反推出 $G(n)=\sum_{i=0}^nF(i)b_{ni}$ ，这个过程就叫做 <strong>反演</strong> 。</p>
-<p>我们考虑先来用组合意义来证明公式 9：$\dbinom{n}{m}\dbinom{m}{k}=\dbinom{n}{k}\dbinom{n-k}{m-k}$ 。这个就相当于从 $n$ 个人里面选出 $m$ 个人，再从 $m$ 个人里面选出 $k$ 个人的方案数。这其实就相当于从 $n$ 个人里面内定了 $k$ 个人，然后再从 $n-k$ 个人中选择 $m-k$ 个人来 ”凑数“。</p>
-<p>公式 5 ( <strong>二项式反演公式</strong> )：$F(n)=\sum_{i=0}^n\dbinom{n}{i}G(i)\Rightarrow G(n)=\sum_{i=0}^n(-1)^{n-i}\dbinom{n}{i}F(i)$</p>
-<script type="math/tex; mode=display">
-\begin{aligned}
-\sum_{i=0}^n(-1)^{n-i}\binom{n}{i}F(i) &= \sum_{i=0}^n(-1)^{n-i}\binom{n}{i} (\sum_{j=0}^i\binom{i}{j}G(j)) &&(展开F(i))\\
-&=\sum_{i=0}^n(\sum_{j=0}^i(-1)^{n-i}\binom{n}{i}\binom{i}{j})G(j) &&(乘法分配律) \\
-&=\sum_{j=0}^nG(j)\sum_{i=j}^n(-1)^{n-i}\binom{n}{i}\binom{i}{j} &&(交换和式)
-\end{aligned}</script><p>我们来仔细探究一下最后一步为什么可以这样做。我们将所有的项用矩阵的形式写出来：</p>
-<script type="math/tex; mode=display">
-\begin{bmatrix}
-(-1)^0\binom{n}{0}\binom{0}{0}G(0) \\
-(-1)^1\binom{n}{1}\binom{1}{0}G(0) & (-1)^1\binom{n}{1}\binom{1}{1}G(1) \\
-(-1)^2\binom{n}{2}\binom{2}{0}G(0) & (-1)^2\binom{n}{2}\binom{2}{1}G(1) & (-1)^2\binom{n}{2}\binom{2}{2}G(2) \\
-\vdots & \vdots & \ddots \\
-(-1)^n\binom{n}{n}\binom{n}{0}G(0) & (-1)^n\binom{n}{n}\binom{n}{1}G(1) & \cdots & (-1)^n\binom{n}{n}\binom{n}{n}G(n)
-\end{bmatrix}</script><p>之前的一步是按照行来枚举的，而最后一步则是按照列来枚举。</p>
-<p>考虑分析 $\sum_{i=j}^n(-1)^{n-i}\dbinom{n}{i}\dbinom{i}{j}$ 。</p>
-<script type="math/tex; mode=display">
-\begin{aligned}
-\sum_{i=j}^n(-1)^{n-i}\binom{n}{i}\binom{i}{j} &= \sum_{i=j}^n(-1)^{n-i}\binom{n}{j}\binom{n-j}{i-j} &&(利用公式9化简)\\
-&=\binom{n}{j}\sum_{i=j}^n(-1)^{n-i}\binom{n-j}{i-j} &&(移项)\\
-&=\binom{n}{j}\sum_{i=0}^{n-j}(-1)^{n-j-i}\binom{n-j}{i} &&(更改枚举下标)\\
-&=\binom{n}{j}(1-1)^{n-j} &&(二项式定理)
-\end{aligned}</script><p>于是，当 $j&lt;n$ 时，原式的值为 0，当 $j=n$ 时，原式的值为 1。于是，</p>
-<script type="math/tex; mode=display">
-\begin{aligned}
-&\sum_{j=0}^nG(j)\sum_{i=j}^n(-1)^{n-i}\binom{n}{i}\binom{i}{j}\\
-=&\sum_{j=0}^nG(j)\times[j=n]=G(n) &&（等效替代）\\
-\therefore & \sum_{i=0}^n(-1)^{n-i}\binom{n}{i}F(i)=G(n) && \square
-\end{aligned}</script><hr>
-<h3 id="2-第二类斯特林数"><a href="#2-第二类斯特林数" class="headerlink" title="2. 第二类斯特林数"></a>2. 第二类斯特林数</h3><ul>
-<li>简单介绍</li>
-</ul>
-<div class="note info">
-            <p> <strong>为什么先介绍第二类斯特林数？</strong></p><p>虽然被称作“第二类”，第二类斯特林数却在斯特林的相关著作和具体数学中被首先描述，同时也比第一类斯特林数常用得多。———— <a href="https://oi-wiki.org/math/stirling/">OI-Wiki</a></p>
-          </div>
-<p><strong>第二类斯特林数</strong>，写作 $\begin{Bmatrix}n\\k\end{Bmatrix}$ 或者 $S(n,k)$ ，是指将 $n$ 个互不相同的小球放入 $k$ 个不区分的盒子中，且每个盒子不为空的方案数。根据定义，我们可以得到递推式（ 公式 6 ）：</p>
-<script type="math/tex; mode=display">
-\def\stir#1#2{\begin{Bmatrix}#1\\#2\end{Bmatrix}}
-\stir{n}{k}=\stir{n-1}{k-1}+k\stir{n-1}{k}\ \ \ \ \ \ \ \ \ \ (6)</script><p>当 $k=0$ 时，$\begin{Bmatrix}n\\k\end{Bmatrix}=[n=0]$ 。我们可以用组合意义来理解：</p>
-<ol>
-<li>把一个新的小球放到一个新的盒子，共有 $\begin{Bmatrix}n-1\\k-1\end{Bmatrix}$ 种方案。</li>
-<li>把小球放到一个现有的盒子中，共有 $k\begin{Bmatrix}n-1\\k\end{Bmatrix}$ 种方案。</li>
-</ol>
-<p>运用加法原理即可得到递推式。根据定义，还有一个很神奇的公式（公式 7）：</p>
-<script type="math/tex; mode=display">
-\def\stir#1#2{\begin{Bmatrix}#1\\#2\end{Bmatrix}}
-n^m=\sum_{i=0}^n\stir{m}{i}\binom{n}{i}i!\ \ \ \ \ \ \ \ \ \ (7)</script><p>$n^m$ 相当于把 $m$ 个互不相同的小球放入 $n$ 个互不相同的盒子里面的方案数。我们考虑先枚举不空的盒子数量 $i$ ，然后用斯特林数求出在这些盒子里面放入 $m$ 个小球的方案数。由于斯特林数中盒子互不区分，所以最终还要乘上一个 $i!$ 才能够得到最终结果。</p>
-<hr>
-<ul>
-<li>通项公式</li>
-</ul>
-<p>我们设 $F_k$ 为将 $n$ 个不同的球放到 $k$ 个不同的盒子（盒子不可以为空）的方案数，$G_k$ 则是盒子允许为空时的方案数。由组合意义得</p>
-<script type="math/tex; mode=display">
-G_k=k^n=\sum_{j=0}^k\binom{k}{j}F(j)</script><p>我们发现第二个等号右边的式子刚好符合二项式反演的形式，于是可以得到</p>
-<script type="math/tex; mode=display">
-\begin{aligned}
-F_i &= \sum_{j=0}^i(-1)^{i-j}\binom{i}{j}G_j\\
-&=\sum_{j=0}^i(-1)^{i-j}\binom{i}{j}j^n &&(带入 G_k=k^n)\\ 
-&=\sum_{j=0}^i\frac{i!(-1)^{i-j}j^n}{(i-j)!j!} &&(展开组合数)
-\end{aligned}</script><p>第二类斯特林数与 $F_k$ 的关系只有它不会互相区分盒子。所以，$F_k$ 就是斯特林数的 $k!$ 倍，</p>
-<script type="math/tex; mode=display">
-\begin{Bmatrix}n\\k\end{Bmatrix}=\frac{F_k}{k!}=\sum_{i=0}^k\frac{(-1)^{k-i}i^n}{(k-i)!i!}\ \ \ \ \ \ \ \ \ \ (8)</script><hr>
-<ul>
-<li>Practice - <a href="https://www.luogu.com.cn/problem/P6620">「2020省选联考」 组合数问题</a></li>
-</ul>
-<div class="note success">
-            <p>给出 $n,x,m$ ，请你化简下列式子，使得 $n$ 不出现在求和符号中：</p><script type="math/tex; mode=display">\sum_{k=0}^nf(k)\times x^k\times \binom{n}{k}</script><p>其中 $f(k)=a_0+a_1k+a_2k^2+\cdots+a_mk^m$ 。</p>
-          </div>
-<script type="math/tex; mode=display">
-\def\stir#1#2{\begin{Bmatrix}#1\\#2\end{Bmatrix}}
-\begin{aligned}
-& \sum_{k=0}^nf(k)\times x^k\times \binom{n}{k}\\
-=& \sum_{k=0}^n(\sum_{i=0}^ma_ik^i)x^k\binom{n}{k} &&(展开f(k))\\
-=& \sum_{k=0}^n(\sum_{i=0}^ma_i\sum_{j=0}^k\stir{i}{j}\binom{k}{j}j!)x^k\binom{n}{k} &&(利用公式7展开k^i)\\
-=& \sum_{k=0}^n(\sum_{i=0}^ma_i\sum_{j=0}^m\stir{i}{j}j!)x^k\binom{n}{k}\binom{k}{j} &&(移项并更改j的枚举上界) \\
-=& \sum_{k=0}^n(\sum_{i=0}^ma_i\sum_{j=0}^m\stir{i}{j}j!)x^k\binom{n}{j}\binom{n-j}{k-j} &&(利用公式9化简组合数) \\
-=& \sum_{i=0}^ma_i\sum_{j=0}^m\stir{i}{j}j!\sum_{k=0}^nx^k\binom{n}{j}\binom{n-j}{k-j} &&(更改枚举顺序) \\
-=& \sum_{i=0}^ma_i\sum_{j=0}^m\stir{i}{j}\binom{n}{j}j!\sum_{k=0}^nx^k\binom{n-j}{k-j} &&(移项) \\
-=& \sum_{i=0}^ma_i\sum_{j=0}^m\stir{i}{j}\binom{n}{j}j!x^j\sum_{k=0}^{n-j}x^k\binom{n-j}{k} &&(更改枚举下标)\\
-=& \sum_{i=0}^ma_i\sum_{j=0}^m\stir{i}{j}\binom{n}{j}j!x^j(x+1)^{n-j} &&(利用二项式定理化简)\\
-=& \sum_{i=0}^ma_i\sum_{j=0}^m\stir{i}{j}A_n^jx^j(x+1)^{n-j} &&(利用排列组合公式化简)
-\end{aligned}</script><p>这里给出本题的代码解决方案：<strong><a href="https://loj.ac/s/1082810">There</a></strong> 。</p>
-<hr>
-<h3 id="Ex-2-第一类斯特林数"><a href="#Ex-2-第一类斯特林数" class="headerlink" title="Ex.2 第一类斯特林数"></a>Ex.2 第一类斯特林数</h3><ul>
-<li>圆排列与斯特林数</li>
-</ul>
-<p>设 $n$ 个人选出 $m$ 个人来围成一圈的排列数记为 $Q^m_n$ （所有经过旋转可以重合的排列视为一个排列）。我们发现，一个圆葱不同的 $m$ 个位置断开，所形成的排列都是不同的，于是就有：</p>
-<script type="math/tex; mode=display">
-Q^m_n=\frac{A^m_n}{m}=\frac{n!}{m\times(n-m)!}</script><p><strong>第一类斯特林数</strong> ，记作 $\begin{bmatrix}n\\k\end{bmatrix}$ 或者 $s(n,k)$ ，表示将 $n$ 个不同的人放入 $k$ 个互不区分的圆排列的方案数。递推式（也就是公式 10）如下：</p>
-<script type="math/tex; mode=display">
-\def\Stir#1#2{\begin{bmatrix}#1\\#2\end{bmatrix}}
-\Stir{n}{k}=\Stir{n-1}{k-1}+(n-1)\Stir{n-1}{k}\ \ \ \ \ \ \ \ \ \ (10)</script><p>我们可以这样理解：</p>
-<ol>
-<li>将一个人单独放入一个圆排列中，有 $\begin{bmatrix}n-1\\k-1\end{bmatrix}$ 中方案。</li>
-<li>将一个人放入现有的圆排列中，由于放入任何一个人旁边都会产生一个新方案，而又有 $(n-1)$ 个人，所以共有 $(n-1)\begin{bmatrix}n-1\\k\end{bmatrix}$ 种方案。</li>
-</ol>
-<p>根据加法原理即可得到递推式。</p>
-<hr>
-<h3 id="Exercise-Time"><a href="#Exercise-Time" class="headerlink" title="Exercise Time"></a>Exercise Time</h3><ol>
-<li>请仿照二项式反演的证明过程，证明二项式反演的另一种形式：</li>
-</ol>
-<script type="math/tex; mode=display">
-F(n)=\sum_{i=0}^n(-1)^i\binom{n}{i}G(i)\Rightarrow G(n)=\sum_{i=0}^n(-1)^i\binom{n}{i}F(i)</script><ol>
-<li>给出引理（无需证明），请你证明斯特林反演公式：</li>
-</ol>
-<script type="math/tex; mode=display">
-\def\stir#1#2{\begin{Bmatrix}#1\\#2\end{Bmatrix}}
-\def\Stir#1#2{\begin{bmatrix}#1\\#2\end{bmatrix}}
-\begin{aligned}
-& \sum_{k=m}^n(-1)^{n-k}\Stir{n}{k}\stir{k}{m}=[m=n] && (引理)\\
-& F(n)=\sum_{i=0}^n\stir{n}{i}G(i)\Rightarrow G(n)=\sum_{i=0}^n(-1)^{n-i}\Stir{n}{k}F(k) &&(斯特林反演公式)
-\end{aligned}</script><ol>
-<li>请根据二项式反演和以上两道练习题，试判断在什么情况下反演公式成立：</li>
-</ol>
-<script type="math/tex; mode=display">
-F(n)=\sum_{i=0}^na_{ni}G(i)\Rightarrow G(n)=\sum_{i=0}^nb_{ni}F(i)</script><hr>
-<h3 id="All-in-All"><a href="#All-in-All" class="headerlink" title="All in All"></a>All in All</h3><p>我们学到了什么？</p>
-<ul>
-<li>Catalan 数通项公式极其模型</li>
-<li>斯特林数递推式和通项公式</li>
-<li>二项式反演公式</li>
-<li>简单的数论推式子技巧！</li>
-</ul>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      <tags>
-        <tag>巨佬谭</tag>
-        <tag>第二期</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>三班月赛 第一期</title>
     <url>/2021/08/28/san-ban-yue-sai-one/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本题卷为 <strong>数学-1</strong> 题卷。</p>
@@ -1555,18 +1515,6 @@ a=st,\ b=\frac{s^2-t^2}{2},\ c=\frac{s^2+t^2}{2}</script><p>其中 $s&gt;t&gt;0$
       </tags>
   </entry>
   <entry>
-    <title>你 被 骗 了</title>
-    <url>/2021/08/10/test/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><iframe src="//player.bilibili.com/player.html?aid=80433022&bvid=BV1GJ411x7h7&cid=137649199&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
-
-<p><strong>网站建设</strong> / 190331 舒熙皓</p>
-<p><strong>音乐提供</strong> / 1903 全体同学</p>
-<p><strong>版权协议</strong> / <strong>CC-BY-SA 4.0</strong></p>
-<span id="more"></span>
-<p><del>此时某人终于想起了这个网站的账号和密码</del></p>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-  </entry>
-  <entry>
     <title>玄学的修养之道</title>
     <url>/2021/05/21/xuan-xue-de-xiu-yang-zhi-dao/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><strong>作者</strong> / 190346 尹诗涵</p>
@@ -1585,6 +1533,18 @@ a=st,\ b=\frac{s^2-t^2}{2},\ c=\frac{s^2+t^2}{2}</script><p>其中 $s&gt;t&gt;0$
         <tag>第一期</tag>
         <tag>巨佬谭</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>你 被 骗 了</title>
+    <url>/2021/08/10/test/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><iframe src="//player.bilibili.com/player.html?aid=80433022&bvid=BV1GJ411x7h7&cid=137649199&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
+<p><strong>网站建设</strong> / 190331 舒熙皓</p>
+<p><strong>音乐提供</strong> / 1903 全体同学</p>
+<p><strong>版权协议</strong> / <strong>CC-BY-SA 4.0</strong></p>
+<span id="more"></span>
+<p><del>此时某人终于想起了这个网站的账号和密码</del></p>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
   </entry>
   <entry>
     <title>1903 故事会 第一期</title>
